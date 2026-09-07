@@ -12,3 +12,4 @@ NOT USED:
 - Cloudflare R2
 
 Important: Keep the Google Apps Script deployment URL configured in worker.js. Do not replace the backend with Supabase.
+Cloudflare first build trigger
