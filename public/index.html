@@ -1,0 +1,1540 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Panchayat Work GPS</title><link rel="manifest" href="/manifest.json"><meta name="theme-color" content="#111827"><meta name="application-name" content="Panchayat Work GPS"><style>
+:root{--bg:#f3f4f6;--card:#fff;--text:#111827;--muted:#6b7280;--line:#e5e7eb;--primary:#2563eb;--success:#16a34a;--danger:#dc2626;--input:#fff;--shadow:0 10px 30px #00000012}body.dark{--bg:#0b1120;--card:#111827;--text:#f9fafb;--muted:#9ca3af;--line:#263244;--input:#0f172a;--shadow:0 12px 35px #00000040}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,Segoe UI,Arial,sans-serif}.topbar{background:var(--card);border-bottom:1px solid var(--line);padding:12px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{font-weight:800;font-size:19px}.top-actions{display:flex;gap:8px}.top-actions button{width:auto;margin:0;padding:9px 12px}.app{max-width:1180px;margin:auto;padding:16px}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:var(--shadow);margin:14px 0}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.menu{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.statgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.stat{padding:14px;border:1px solid var(--line);border-radius:14px}.stat b{font-size:22px;display:block;margin-top:4px}input,select,button{font:inherit;width:100%;padding:12px;border-radius:10px;border:1px solid var(--line);background:var(--input);color:var(--text)}button{background:var(--primary);border:0;color:#fff;font-weight:700;cursor:pointer}button.secondary{background:#475569}button.success{background:var(--success)}button.danger{background:var(--danger)}button.ghost{background:transparent;color:var(--text);border:1px solid var(--line)}button.small{width:auto;padding:7px 10px;font-size:13px}.hidden{display:none!important}.muted{color:var(--muted);font-size:13px}.status{margin-top:10px;padding:10px;border-radius:10px;background:#eff6ff;color:#1d4ed8}.status.ok{background:#ecfdf5;color:#166534}.status.err{background:#fef2f2;color:#991b1b}.toolbar{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}.toolbar>*{width:auto}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:12px}table{width:100%;border-collapse:collapse;min-width:900px}th,td{border-bottom:1px solid var(--line);padding:9px;text-align:left;font-size:13px}th{background:var(--bg)}.camera{font-size:18px;padding:16px}.preview{max-width:180px;max-height:180px;border-radius:12px;margin-top:10px}.footer{text-align:center;color:var(--muted);font-size:12px;padding:20px}.login{max-width:430px;margin:7vh auto}.pill{display:inline-block;padding:5px 9px;border-radius:999px;background:var(--bg);font-size:12px;margin:2px}.online{color:#15803d}.offline{color:#b91c1c}.modal{position:fixed;inset:0;background:#0008;display:flex;align-items:center;justify-content:center;padding:16px;z-index:20}.modal>div{max-width:620px;width:100%;max-height:90vh;overflow:auto;background:var(--card);border-radius:18px;padding:18px}@media(max-width:800px){.grid,.menu,.statgrid{grid-template-columns:1fr}.app{padding:10px}}@media print{body{background:#fff;color:#000}.no-print,.topbar,.footer{display:none!important}.app{max-width:none;padding:0}.card{border:0;box-shadow:none;margin:0;padding:0}.table-wrap{overflow:visible;border:0}table{min-width:0;width:100%;font-size:8px}th,td{padding:4px;border:1px solid #000}@page{size:A4 landscape;margin:8mm}}
+
+.mobile-nav{display:none}.photo-card{border:1px solid var(--line);border-radius:16px;padding:14px;background:var(--card);margin-top:12px}.photo-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.photo-thumb{aspect-ratio:1;border-radius:12px;object-fit:cover;width:100%;background:var(--bg);border:1px solid var(--line)}.photo-slot{position:relative}.photo-slot span{position:absolute;left:6px;top:6px;background:#000b;color:#fff;border-radius:8px;padding:3px 6px;font-size:11px}.hero{background:linear-gradient(135deg,var(--primary),#7c3aed);color:#fff;border:0}.quick-save{font-size:17px;padding:15px}.camera-preview{width:100%;max-height:320px;object-fit:contain;background:#000;border-radius:16px;margin-top:10px}.recent-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.recent-grid img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:10px}.mobile-only{display:none}@media(max-width:800px){.topbar{position:sticky;top:0;z-index:10}.app{padding:10px 10px 86px}.card{border-radius:16px;padding:14px}.menu{grid-template-columns:repeat(2,1fr)}.menu button{min-height:70px}.photo-grid{grid-template-columns:repeat(2,1fr)}.recent-grid{grid-template-columns:repeat(4,1fr)}.mobile-nav{position:fixed;display:grid;grid-template-columns:repeat(4,1fr);left:0;right:0;bottom:0;background:var(--card);border-top:1px solid var(--line);z-index:30;padding:6px max(6px,env(safe-area-inset-left)) calc(6px + env(safe-area-inset-bottom));box-shadow:0 -8px 20px #0002}.mobile-nav button{background:transparent;color:var(--text);padding:7px 2px;border-radius:10px;font-size:18px}.mobile-nav span{display:block;font-size:10px;font-weight:600;margin-top:2px}.mobile-only{display:block}.camera-preview{max-height:280px}}
+
+/* ===== FINAL PROFESSIONAL GOVERNMENT UI ===== */
+:root{
+  --gov-navy:#082b5c;--gov-blue:#1456c8;--gov-sky:#2b7cff;
+  --gov-bg:#f4f7fb;--gov-line:#dbe4f0;--gov-shadow:0 12px 34px rgba(8,43,92,.10);
+}
+body{
+  background:radial-gradient(circle at 10% 0%,rgba(20,86,200,.09),transparent 28%),var(--bg);
+}
+.topbar{
+  background:linear-gradient(90deg,var(--gov-navy),#0c3e7f);
+  color:#fff;position:sticky;top:0;z-index:100;
+  box-shadow:0 6px 20px rgba(8,43,92,.18);
+}
+.topbar .ghost,.topbar .small{color:#fff;border-color:rgba(255,255,255,.25)}
+.modern-brand{display:flex!important;align-items:center;gap:10px;letter-spacing:-.2px}
+.modern-brand small{display:block;font-size:10px;font-weight:500;opacity:.78;margin-top:2px}
+.brand-mark{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22)}
+.brand-mark svg{width:25px;height:25px}
+.page{animation:pageIn .2s ease both}
+@keyframes pageIn{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
+#dash>.card:first-child{
+  border:0;color:#fff;background:linear-gradient(135deg,var(--gov-navy),var(--gov-blue));
+  box-shadow:0 18px 44px rgba(8,43,92,.22)
+}
+#dash>.card:first-child .muted{color:#dcecff}
+#dash .stat{background:rgba(255,255,255,.10);border-color:rgba(255,255,255,.15);color:#fff}
+#dash .stat b{color:#fff}
+#dash .menu button{
+  background:var(--card);border:1px solid var(--line);box-shadow:var(--gov-shadow);
+  min-height:88px;transition:transform .18s,box-shadow .18s,border-color .18s
+}
+#dash .menu button:hover{transform:translateY(-2px);box-shadow:0 16px 34px rgba(20,86,200,.15);border-color:rgba(20,86,200,.35)}
+.card{box-shadow:0 8px 26px rgba(8,43,92,.06)}
+.install-hint{border:1px dashed rgba(20,86,200,.35);background:rgba(20,86,200,.06);border-radius:12px;padding:10px 12px;font-size:12px}
+.user-actions{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.user-actions button{font-size:12px;padding:7px 9px}
+.danger-outline{border:1px solid #ef4444!important;color:#dc2626!important;background:transparent!important}
+@media(min-width:801px){#dash .menu{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:800px){
+  .modern-brand small{display:none}
+  .brand-mark{width:34px;height:34px}
+  .app{padding-bottom:92px}
+  #dash .menu button{min-height:76px}
+}
+@media print{
+  body>*{display:none!important}
+  main.app{display:block!important;padding:0!important;margin:0!important}
+  main.app>*{display:none!important}
+  main.app #report{display:block!important;visibility:visible!important}
+  #report *{visibility:visible}
+  #report .no-print,#report .mobile-nav,#report .topbar{display:none!important}
+  @page{size:A4 landscape;margin:8mm}
+}
+
+/* ===== FINAL DESIGN REFERENCE / HIGH-CONTRAST ALIGNMENT PASS ===== */
+:root{
+  --gov-navy:#06295a;
+  --gov-blue:#0b5ed7;
+  --gov-blue-2:#1976d2;
+  --gov-ink:#10233f;
+  --gov-muted:#5b6b82;
+  --gov-white:#ffffff;
+  --gov-bg:#f3f6fa;
+  --gov-border:#d7e0eb;
+  --gov-success:#0891b2;
+  --gov-warning:#b86a00;
+  --gov-danger:#c62828;
+  --gov-shadow:0 10px 28px rgba(6,41,90,.10);
+}
+
+/* Base readability */
+html,body{background:var(--gov-bg);color:var(--gov-ink)}
+body{font-family:Inter,Segoe UI,Arial,sans-serif;line-height:1.45}
+button,input,select,textarea{font:inherit}
+button{font-weight:600}
+.muted,.hint,.small.muted{color:var(--gov-muted)!important}
+a{color:var(--gov-blue)}
+
+/* Header / brand */
+.topbar{
+  min-height:64px;
+  background:linear-gradient(90deg,var(--gov-navy),#0a3f86);
+  color:#fff!important;
+  border-bottom:1px solid rgba(255,255,255,.12);
+  box-shadow:0 5px 18px rgba(6,41,90,.18);
+}
+.topbar *{color:inherit}
+.modern-brand{display:flex!important;align-items:center;gap:11px;min-width:0}
+.modern-brand b{font-size:16px;line-height:1.1;white-space:nowrap}
+.modern-brand small{display:block;font-size:10px;line-height:1.2;opacity:.86;margin-top:3px}
+.brand-mark{
+  width:38px;height:38px;flex:0 0 38px;border-radius:10px;
+  display:grid;place-items:center;color:#fff!important;
+  background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.28)
+}
+.brand-mark svg{width:25px;height:25px}
+
+/* Page containers */
+.app{max-width:1240px;margin:0 auto}
+.page,.card{
+  border:1px solid var(--gov-border);
+  border-radius:16px;
+  background:var(--gov-white);
+  color:var(--gov-ink);
+  box-shadow:var(--gov-shadow);
+}
+.page{padding:18px}
+.page h1,.page h2,.page h3,.card h1,.card h2,.card h3{color:var(--gov-ink);margin-top:0}
+.section-title{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}
+.section-title>*{min-width:0}
+
+/* Dashboard hero */
+#dash>.card:first-child{
+  color:#fff!important;
+  background:linear-gradient(135deg,var(--gov-navy),var(--gov-blue));
+  border:0;box-shadow:0 18px 42px rgba(6,41,90,.22)
+}
+#dash>.card:first-child *{color:#fff!important}
+#dash>.card:first-child .muted{color:#e3efff!important}
+#dash>.card:first-child .pill,
+#dash>.card:first-child .badge{background:rgba(255,255,255,.16);color:#fff!important;border-color:rgba(255,255,255,.18)}
+#dash .menu{align-items:stretch}
+#dash .menu button{
+  min-height:92px;width:100%;text-align:left;
+  display:flex;align-items:center;justify-content:flex-start;gap:10px;
+  color:var(--gov-ink)!important;background:#fff!important;
+  border:1px solid var(--gov-border)!important;
+  border-radius:14px;box-shadow:var(--gov-shadow);
+}
+#dash .menu button *{color:inherit}
+#dash .menu button:hover{border-color:#8eb8ef!important;transform:translateY(-2px);box-shadow:0 16px 30px rgba(11,94,215,.14)}
+#dash .menu button:active{transform:translateY(0)}
+
+/* Stats/KPIs */
+.stat,.kpi{
+  background:#fff;color:var(--gov-ink);
+  border:1px solid var(--gov-border);
+  border-radius:14px;
+}
+.stat b,.kpi b{color:var(--gov-navy)!important}
+.stat .muted,.kpi .muted{color:var(--gov-muted)!important}
+
+/* Controls: dark readable text on white */
+input,select,textarea{
+  background:#fff!important;color:var(--gov-ink)!important;
+  border:1px solid #b8c7d9!important;border-radius:10px;
+}
+input::placeholder,textarea::placeholder{color:#7b8798!important;opacity:1}
+input:focus,select:focus,textarea:focus{
+  outline:3px solid rgba(11,94,215,.12);border-color:var(--gov-blue)!important
+}
+button:not(.ghost):not(.danger-outline){
+  color:#fff!important;
+  background:linear-gradient(135deg,var(--gov-blue),var(--gov-blue-2))!important;
+  border:1px solid var(--gov-blue)!important;
+}
+button.ghost{
+  color:var(--gov-navy)!important;background:#fff!important;
+  border:1px solid #b8c7d9!important
+}
+button.ghost:hover{border-color:var(--gov-blue)!important;color:var(--gov-blue)!important}
+.danger-outline{color:var(--gov-danger)!important;background:#fff!important;border:1px solid #ef9a9a!important}
+
+/* Status / badges */
+.status{color:var(--gov-ink)}
+.status.ok{color:var(--gov-success)!important}
+.status.err{color:var(--gov-danger)!important}
+.pill,.badge{color:var(--gov-navy);background:#eaf2ff;border:1px solid #c9dcf7}
+
+/* Lists / tables */
+table{width:100%;border-collapse:separate;border-spacing:0;overflow:hidden;border:1px solid var(--gov-border);border-radius:12px}
+th{background:#eaf2ff!important;color:var(--gov-navy)!important;font-weight:700}
+td{background:#fff;color:var(--gov-ink);border-top:1px solid var(--gov-border)}
+th,td{padding:10px 9px;vertical-align:middle}
+tr:hover td{background:#f8fbff}
+
+/* User action alignment */
+.user-actions{display:flex;justify-content:flex-end;align-items:center;gap:7px;flex-wrap:wrap}
+.user-actions button{min-width:72px}
+.grid{align-items:center}
+
+/* Mobile */
+@media(max-width:800px){
+  .topbar{min-height:58px;padding:8px 10px}
+  .modern-brand b{font-size:14px}
+  .modern-brand small{display:none}
+  .brand-mark{width:34px;height:34px;flex-basis:34px}
+  .page,.card{border-radius:13px}
+  .page{padding:13px}
+  .section-title{align-items:flex-start;flex-direction:column}
+  #dash .menu button{min-height:72px}
+  .user-actions{justify-content:flex-start}
+  table{font-size:12px}
+  th,td{padding:8px 6px}
+}
+
+/* Install hint */
+.install-hint{
+  color:var(--gov-navy)!important;background:#eaf2ff!important;
+  border:1px dashed #8fb7eb!important;border-radius:12px;padding:10px 12px;font-size:12px
+}
+.install-hint *{color:inherit}
+
+/* Page transitions */
+.page{animation:finalPageIn .18s ease both}
+@keyframes finalPageIn{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+
+/* Report print: only report, high contrast, A4 landscape */
+@media print{
+  html,body{background:#fff!important;color:#000!important}
+  body>*{display:none!important}
+  main.app{display:block!important;margin:0!important;padding:0!important;max-width:none!important}
+  main.app>*{display:none!important}
+  main.app #report{display:block!important;visibility:visible!important;background:#fff!important;border:0!important;box-shadow:none!important;padding:0!important}
+  #report *{visibility:visible!important;color:#000!important}
+  #report .no-print,#report .mobile-nav,#report .topbar{display:none!important}
+  #report table{border:1px solid #777!important}
+  #report th{background:#eee!important;color:#000!important}
+  #report td{background:#fff!important;color:#000!important}
+  @page{size:A4 landscape;margin:8mm}
+}
+
+/* =========================================================
+   FINAL DEVELOPMENT BLUEPRINT
+   Visual reference: Panchayat Work GPS premium mobile UI
+   ========================================================= */
+:root{
+  --ref-navy:#0f2f5f;
+  --ref-navy2:#08244d;
+  --ref-blue:#0d47a1;
+  --ref-blue2:#1565c0;
+  --ref-green:#0891b2;
+  --ref-orange:#ff9f0a;
+  --ref-red:#e53935;
+  --ref-purple:#7e57c2;
+  --ref-bg:#f7f9fc;
+  --ref-line:#e2e8f0;
+  --ref-text:#0f172a;
+  --ref-muted:#64748b;
+  --ref-shadow:0 5px 18px rgba(15,47,95,.10);
+}
+
+/* Reference typography and surface */
+html,body{background:var(--ref-bg);color:var(--ref-text)}
+body{font-family:Inter,Segoe UI,Roboto,Arial,sans-serif;letter-spacing:.05px}
+.topbar{
+  min-height:64px;
+  padding:10px 16px;
+  background:linear-gradient(135deg,var(--ref-navy2),var(--ref-navy))!important;
+  border:0!important;color:#fff!important;
+}
+.topbar *{color:#fff}
+.modern-brand{gap:10px}
+.modern-brand b{font-size:16px;font-weight:800;text-transform:uppercase}
+.modern-brand small{font-size:10px;opacity:.82}
+.brand-mark{
+  width:38px;height:38px;border-radius:11px;
+  background:#fff!important;color:var(--ref-blue)!important;
+  border:0;box-shadow:0 3px 10px rgba(0,0,0,.14)
+}
+.brand-mark svg{width:26px;height:26px}
+
+.app{max-width:1180px;padding:14px}
+.card,.page{
+  background:#fff!important;color:var(--ref-text)!important;
+  border:1px solid var(--ref-line)!important;
+  border-radius:14px!important;
+  box-shadow:var(--ref-shadow)!important;
+}
+.card h1,.card h2,.card h3,.page h1,.page h2,.page h3{color:var(--ref-navy2)}
+.muted{color:var(--ref-muted)!important}
+input,select,textarea{
+  background:#fff!important;color:var(--ref-text)!important;
+  border:1px solid #cbd5e1!important;border-radius:9px!important;
+  min-height:44px
+}
+input::placeholder,textarea::placeholder{color:#94a3b8!important}
+input:focus,select:focus,textarea:focus{
+  outline:3px solid rgba(21,101,192,.12)!important;
+  border-color:var(--ref-blue2)!important
+}
+button{
+  border-radius:9px!important;
+  background:linear-gradient(135deg,var(--ref-blue),var(--ref-blue2))!important;
+  color:#fff!important
+}
+button.secondary{background:#64748b!important}
+button.success{background:var(--ref-green)!important}
+button.danger{background:var(--ref-red)!important}
+button.ghost{background:#fff!important;color:var(--ref-blue)!important;border:1px solid #b9c8da!important}
+button.small{min-height:36px}
+
+/* Login reference: dark, premium, centered */
+#login{
+  background:linear-gradient(155deg,#071e40 0%,#0b376f 55%,#0d47a1 100%)!important;
+  color:#fff!important;border:0!important;max-width:430px;
+  padding:28px 24px!important;box-shadow:0 20px 50px rgba(7,30,64,.28)!important
+}
+#login h2,#login p,#login .muted{color:#fff!important}
+#login h2{text-align:center;font-size:24px;margin-bottom:4px}
+#login:before{
+  content:"PANCHAYAT\A WORK GPS";
+  white-space:pre;
+  display:block;text-align:center;font-size:27px;font-weight:800;
+  letter-spacing:.8px;line-height:1.05;margin:4px 0 26px
+}
+#login input{
+  background:rgba(255,255,255,.06)!important;color:#fff!important;
+  border-color:rgba(255,255,255,.32)!important
+}
+#login input::placeholder{color:#d9e6f7!important}
+#login button{
+  min-height:46px;background:#1267dc!important;margin-top:4px
+}
+#loginStatus{background:rgba(255,255,255,.10)!important;color:#eaf3ff!important;border:1px solid rgba(255,255,255,.15)}
+
+/* Dashboard reference */
+#dash>.card:first-child{
+  background:linear-gradient(135deg,var(--ref-navy2),var(--ref-blue))!important;
+  color:#fff!important;border:0!important;padding:18px!important
+}
+#dash>.card:first-child h2,#dash>.card:first-child .muted{color:#fff!important}
+#dash .statgrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-top:15px}
+#dash .stat{
+  background:#fff!important;color:var(--ref-text)!important;
+  border:1px solid var(--ref-line)!important;border-radius:11px!important;
+  padding:13px!important;box-shadow:0 3px 10px rgba(0,0,0,.06)
+}
+#dash .stat b{font-size:22px;color:var(--ref-navy2)!important}
+#dash .menu{
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:10px
+}
+#dash .menu button{
+  min-height:82px;text-align:left;justify-content:flex-start;
+  background:#fff!important;color:var(--ref-navy2)!important;
+  border:1px solid var(--ref-line)!important
+}
+
+/* Page headers mirror the screenshot */
+.page>.toolbar:first-child{margin-bottom:4px}
+.page h2{font-size:20px;font-weight:800}
+.hero{
+  background:linear-gradient(135deg,var(--ref-navy2),var(--ref-blue))!important;
+  border:0!important;color:#fff!important
+}
+.hero h2,.hero p{color:#fff!important}
+
+/* Capture: 2x2 photo tiles */
+.photo-grid{grid-template-columns:repeat(2,1fr)!important;gap:9px}
+.photo-slot{
+  min-height:110px;border:1px solid #bfd0e4;border-radius:10px;
+  background:#f8fafc;display:flex;align-items:center;justify-content:center
+}
+.photo-thumb{border-radius:10px}
+#photo .photo-card h3{font-size:15px}
+#photo #quickSaveBtn{min-height:46px}
+
+/* Database / Photo Database cards */
+#photoDbGrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+#photoDbGrid .photo-card{margin:0}
+#photoDbGrid .photo-thumb{aspect-ratio:1.35}
+.table-wrap{border-color:var(--ref-line)!important}
+th{background:#eef4fb!important;color:var(--ref-navy2)!important;font-weight:800}
+td{color:var(--ref-text)!important;background:#fff!important}
+
+/* User list reference */
+#userList .card{padding:12px;border-radius:12px!important}
+.user-actions{justify-content:flex-end;align-items:center}
+.user-actions button{min-width:68px}
+
+/* Bottom mobile navigation: 5-item reference */
+.mobile-nav{
+  background:#fff!important;border-top:1px solid #dbe4ee!important;
+  box-shadow:0 -5px 20px rgba(15,47,95,.12)!important
+}
+.mobile-nav button{
+  background:transparent!important;color:#334155!important;
+  border:0!important;min-height:48px
+}
+.mobile-nav button span{color:#334155!important}
+.mobile-nav button:first-child{color:var(--ref-blue)!important}
+.mobile-nav button:first-child span{color:var(--ref-blue)!important}
+
+/* Footer reference */
+.footer{color:#64748b!important}
+
+/* Mobile reference proportions */
+@media(max-width:800px){
+  .app{padding:8px 8px 88px}
+  .topbar{padding:9px 11px}
+  .modern-brand b{font-size:13px}
+  .card,.page{border-radius:13px!important}
+  #login{margin:3vh auto;padding:25px 20px!important;min-height:570px;display:flex;flex-direction:column;justify-content:center}
+  #login:before{font-size:25px;margin-bottom:28px}
+  #dash .statgrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  #dash .menu{grid-template-columns:repeat(2,minmax(0,1fr))}
+  #dash .menu button{min-height:72px;font-size:13px}
+  .grid{gap:9px}
+  .photo-grid{grid-template-columns:repeat(2,1fr)!important}
+  #photoDbGrid{grid-template-columns:repeat(2,1fr)}
+  .page h2{font-size:18px}
+  .toolbar{gap:6px}
+}
+
+/* Desktop keeps compact centered phone-like content */
+@media(min-width:801px){
+  #login{margin:6vh auto}
+  #dash>.card{padding:18px 20px}
+}
+
+/* High-contrast print */
+@media print{
+  html,body{background:#fff!important;color:#000!important}
+  main.app{max-width:none!important;padding:0!important}
+  main.app>*{display:none!important}
+  main.app #report{display:block!important;visibility:visible!important}
+  #report *{visibility:visible!important;color:#000!important}
+  #report .no-print{display:none!important}
+  @page{size:A4 landscape;margin:8mm}
+}
+
+/* ===== MOBILE PROFESSIONAL FINAL POLISH ===== */
+:root{
+  --final-primary:#2563eb;
+  --final-primary-2:#0891b2;
+  --final-deep:#172554;
+  --final-accent:#eff6ff;
+  --final-bg:#f4f7fb;
+  --final-text:#172033;
+  --final-muted:#667085;
+  --final-line:#d9e1ec;
+}
+html,body{background:var(--final-bg);color:var(--final-text)}
+body{overflow-x:hidden}
+.topbar{
+  min-height:58px!important;
+  padding:8px 14px!important;
+  background:linear-gradient(90deg,var(--final-deep),var(--final-primary-2))!important;
+  box-shadow:0 5px 18px rgba(7,94,78,.16)!important;
+}
+.brand-mark{width:34px!important;height:34px!important;flex-basis:34px!important;border-radius:10px!important;background:rgba(255,255,255,.16)!important}
+.modern-brand b{font-size:15px!important;letter-spacing:.1px}
+.modern-brand small{font-size:9px!important}
+.top-actions button{min-height:38px;padding:8px 11px!important;border-radius:11px!important}
+.app{max-width:1240px!important;padding-top:12px}
+.dashboard-page{display:block}
+.dashboard-hero{
+  border-radius:22px;
+  padding:20px;
+  color:#fff;
+  background:linear-gradient(135deg,#172554 0%,#2563eb 55%,#0891b2 100%);
+  box-shadow:0 18px 42px rgba(7,94,78,.20);
+}
+.hero-top{display:flex;align-items:flex-start;justify-content:space-between;gap:18px}
+.eyebrow{font-size:10px;letter-spacing:1.15px;opacity:.78;font-weight:700}
+.dashboard-hero h1{font-size:30px;line-height:1.1;margin:5px 0 8px;color:#fff}
+.hero-user{font-size:14px;opacity:.92}
+.hero-actions{display:flex;align-items:center;gap:8px}
+.hero-actions .pill{background:rgba(255,255,255,.14)!important;color:#fff!important;border:1px solid rgba(255,255,255,.22)}
+.hero-signout{width:auto!important;padding:9px 14px!important;border-radius:11px!important;background:rgba(255,255,255,.12)!important;border:1px solid rgba(255,255,255,.22)!important;color:#fff!important}
+.kpi-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:18px}
+.kpi-card{
+  display:flex;align-items:center;gap:11px;
+  min-width:0;padding:13px;
+  border-radius:15px;
+  background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.18);
+  backdrop-filter:blur(8px);
+}
+.kpi-icon{width:38px;height:38px;display:grid;place-items:center;border-radius:11px;background:rgba(255,255,255,.16);font-size:19px;flex:0 0 38px}
+.kpi-label{display:block;font-size:11px;opacity:.78}
+.kpi-card b{display:block;font-size:23px;line-height:1.15;color:#fff;margin:2px 0}
+.kpi-status{font-size:9px;opacity:.82}
+.kpi-status.good{color:#d7ffe9}.kpi-status.warn{color:#fff0c9}.kpi-status.neutral{color:#e7f3ff}
+.summary-card,.quick-card{
+  margin-top:14px;padding:17px;border-radius:18px;background:#fff;border:1px solid var(--final-line);
+  box-shadow:0 8px 24px rgba(7,94,78,.07)
+}
+.section-title{margin-bottom:12px}
+.section-title h2{font-size:18px;margin:0;color:var(--final-text)}
+.section-title p{margin:3px 0 0}
+.summary-badge{font-size:11px;padding:6px 9px;border-radius:999px;background:var(--final-accent);color:var(--final-primary);font-weight:800}
+.summary-track{height:10px;border-radius:99px;background:#e8efed;overflow:hidden}
+.summary-track span{display:block;height:100%;width:0%;border-radius:99px;background:linear-gradient(90deg,var(--final-primary),var(--final-primary-2));transition:width .4s ease}
+.summary-meta{display:flex;justify-content:space-between;gap:10px;margin-top:9px;font-size:12px;color:var(--final-muted)}
+.summary-meta b{color:var(--final-text)}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:5px}
+.dot.teal{background:var(--final-primary)}.dot.amber{background:#e6a21a}
+.quick-card .menu{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.quick-card .menu button{
+  min-height:78px!important;
+  display:flex!important;align-items:center!important;justify-content:flex-start!important;gap:10px!important;
+  text-align:left!important;padding:13px!important;
+  background:#fff!important;color:var(--final-text)!important;
+  border:1px solid var(--final-line)!important;border-radius:14px!important;
+  box-shadow:0 5px 15px rgba(7,94,78,.06)!important;
+}
+.quick-card .menu button:hover{transform:translateY(-1px);border-color:#9fcfc2!important;background:#fbfffe!important}
+.quick-card .menu button>span:not(.nav-icon){display:block}
+.quick-card .menu button small{display:block;color:var(--final-muted);font-size:10px;font-weight:500;margin-top:2px}
+.quick-card .menu button.secondary{background:#f3faf7!important;color:var(--final-primary)!important;border-color:#cbe5dd!important}
+.page{
+  min-height:calc(100vh - 92px);
+  margin-bottom:14px;
+}
+.footer{padding:18px 10px 24px;color:#68807a;font-size:11px}
+.footer span{padding:0 4px}
+.mobile-nav{display:none!important}
+@media(max-width:800px){
+  .topbar{padding:7px 11px!important}
+  .modern-brand small{display:none!important}
+  .modern-brand b{font-size:14px!important}
+  .app{padding:9px 10px 116px!important}
+  .dashboard-hero{padding:16px;border-radius:19px}
+  .hero-top{gap:8px}
+  .dashboard-hero h1{font-size:27px}
+  .hero-user{font-size:12px}
+  .hero-actions{flex-direction:column;align-items:flex-end;gap:6px}
+  .hero-signout{font-size:12px!important;padding:8px 11px!important}
+  .kpi-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:14px}
+  .kpi-card{padding:10px;gap:8px}
+  .kpi-icon{width:34px;height:34px;flex-basis:34px;font-size:16px}
+  .kpi-label{font-size:10px}.kpi-card b{font-size:20px}.kpi-status{font-size:8px}
+  .summary-card,.quick-card{padding:13px;border-radius:16px;margin-top:11px}
+  .summary-meta{font-size:11px}
+  .quick-card .menu{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .quick-card .menu button{min-height:70px!important;font-size:14px!important;padding:11px!important}
+  .quick-card .menu button small{font-size:9px}
+  .page{min-height:calc(100vh - 78px);margin-bottom:0}
+  .footer{padding-bottom:124px}
+  .mobile-nav{
+    display:grid!important;
+    grid-template-columns:repeat(5,1fr)!important;
+    left:8px!important;right:8px!important;bottom:8px!important;
+    border:1px solid #cfe2dc!important;border-radius:18px!important;
+    background:rgba(255,255,255,.97)!important;
+    padding:6px 4px calc(6px + env(safe-area-inset-bottom))!important;
+    box-shadow:0 10px 30px rgba(7,94,78,.18)!important;
+    backdrop-filter:blur(12px)
+  }
+  .mobile-nav button{
+    width:100%!important;min-width:0!important;
+    min-height:58px!important;padding:5px 2px!important;
+    border:0!important;background:transparent!important;
+    color:#56706a!important;border-radius:13px!important;
+    display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;
+    gap:2px!important;font-size:10px!important
+  }
+  .mobile-nav .nav-icon{font-size:19px;line-height:20px}
+  .mobile-nav button>span:last-child{font-size:9px;font-weight:700;line-height:11px}
+  .mobile-nav button.active{background:#e8f7f2!important;color:var(--final-primary)!important}
+  .mobile-nav button.active .nav-icon{transform:translateY(-1px)}
+}
+@media(max-width:380px){
+  .dashboard-hero h1{font-size:24px}
+  .kpi-card{padding:8px}
+  .kpi-card b{font-size:18px}
+  .quick-card .menu button{font-size:13px!important}
+}
+body.dark .summary-card,body.dark .quick-card{background:#111c1a!important;border-color:#334155!important;color:#f1f5f9}
+body.dark .section-title h2,body.dark .summary-meta b{color:#f1f5f9}
+body.dark .quick-card .menu button{background:#13231f!important;color:#eaf7f3!important;border-color:#334155!important}
+body.dark .quick-card .menu button small{color:#9eb5ad}
+body.dark .summary-track{background:#253a34}
+body.dark .mobile-nav{background:rgba(15,28,24,.97)!important;border-color:#334155!important}
+body.dark .mobile-nav button{color:#b5cbc4!important}
+body.dark .mobile-nav button.active{background:#173c31!important;color:#63d6b3!important}
+
+
+.photo-stepper{display:flex;align-items:center;justify-content:center;gap:7px;margin:10px 0 3px}.photo-step{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:#e8eef7;color:#5b6b82;border:1px solid #cbd7e6;font-weight:800;font-size:13px}.photo-step.active{background:#0b5ed7;color:#fff;border-color:#0b5ed7}.photo-step.done{background:#0891b2;color:#fff;border-color:#0891b2}.photo-stepper i{height:2px;flex:1;max-width:42px;background:#cbd7e6}.photo-step-label{text-align:center;font-weight:800;color:#06295a;font-size:13px;margin-bottom:8px}
+@media(max-width:800px){.photo-stepper{gap:4px}.photo-step{width:27px;height:27px;font-size:12px}.photo-stepper i{max-width:28px}.photo-step-label{font-size:12px}}
+
+/* =========================================================
+   V17 MOBILE DARK / FIELD-DURABLE DESIGN
+   Required palette:
+   #1F2937 base, #374151 cards, #14B8A6 teal,
+   #EA580C orange, #F9FAFB text, #D1D5DB muted,
+   #6B7280 outlines, #F59E0B amber
+   ========================================================= */
+:root{
+  --bg:#1F2937!important;
+  --card:#374151!important;
+  --text:#F9FAFB!important;
+  --muted:#D1D5DB!important;
+  --line:#6B7280!important;
+  --primary:#14B8A6!important;
+  --success:#14B8A6!important;
+  --danger:#EA580C!important;
+  --input:#374151!important;
+  --shadow:0 10px 28px rgba(0,0,0,.28)!important;
+  --teal:#14B8A6;--orange:#EA580C;--amber:#F59E0B;
+}
+body,body.dark{
+  background:#1F2937!important;color:#F9FAFB!important;
+}
+body:before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;
+  background:linear-gradient(180deg,rgba(20,184,166,.035),transparent 28%);
+}
+.topbar{
+  background:#1F2937!important;color:#F9FAFB!important;
+  border-bottom:1px solid #6B7280!important;box-shadow:0 5px 18px rgba(0,0,0,.25)!important;
+}
+.topbar .ghost,.topbar .small{color:#F9FAFB!important;border-color:#6B7280!important}
+.brand-mark{background:#374151!important;border-color:#14B8A6!important}
+.brand-mark svg{color:#14B8A6!important;fill:none}
+.card,.photo-card,.summary-card,.activity-report,.table-wrap{
+  background:#374151!important;border-color:#6B7280!important;color:#F9FAFB!important;
+  box-shadow:0 8px 24px rgba(0,0,0,.24)!important;
+}
+h1,h2,h3,h4,label,th,td,.brand,.kpi-label,.stat b{color:#F9FAFB!important}
+.muted,.eyebrow,.hero-user,.footer{color:#D1D5DB!important}
+input,select{
+  background:#374151!important;color:#F9FAFB!important;border:1px solid #6B7280!important;
+}
+input:focus,select:focus{outline:2px solid #14B8A6!important;outline-offset:1px;border-color:#14B8A6!important}
+input::placeholder{color:#D1D5DB!important}
+button{background:#14B8A6!important;color:#fff!important;border-color:#14B8A6!important}
+button.secondary,button.ghost,.hero-signout{
+  background:#374151!important;color:#14B8A6!important;border:1px solid #14B8A6!important;
+}
+button.danger,.danger-outline{background:#EA580C!important;color:#fff!important;border-color:#EA580C!important}
+.status{background:#374151!important;color:#F59E0B!important;border:1px solid #6B7280!important}
+.status.ok{background:#374151!important;color:#14B8A6!important}
+.status.err{background:#374151!important;color:#FDE68A!important;border-color:#EA580C!important}
+.pill{background:#4B5563!important;color:#F9FAFB!important;border:1px solid #6B7280}
+.online{color:#14B8A6!important}.offline{color:#EA580C!important}
+.hero,#dash>.card:first-child{
+  background:#374151!important;border:1px solid #6B7280!important;color:#F9FAFB!important;
+}
+.kpi-grid{gap:10px!important}
+.kpi-card,.stat{
+  background:#374151!important;border:1px solid #6B7280!important;color:#F9FAFB!important;
+}
+.kpi-icon{color:#14B8A6!important}
+.kpi-status.good{color:#14B8A6!important}
+.kpi-status.warn{color:#F59E0B!important}
+.kpi-status.neutral{color:#D1D5DB!important}
+.progress,.progress-bar{background:#6B7280!important}
+.progress-bar{background:#14B8A6!important}
+.table-wrap{overflow-x:auto!important}
+table{background:#374151!important}
+thead th{background:#1F2937!important;color:#F9FAFB!important;border-color:#6B7280!important}
+tbody tr:nth-child(odd){background:#374151!important}
+tbody tr:nth-child(even){background:#4B5563!important}
+tbody td{color:#F9FAFB!important;border-color:#6B7280!important}
+input[type=checkbox]{accent-color:#14B8A6!important}
+.photo-slot span{background:#1F2937!important;color:#F9FAFB!important;border:1px solid #14B8A6}
+.camera-preview{background:#1F2937!important;border:1px solid #6B7280}
+.photo-thumb{background:#1F2937!important;border-color:#6B7280!important}
+.mobile-nav{
+  background:#1F2937!important;border-top:1px solid #6B7280!important;
+  box-shadow:0 -8px 22px rgba(0,0,0,.38)!important;
+}
+.mobile-nav button{color:#9CA3AF!important;background:transparent!important;border:0!important}
+.mobile-nav button.active,.mobile-nav button[aria-current=true]{
+  color:#14B8A6!important;background:#14B8A6!important;
+}
+.mobile-nav button.active span,.mobile-nav button[aria-current=true] span{color:#fff!important}
+#login{
+  background:#374151!important;border:1px solid #6B7280!important;
+  max-width:430px!important;
+}
+#login h2{color:#F9FAFB!important}
+#login input{
+  background:#374151!important;border-width:0 0 2px!important;border-radius:4px!important;
+  border-color:#14B8A6!important;
+}
+#login button{min-height:48px;border-radius:12px!important;font-weight:800}
+.section-title{gap:10px}
+.summary-badge{background:#4B5563!important;color:#14B8A6!important;border:1px solid #14B8A6!important}
+@media(max-width:800px){
+  html,body{overflow-x:hidden!important}
+  body{font-size:14px!important}
+  .topbar{padding:9px 10px!important;min-height:56px}
+  .brand{font-size:15px!important}
+  .brand-mark{width:34px!important;height:34px!important}
+  .top-actions{gap:5px!important}
+  .top-actions button{min-height:38px!important;padding:7px 9px!important;font-size:12px!important}
+  .app{width:100%!important;max-width:100%!important;padding:8px 8px 88px!important}
+  .card{padding:12px!important;margin:9px 0!important;border-radius:14px!important}
+  .grid,.menu{grid-template-columns:1fr!important;gap:8px!important}
+  .statgrid,.kpi-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important}
+  .stat,.kpi-card{min-width:0!important;padding:10px!important;border-radius:12px!important}
+  .stat b,.kpi-card b{font-size:20px!important;overflow-wrap:anywhere}
+  .kpi-label{font-size:11px!important}
+  .kpi-status{font-size:10px!important}
+  input,select,button{min-height:44px!important;padding:10px!important;font-size:14px!important}
+  .toolbar{display:grid!important;grid-template-columns:1fr 1fr!important;gap:7px!important}
+  .toolbar>*{width:100%!important}
+  .photo-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:7px!important}
+  .photo-card{padding:10px!important}
+  .camera-preview{max-height:230px!important}
+  .quick-save{min-height:48px!important;font-size:15px!important}
+  .recent-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  .mobile-nav{grid-template-columns:repeat(5,1fr)!important;padding:4px 4px calc(4px + env(safe-area-inset-bottom))!important}
+  .mobile-nav button{min-height:48px!important;padding:4px 1px!important;font-size:17px!important;border-radius:10px!important}
+  .mobile-nav span{font-size:9px!important}
+  .dashboard-hero{padding:0!important}
+  .hero-top{gap:8px!important;align-items:flex-start!important}
+  .hero-top h1{font-size:23px!important;margin:4px 0!important}
+  .hero-actions{gap:5px!important;flex-wrap:wrap}
+  .hero-signout{font-size:11px!important;padding:7px 9px!important;min-height:36px!important}
+  .table-wrap{margin-left:-2px!important;margin-right:-2px!important}
+  table{min-width:760px!important}
+  #login{margin:4vh auto!important}
+}
+@media(min-width:801px){
+  .app{max-width:1180px}
+}
+
+
+/* V18.2 ULTRA CLEAR REDESIGN */
+:root{--gov-navy:#06295A;--gov-blue:#2563EB;--gov-success:#08A6A6;--gov-bg:#F4F8FC;--gov-white:#FFFFFF;--gov-ink:#132238;--radius-xl:22px;--shadow-soft:0 10px 32px rgba(15,35,65,.10)}
+body{background:var(--gov-bg)!important;color:var(--gov-ink);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body.dark{--gov-bg:#08111F;--gov-white:#101D2E;--gov-ink:#F8FAFC;background:#08111F!important}
+.topbar{background:linear-gradient(100deg,var(--gov-navy),var(--gov-blue),var(--gov-success))!important;border:0!important;min-height:64px;box-shadow:0 5px 24px rgba(6,41,90,.18)!important}
+.topbar .brand{color:#fff!important}.topbar .brand small{color:#dceeff!important}
+.app{max-width:1280px;padding:18px 20px 100px!important}
+.card,.summary-card,.quick-card,.activity-report{border:1px solid rgba(90,120,160,.16)!important;border-radius:var(--radius-xl)!important;box-shadow:var(--shadow-soft)!important}
+.dashboard-hero{background:linear-gradient(135deg,#06295A 0%,#2563EB 62%,#08A6A6 100%)!important;border-radius:24px!important;box-shadow:0 18px 44px rgba(6,41,90,.22)!important}
+.kpi-card{border:1px solid rgba(255,255,255,.24)!important;border-radius:18px!important;box-shadow:0 10px 25px rgba(0,0,0,.10)!important;backdrop-filter:blur(4px)}
+.work-done-card{outline:2px solid rgba(8,166,166,.25)}
+.login{max-width:420px!important;margin:7vh auto!important;padding:30px!important;background:rgba(255,255,255,.98)!important;border-radius:26px!important;box-shadow:0 22px 70px rgba(6,41,90,.20)!important}
+body.dark .login{background:#101D2E!important}.login-brand{display:flex;align-items:center;gap:12px;margin-bottom:24px}.login-brand b{display:block;font-size:19px}.login-brand small{display:block;color:var(--muted);margin-top:3px}.login-logo{width:48px;height:48px;border-radius:15px;display:grid;place-items:center;color:#fff;background:linear-gradient(135deg,#06295A,#2563EB,#08A6A6);font-size:25px;box-shadow:0 8px 20px rgba(37,99,235,.25)}.login-title h2{margin:0;font-size:28px}.login-title p{margin:6px 0 22px;color:var(--muted)}.field-label{display:block;font-size:12px;font-weight:800;margin:12px 0 6px;color:var(--gov-ink)}body.dark .field-label{color:#eaf2ff}.login-primary{margin-top:16px!important;min-height:50px!important;border-radius:14px!important;background:linear-gradient(90deg,#2563EB,#08A6A6)!important;box-shadow:0 10px 24px rgba(37,99,235,.22)}.login-note{font-size:11px;color:var(--muted);text-align:center;margin-top:13px}.status{border-radius:12px!important}.user-row{padding:14px!important}.user-actions button{min-width:82px!important}.hidden{display:none!important}
+button,input,select{transition:transform .12s ease,box-shadow .12s ease,border-color .12s ease}button:hover{transform:translateY(-1px)}
+@media(max-width:800px){.app{padding:10px 10px 92px!important}.login{margin:3vh auto!important;padding:22px!important}.dashboard-hero{border-radius:20px!important}.kpi-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}.kpi-card{min-height:108px!important}}
+</style>
+<style>
+/* ===== FINAL GREEN + TEAL PROFESSIONAL UI ===== */
+:root{
+ --gov-navy:#0f172a;
+ --gov-blue:#2563eb;
+ --gov-blue-2:#1d4ed8;
+ --gov-ink:#172033;
+ --gov-muted:#5d746e;
+ --gov-white:#ffffff;
+ --gov-bg:#f4f8f6;
+ --gov-border:#d7e6e1;
+ --gov-success:#0891b2;
+ --gov-warning:#c77900;
+ --gov-danger:#c62828;
+ --gov-shadow:0 10px 28px rgba(20,83,45,.10);
+ --primary:#2563eb; --success:#0891b2;
+}
+html,body{background:radial-gradient(circle at 10% 0%,rgba(22,138,99,.10),transparent 30%),var(--gov-bg);color:var(--gov-ink)}
+.topbar{background:linear-gradient(100deg,#0f172a 0%,#2563eb 48%,#1d4ed8 100%)!important;color:#fff!important;border-bottom:1px solid rgba(255,255,255,.15);box-shadow:0 6px 20px rgba(20,83,45,.20)}
+.topbar *{color:inherit}.brand-mark{background:rgba(255,255,255,.15)!important;border-color:rgba(255,255,255,.28)!important}
+.app{max-width:1240px}.card,.page{background:#fff;border-color:var(--gov-border);box-shadow:var(--gov-shadow);color:var(--gov-ink)}
+#dash>.card:first-child{background:linear-gradient(135deg,#0f172a,#2563eb 55%,#1d4ed8)!important;color:#fff!important;box-shadow:0 18px 42px rgba(20,83,45,.22)}
+#dash>.card:first-child *{color:#fff!important}
+#dash .stat{background:rgba(255,255,255,.11)!important;border-color:rgba(255,255,255,.18)!important;color:#fff!important}
+#dash .menu button{background:#fff!important;color:var(--gov-ink)!important;border:1px solid var(--gov-border)!important;box-shadow:var(--gov-shadow);border-radius:14px}
+#dash .menu button:hover{border-color:#78c9b1!important;box-shadow:0 16px 30px rgba(22,138,99,.15);transform:translateY(-2px)}
+.stat b,.kpi b{color:#0f172a!important}.stat .muted,.kpi .muted{color:var(--gov-muted)!important}
+input,select,textarea{background:#fff!important;color:var(--gov-ink)!important;border-color:#b9d1c9!important}
+input::placeholder,textarea::placeholder{color:#7b8e89!important}
+input:focus,select:focus,textarea:focus{outline:3px solid rgba(22,138,99,.14);border-color:#2563eb!important}
+button:not(.ghost):not(.danger-outline){background:linear-gradient(135deg,#2563eb,#1d4ed8)!important;border-color:#2563eb!important;color:#fff!important}
+button.success{background:linear-gradient(135deg,#0891b2,#0d7a3b)!important}
+button.ghost{background:#fff!important;color:#0f172a!important;border-color:#b9d1c9!important}
+button.ghost:hover{border-color:#2563eb!important;background:#f2faf7!important}
+.status{background:#ecfdf5;color:#12633f}.status.ok{background:#eaf8ef;color:#146c39}.status.err{background:#fff1f1;color:#9b2424}
+.hero{background:linear-gradient(135deg,#0f172a,#2563eb 55%,#1d4ed8)!important}
+.install-hint{border-color:rgba(22,138,99,.35);background:rgba(22,138,99,.07)}
+.mobile-nav{background:rgba(255,255,255,.97)!important;border-top-color:#d7e6e1!important;box-shadow:0 -8px 20px rgba(20,83,45,.12)}
+.mobile-nav button{color:#172033!important}.mobile-nav button.active,.mobile-nav button:hover{color:#2563eb!important;background:#edf9f4!important}
+.photo-card{border-color:var(--gov-border);box-shadow:0 6px 18px rgba(20,83,45,.06)}
+.table-wrap{border-color:var(--gov-border)}th{background:#f1f7f4;color:#172033}
+.footer{color:#5d746e}.pill{background:#edf7f3;color:#0f172a}
+@media(max-width:800px){.topbar{min-height:58px}.modern-brand b{font-size:15px}.brand-mark{width:34px;height:34px;flex-basis:34px}.app{padding-bottom:92px}.card{border-radius:15px}.menu button{border-radius:13px}}
+
+/* ===== MATCHING MOBILE SCREEN SYSTEM ===== */
+:root{
+  --app-teal:#0891b2;
+  --app-teal-2:#0b9a82;
+  --app-teal-dark:#05635f;
+  --app-soft:#eaf7f4;
+  --app-blue:#2677e8;
+  --app-amber:#f0a51a;
+  --app-purple:#7b4bd8;
+}
+body{
+  background:linear-gradient(180deg,#effaf7 0,#f5f8fa 42%,#eef4f4 100%);
+}
+.topbar{
+  background:linear-gradient(100deg,#08746f,#0b9b80)!important;
+  border:0!important;
+  color:#fff!important;
+}
+.topbar .ghost,.topbar .small{color:#fff!important;border-color:#ffffff55!important}
+.modern-brand .brand-mark{
+  background:#ffffff22!important;border-color:#ffffff44!important;
+}
+.dashboard-hero{
+  background:linear-gradient(135deg,#08796f 0%,#0a9b7d 55%,#14aa83 100%)!important;
+  border-radius:24px!important;
+  box-shadow:0 14px 32px rgba(4,110,95,.18)!important;
+}
+.kpi-card{
+  background:rgba(255,255,255,.12)!important;
+  border:1px solid rgba(255,255,255,.25)!important;
+  box-shadow:none!important;
+  border-radius:20px!important;
+}
+.kpi-icon{
+  background:rgba(255,255,255,.16)!important;
+}
+.summary-card,.quick-card,.page{
+  background:rgba(255,255,255,.97)!important;
+  border-color:#dce9e7!important;
+  border-radius:22px!important;
+  box-shadow:0 10px 28px rgba(12,78,70,.08)!important;
+}
+.summary-badge{
+  background:#e4f7f1!important;color:#07816d!important;
+}
+.summary-track{background:#e2eeec!important}
+.summary-track span{background:linear-gradient(90deg,#0a8d79,#12a887)!important}
+.quick-card .menu button{
+  background:#fff!important;
+  border:1px solid #dbe8e6!important;
+  color:#163b43!important;
+  border-radius:18px!important;
+  box-shadow:0 5px 16px rgba(15,75,70,.05)!important;
+}
+.quick-card .menu button:hover{
+  border-color:#0b9a82!important;
+  transform:translateY(-1px);
+}
+.quick-card .menu button small{color:#6d7f85!important}
+.page{
+  animation:pageIn .22s ease-out;
+}
+@keyframes pageIn{
+  from{opacity:0;transform:translateY(8px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.page-title{
+  display:flex;align-items:center;gap:12px;margin:2px 0 14px;
+}
+.page-title h2{margin:0;font-size:24px;letter-spacing:-.3px}
+.page-title .muted{margin:3px 0 0}
+.page-icon{
+  width:46px;height:46px;display:grid;place-items:center;
+  border-radius:14px;background:#e5f7f3;font-size:23px;
+  border:1px solid #ccebe4;
+}
+.page .hero{
+  background:linear-gradient(135deg,#08796f,#0aa180)!important;
+  border-radius:20px!important;
+}
+.page .toolbar:first-child{
+  margin-bottom:14px;
+}
+.page input,.page select,.page textarea{
+  border-color:#d6e5e3!important;
+  border-radius:12px!important;
+}
+.page button{
+  border-radius:12px!important;
+}
+.page button:not(.secondary):not(.ghost){
+  background:linear-gradient(135deg,#0891b2,#0b9d82)!important;
+}
+.page button.secondary{
+  background:#e7f2f1!important;color:#1d4ed8!important;
+}
+.page button.ghost{
+  color:#1d4ed8!important;border-color:#c9dfdc!important;
+}
+.status{
+  border:1px solid #d8ece8!important;background:#effaf7!important;color:#1d4ed8!important;
+}
+.photo-card{
+  background:#f8fcfb!important;border-color:#d7e9e6!important;
+}
+.photo-slot{
+  border:1px dashed #a9d7cf!important;border-radius:14px!important;
+  background:#f5fbfa!important;
+}
+.recent-grid img{
+  border:2px solid #e1eeeb!important;border-radius:14px!important;
+}
+.table-wrap{
+  border-color:#d9e8e5!important;
+}
+th{background:#eef8f6!important;color:#13524d}
+@media(max-width:800px){
+  .app{padding:10px 10px 94px!important}
+  .dashboard-hero{padding:18px!important}
+  .dashboard-hero h1{font-size:34px!important}
+  .hero-top{gap:10px}
+  .hero-actions{gap:6px}
+  .kpi-grid{gap:10px!important}
+  .kpi-card{min-height:128px!important;padding:12px!important}
+  .kpi-label{font-size:13px!important}
+  .kpi-card b{font-size:28px!important}
+  .summary-card,.quick-card,.page{border-radius:20px!important}
+  .quick-card .menu{gap:10px!important}
+  .quick-card .menu button{
+    min-height:92px!important;padding:14px 10px!important;
+    display:flex;align-items:center;justify-content:flex-start;gap:10px;
+    font-size:16px!important;
+  }
+  .page{
+    margin:0!important;padding:14px!important;
+    min-height:calc(100vh - 165px);
+  }
+  .page .toolbar{
+    gap:7px!important;
+  }
+  .page-title h2{font-size:22px}
+  .page-icon{width:42px;height:42px;font-size:20px}
+  .photo-grid{gap:10px!important}
+  .camera-preview{max-height:250px!important}
+  .mobile-nav{
+    width:calc(100% - 12px)!important;
+    left:6px!important;right:6px!important;
+    bottom:6px!important;
+    border:1px solid #cfe5e1!important;
+    border-radius:18px!important;
+    background:rgba(255,255,255,.97)!important;
+    padding:6px!important;
+    box-shadow:0 12px 30px rgba(8,70,65,.18)!important;
+    grid-template-columns:repeat(5,minmax(0,1fr))!important;
+    gap:2px!important;
+  }
+  .mobile-nav button{
+    min-width:0!important;
+    border-radius:14px!important;
+    color:#607277!important;
+    padding:7px 2px!important;
+    background:transparent!important;
+    font-size:19px!important;
+  }
+  .mobile-nav button.active{
+    background:#e4f7f1!important;
+    color:#0891b2!important;
+    box-shadow:inset 0 0 0 1px #bfe4dc!important;
+  }
+  .mobile-nav span{font-size:10px!important}
+}
+body.dark{
+  --bg:#071a1a;--card:#0f2424;--text:#eff6ff;--muted:#a7c1bd;
+  --line:#274643;--input:#0c1e1e;
+  background:linear-gradient(180deg,#061817,#0a2020 55%,#071818)!important;
+}
+body.dark .topbar{background:linear-gradient(100deg,#043e3b,#066b5c)!important}
+body.dark .dashboard-hero{background:linear-gradient(135deg,#043e3b,#057a67,#0a8d70)!important}
+body.dark .summary-card,body.dark .quick-card,body.dark .page{
+  background:#0f2424!important;border-color:#274643!important;color:#eff6ff!important;
+}
+body.dark .quick-card .menu button{
+  background:#112b2a!important;color:#eff6ff!important;border-color:#2b4b47!important;
+}
+body.dark .quick-card .menu button small{color:#a7c1bd!important}
+body.dark .page-icon{background:#123c37!important;border-color:#2b5953!important}
+body.dark .page input,body.dark .page select,body.dark .page textarea{
+  background:#0b1f1e!important;color:#eff6ff!important;border-color:#31524e!important;
+}
+body.dark .page button.secondary{background:#173a37!important;color:#93c5fd!important}
+body.dark .page button.ghost{color:#93c5fd!important;border-color:#315a55!important}
+body.dark th{background:#14322f!important;color:#c8e8e1!important}
+body.dark .mobile-nav{background:rgba(8,25,24,.98)!important;border-color:#31524e!important}
+body.dark .mobile-nav button{color:#9fbab6!important}
+body.dark .mobile-nav button.active{background:#12423b!important;color:#93c5fd!important}
+@media print{
+  body{background:#fff!important}
+  #report{display:block!important}
+}
+
+/* ===== FINAL STABLE UI — NO GREEN PALETTE ===== */
+:root{
+ --stable-bg:#f4f7fb;--stable-card:#ffffff;--stable-text:#172033;--stable-muted:#667085;
+ --stable-line:#d9e1ec;--stable-primary:#2563eb;--stable-primary2:#1d4ed8;
+ --stable-accent:#0891b2;--stable-warn:#f59e0b;--stable-danger:#dc2626;
+ --stable-dark:#0f172a;--stable-dark2:#172554;--stable-dark-card:#111827;
+}
+html,body{background:var(--stable-bg)!important;color:var(--stable-text)!important}
+body{overflow-x:hidden}
+.topbar{background:linear-gradient(100deg,#0f172a,#1e3a8a)!important;color:#fff!important;border:0!important;box-shadow:0 6px 22px rgba(15,23,42,.18)!important}
+.topbar *{color:#fff!important}
+.brand-mark{background:#fff!important;color:#2563eb!important;border:0!important;box-shadow:0 3px 12px rgba(0,0,0,.16)!important}
+.app{max-width:1240px!important}
+.card,.page{background:var(--stable-card)!important;color:var(--stable-text)!important;border:1px solid var(--stable-line)!important;box-shadow:0 8px 26px rgba(15,23,42,.07)!important}
+.card h1,.card h2,.card h3,.page h1,.page h2,.page h3{color:var(--stable-dark)!important}
+.muted{color:var(--stable-muted)!important}
+input,select,textarea{background:#fff!important;color:var(--stable-text)!important;border:1px solid #c7d2e0!important}
+input::placeholder,textarea::placeholder{color:#98a2b3!important}
+input:focus,select:focus,textarea:focus{border-color:var(--stable-primary)!important;outline:3px solid rgba(37,99,235,.12)!important}
+button:not(.ghost):not(.danger-outline){background:linear-gradient(135deg,var(--stable-primary),var(--stable-primary2))!important;color:#fff!important;border-color:var(--stable-primary)!important}
+button.secondary{background:#475467!important;color:#fff!important}
+button.success{background:#0891b2!important;color:#fff!important}
+button.danger{background:#dc2626!important;color:#fff!important}
+button.ghost{background:#fff!important;color:var(--stable-primary)!important;border:1px solid #b9c7d8!important}
+button.ghost:hover{background:#eff6ff!important;border-color:#7da7f5!important}
+.pill,.badge{background:#eff6ff!important;color:#1d4ed8!important;border:1px solid #cfe0ff!important}
+.status{background:#f8fafc!important;color:var(--stable-text)!important;border:1px solid var(--stable-line)!important}
+.status.ok{background:#ecfeff!important;color:#0e7490!important}
+.status.err{background:#fef2f2!important;color:#b91c1c!important}
+#dash>.card:first-child,.dashboard-hero{background:linear-gradient(135deg,#0f172a 0%,#1e3a8a 58%,#2563eb 100%)!important;color:#fff!important;border:0!important;box-shadow:0 18px 44px rgba(15,23,42,.22)!important}
+#dash>.card:first-child *,.dashboard-hero *{color:#fff!important}
+#dash .stat{background:rgba(255,255,255,.12)!important;color:#fff!important;border-color:rgba(255,255,255,.20)!important}
+#dash .stat b{color:#fff!important}
+.kpi-card{background:rgba(255,255,255,.12)!important;border-color:rgba(255,255,255,.20)!important}
+.kpi-status.good{color:#dbeafe!important}.kpi-status.warn{color:#fde68a!important}.kpi-status.neutral{color:#dbeafe!important}
+.summary-card,.quick-card{background:#fff!important;border-color:var(--stable-line)!important;box-shadow:0 8px 24px rgba(15,23,42,.06)!important}
+.summary-badge{background:#eff6ff!important;color:#1d4ed8!important}
+.summary-track span{background:linear-gradient(90deg,#2563eb,#0891b2)!important}
+.dot.teal{background:#2563eb!important}.dot.amber{background:#f59e0b!important}
+.quick-card .menu button,#dash .menu button{background:#fff!important;color:var(--stable-text)!important;border-color:var(--stable-line)!important;box-shadow:0 5px 16px rgba(15,23,42,.05)!important}
+.quick-card .menu button:hover,#dash .menu button:hover{border-color:#8db3f4!important;background:#f8fbff!important}
+.hero{background:linear-gradient(135deg,#0f172a,#2563eb)!important;color:#fff!important}
+.hero h2,.hero p{color:#fff!important}
+.photo-slot{background:#f8fafc!important;border-color:#cbd5e1!important}
+.photo-card{background:#fff!important;border-color:var(--stable-line)!important}
+th{background:#eff6ff!important;color:#1e3a8a!important}td{background:#fff!important;color:var(--stable-text)!important}
+.install-hint{background:#eff6ff!important;color:#1e3a8a!important;border-color:#8db3f4!important}
+.footer{color:#667085!important}
+/* Mobile: exactly five items, one row, no clipping */
+@media(max-width:800px){
+ .app{padding:9px 10px 112px!important}
+ .mobile-nav{display:grid!important;grid-template-columns:repeat(5,minmax(0,1fr))!important;left:8px!important;right:8px!important;bottom:8px!important;width:auto!important;min-width:0!important;box-sizing:border-box!important;gap:3px!important;padding:6px 4px calc(6px + env(safe-area-inset-bottom))!important;background:rgba(255,255,255,.98)!important;border:1px solid #d6deea!important;border-radius:18px!important;box-shadow:0 10px 30px rgba(15,23,42,.18)!important;z-index:999!important}
+ .mobile-nav button{min-width:0!important;width:100%!important;max-width:none!important;height:58px!important;min-height:58px!important;margin:0!important;padding:4px 1px!important;background:transparent!important;color:#667085!important;border:0!important;border-radius:12px!important;display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:2px!important;overflow:hidden!important}
+ .mobile-nav button>span{max-width:100%!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important}
+ .mobile-nav button .nav-icon{font-size:18px!important;line-height:20px!important}
+ .mobile-nav button>span:last-child{font-size:9px!important;line-height:11px!important;font-weight:700!important}
+ .mobile-nav button.active{background:#eff6ff!important;color:#1d4ed8!important}
+ .mobile-nav button.active span{color:#1d4ed8!important}
+ .page{min-height:calc(100vh - 76px)!important;margin:0 0 10px!important}
+ .page>.toolbar:first-child{position:sticky;top:0;z-index:5;background:var(--stable-card);padding-bottom:8px}
+ .page>.toolbar:first-child button{min-height:38px!important}
+ .kpi-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ .quick-card .menu{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ .quick-card .menu button{min-height:70px!important}
+ #photoDbGrid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+}
+/* Dark mode — readable, non-green */
+body.dark,body.dark html{background:#0b1220!important;color:#e5e7eb!important}
+body.dark .topbar{background:linear-gradient(100deg,#020617,#172554)!important}
+body.dark .card,body.dark .page,body.dark .summary-card,body.dark .quick-card{background:#111827!important;color:#e5e7eb!important;border-color:#263247!important}
+body.dark .card h1,body.dark .card h2,body.dark .card h3,body.dark .page h1,body.dark .page h2,body.dark .page h3,body.dark .section-title h2{color:#f8fafc!important}
+body.dark .muted,body.dark .summary-meta{color:#9ca3af!important}
+body.dark input,body.dark select,body.dark textarea{background:#0f172a!important;color:#f8fafc!important;border-color:#334155!important}
+body.dark button.ghost{background:#111827!important;color:#93c5fd!important;border-color:#475569!important}
+body.dark .quick-card .menu button,body.dark #dash .menu button{background:#0f172a!important;color:#e5e7eb!important;border-color:#334155!important}
+body.dark th{background:#172554!important;color:#dbeafe!important}body.dark td{background:#111827!important;color:#e5e7eb!important}
+body.dark .photo-slot{background:#0f172a!important;border-color:#334155!important}
+body.dark .mobile-nav{background:rgba(15,23,42,.98)!important;border-color:#334155!important}
+body.dark .mobile-nav button{color:#94a3b8!important}
+body.dark .mobile-nav button.active{background:#172554!important;color:#93c5fd!important}
+body.dark .mobile-nav button.active span{color:#93c5fd!important}
+/* ===== FINAL NAVIGATION + THEME FIX ===== */
+.theme-toggle{background:#fff!important;color:#172033!important;border:1px solid #d5deea!important;border-radius:12px!important;min-width:86px!important;height:42px!important;display:inline-flex!important;align-items:center!important;justify-content:center!important;gap:7px!important;font-weight:800!important;box-shadow:0 4px 14px rgba(15,23,42,.12)!important}
+.theme-toggle *{color:#172033!important}
+.theme-toggle:hover{background:#f3f6fb!important;border-color:#93c5fd!important}
+body.dark .theme-toggle{background:#172033!important;color:#f8fafc!important;border-color:#475569!important}
+body.dark .theme-toggle *{color:#f8fafc!important}
+.theme-icon{font-size:18px!important;line-height:1!important}.theme-label{font-size:12px!important;line-height:1!important}
+/* The active page must replace Dashboard, not sit underneath it. */
+.dashboard-page.hidden,.page.hidden{display:none!important}
+@media(max-width:800px){
+  .topbar .theme-toggle{min-width:76px!important;height:40px!important;padding:0 10px!important}
+  .theme-label{font-size:11px!important}
+  .theme-icon{font-size:16px!important}
+}
+
+/* Print only Report */
+@media print{
+ body>*{display:none!important}main.app{display:block!important;max-width:none!important;padding:0!important}main.app>*{display:none!important}main.app #report{display:block!important;visibility:visible!important;background:#fff!important;color:#000!important;border:0!important;box-shadow:none!important;padding:0!important}#report *{visibility:visible!important;color:#000!important}#report .no-print,#report .mobile-nav,#report .topbar{display:none!important}@page{size:A4 landscape;margin:8mm}
+}
+
+/* FINAL BLUE/INDIGO MOBILE POLISH */
+:root{--bg:#f4f7fb;--card:#fff;--text:#172033;--muted:#5b667a;--line:#d7dfeb;--primary:#2563eb;--primary-dark:#1e3a8a;--accent:#4f46e5}
+html,body{max-width:100%;overflow-x:hidden}
+body{background:#f4f7fb!important;color:#172033!important;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif!important}
+.topbar{background:linear-gradient(135deg,#172554,#1d4ed8)!important}
+.topbar *{color:#fff!important}
+.card,.page,.panel,.summary-card,.quick-card{background:#fff!important;border-color:#d7dfeb!important;color:#172033!important}
+h1,h2,h3,h4,strong,b,label{color:#172033!important}
+p,small,.muted{color:#5b667a!important}
+input,select,textarea{background:#fff!important;color:#172033!important;border:1px solid #cbd5e1!important;border-radius:10px!important}
+input::placeholder,textarea::placeholder{color:#7a879a!important}
+.btn,.primary,.save-btn,.action-btn{background:#2563eb!important;color:#fff!important;border-color:#2563eb!important}
+.btn.secondary,.secondary{background:#eef4ff!important;color:#1e40af!important;border-color:#bfdbfe!important}
+.mobile-nav{background:#fff!important;border:1px solid #d7dfeb!important;box-shadow:0 -5px 20px rgba(23,37,84,.12)!important}
+.mobile-nav button{min-width:0!important;width:20%!important;padding:7px 2px!important;overflow:hidden!important;white-space:nowrap!important;color:#526078!important}
+.mobile-nav button.active{background:#e8efff!important;color:#1d4ed8!important}
+.mobile-nav button span{max-width:100%!important;overflow:hidden!important;text-overflow:ellipsis!important}
+.footer{background:transparent!important;color:#64748b!important}
+.footer .brand-badge,.footer .brand-circle,.footer .footer-icon{background:transparent!important;border:0!important;box-shadow:none!important;color:#2563eb!important;width:auto!important;height:auto!important}
+.capture-card,.capture-section,#capture .section-card{padding:10px!important;margin-bottom:8px!important}
+.capture-card h2,.capture-section h2,#capture .section-card h2{font-size:15px!important;line-height:1.2!important;margin:0 0 6px!important}
+.capture-card p,.capture-section p,#capture .section-card p{font-size:12px!important;line-height:1.3!important}
+.dashboard-page.hidden,.page.hidden{display:none!important}
+@media(max-width:800px){
+ .app,.main,.container,.page,.card,.panel{width:100%!important;max-width:100%!important;box-sizing:border-box!important}
+ .page{padding:10px!important}.card{padding:11px!important}
+ .grid,.quick-grid,.form-grid{grid-template-columns:1fr!important;gap:9px!important}
+ .kpi-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important}
+ .kpi-card{min-width:0!important;padding:9px!important}.kpi-card b{font-size:19px!important}
+ .hero h1,.dashboard-hero h1{font-size:22px!important;line-height:1.15!important}
+ .hero,.dashboard-hero{padding:13px!important}
+ .quick-card .menu{display:grid!important;grid-template-columns:1fr 1fr!important;gap:7px!important}
+ .quick-card .menu button{min-width:0!important;font-size:12px!important;padding:9px 6px!important}
+ table{display:block!important;width:100%!important;overflow-x:auto!important}
+ .form-row,.row{flex-direction:column!important;align-items:stretch!important}
+ .mobile-nav{position:fixed!important;left:8px!important;right:8px!important;bottom:8px!important;width:auto!important;z-index:9999!important;display:flex!important;border-radius:15px!important;padding:4px!important}
+ body{padding-bottom:82px!important}
+}
+@media(max-width:380px){
+ .mobile-nav button{font-size:10px!important}.mobile-nav button .icon{font-size:16px!important}
+ .quick-card .menu{grid-template-columns:1fr!important}.page{padding:8px!important}
+}
+body.dark{--bg:#0b1220;--card:#131e33;--text:#eef4ff;--muted:#aebbd0;--line:#2c3b54;background:#0b1220!important;color:#eef4ff!important}
+body.dark .card,body.dark .page,body.dark .panel,body.dark .summary-card,body.dark .quick-card{background:#131e33!important;color:#eef4ff!important;border-color:#2c3b54!important}
+body.dark h1,body.dark h2,body.dark h3,body.dark h4,body.dark strong,body.dark b,body.dark label{color:#eef4ff!important}
+body.dark p,body.dark small,body.dark .muted{color:#aebbd0!important}
+body.dark input,body.dark select,body.dark textarea{background:#0d1729!important;color:#eef4ff!important;border-color:#344762!important}
+body.dark .mobile-nav{background:#111b2e!important;border-color:#344762!important}
+body.dark .mobile-nav button{color:#aebbd0!important}
+body.dark .mobile-nav button.active{background:#1b376f!important;color:#8bb4ff!important}
+</style>
+<style id="v16-final-mobile-fix">
+:root{--v16-navy:#0b2a57;--v16-royal:#1f5fe0;--v16-light:#eef4ff;--v16-surface:#f8fbff;--v16-border:#cbd8ea;--v16-text:#15233b;--v16-muted:#5b6b83;--v16-teal:#0b9f9a;--v16-amber:#d99100;--v16-red:#c93b3b}
+html,body{background:#eef4fb!important;color:var(--v16-text)!important}
+.topbar{background:linear-gradient(100deg,#0b2a57,#1f5fe0)!important;min-height:64px;padding:10px 14px!important}
+.topbar .brand{color:#fff!important}.topbar .brand small{color:#d9e7ff!important}.top-actions .theme-toggle{background:rgba(255,255,255,.14)!important;color:#fff!important;border:1px solid rgba(255,255,255,.28)!important}
+.app{max-width:1180px!important;padding:14px 16px 94px!important}
+.card,.page,.summary-card,.quick-card{background:var(--v16-surface)!important;color:var(--v16-text)!important;border-color:var(--v16-border)!important;box-shadow:0 8px 24px rgba(23,56,100,.08)!important}
+.muted{color:var(--v16-muted)!important}
+.dashboard-hero{background:linear-gradient(135deg,#0b2a57,#1f5fe0)!important}
+.kpi-card{background:rgba(255,255,255,.96)!important;border:1px solid rgba(255,255,255,.45)!important;backdrop-filter:none!important}
+.kpi-card *{color:var(--v16-text)!important}.kpi-card .kpi-label{color:#52657f!important}.kpi-card .kpi-status.good{color:#19706d!important}.kpi-card .kpi-status.warn{color:#a66a00!important}.kpi-card .kpi-status.neutral{color:#52657f!important}
+.summary-track{background:#dfe9f6!important}.summary-track span{background:linear-gradient(90deg,#1f5fe0,#0b9f9a)!important}.summary-badge{background:#e5efff!important;color:#164baf!important}
+input,select,textarea{background:#fff!important;color:var(--v16-text)!important;border:1px solid #bfcfe4!important;min-height:48px!important}
+button{background:var(--v16-royal)!important;color:#fff!important;min-height:46px}.secondary{background:#e8f0fb!important;color:#164baf!important;border:1px solid #bfd0e8!important}.success{background:var(--v16-teal)!important}.danger{background:var(--v16-red)!important}
+.hero{background:linear-gradient(135deg,#0b2a57,#1f5fe0)!important}
+#photo .grid{grid-template-columns:1fr!important}.photo-card{background:#fff!important}.stat{background:#fff!important;color:var(--v16-text)!important}.stat b{color:var(--v16-text)!important}
+.table-wrap{background:#fff!important}.table-wrap table{color:var(--v16-text)!important}
+.mobile-nav{background:rgba(248,251,255,.98)!important;border:1px solid #cbd8ea!important;box-shadow:0 -6px 24px rgba(23,56,100,.12)!important}
+.mobile-nav button{color:#40536e!important;background:transparent!important;min-height:66px!important}.mobile-nav button.active{background:#e6efff!important;color:#174eae!important;border:1px solid #b8ccea!important}
+@media(max-width:800px){
+ body{font-size:15px!important}.topbar{position:sticky!important;top:0!important;z-index:50}.topbar .brand b{font-size:16px!important}.topbar .brand small{font-size:9px!important}.app{padding:10px 10px 100px!important}.card,.page{padding:12px!important;border-radius:18px!important;margin:9px 0!important}.dashboard-hero{padding:16px!important;border-radius:22px!important}.hero-top{gap:10px!important}.dashboard-hero h1{font-size:28px!important}.hero-user{font-size:13px!important}.hero-actions{flex-direction:column;align-items:flex-end}.hero-signout{width:auto!important}.kpi-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:9px!important;margin-top:14px!important}.kpi-card{padding:12px!important;min-height:104px!important}.kpi-card b{font-size:23px!important}.kpi-icon{width:34px!important;height:34px!important;flex-basis:34px!important}.section-title h2{font-size:19px!important}.menu{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:9px!important}.menu button{min-height:68px!important;padding:10px!important}.toolbar{gap:7px!important}.toolbar>*{max-width:100%!important}.toolbar button{width:auto!important}.photo-grid{grid-template-columns:repeat(2,1fr)!important}.camera-preview{max-height:260px!important}.table-wrap{font-size:12px!important}.mobile-nav{left:8px!important;right:8px!important;bottom:8px!important;border-radius:18px!important;padding:4px!important}.mobile-nav button{padding:6px 2px!important;font-size:11px!important}.mobile-nav .nav-icon{font-size:19px!important}.page-title h2{font-size:22px!important}
+}
+</style>
+
+<style id="v16-4-settings-css">
+.activity-kpi{border:2px solid rgba(20,86,200,.18)!important}.settings-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.settings-panel{border:1px solid var(--line);border-radius:16px;padding:14px;background:var(--card)}.theme-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.theme-card{background:var(--card)!important;color:var(--text)!important;border:1px solid var(--line)!important;text-align:left;padding:9px!important}.theme-card small{display:block;color:var(--muted);font-weight:500;margin-top:3px}.theme-image{height:105px;border-radius:11px;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;font-weight:900;font-size:17px;line-height:1.05;margin-bottom:8px;overflow:hidden}.theme-navy{background:linear-gradient(135deg,#06295a 0%,#0b5ed7 68%,#0b91a6 100%)}.theme-slate{background:linear-gradient(135deg,#10233f,#315b91)}.theme-contrast{background:#000;border:3px solid #fff}.theme-light{background:linear-gradient(135deg,#fff,#dcecff);color:#06295a;border:1px solid #b9cbe2}.color-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.color-grid label{font-size:12px;font-weight:700;color:var(--muted)}.color-grid input{height:44px;padding:4px;margin-top:4px}.high-contrast{--gov-bg:#fff!important;--bg:#fff!important;--card:#fff!important;--text:#000!important;--line:#000!important;--muted:#1f2937!important}.compact-mobile .card,.compact-mobile .page{padding:10px!important}.compact-mobile .menu button{min-height:62px!important}.activity-report{margin-top:12px!important}.activity-report .table-wrap{margin-top:8px}
+@media(max-width:800px){.settings-grid{grid-template-columns:1fr}.theme-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.color-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.settings-panel{padding:12px}.theme-image{height:90px;font-size:14px}.activity-report .table-wrap{overflow:auto}.activity-report table{min-width:520px}}
+</style>
+</head><body><div class="topbar no-print"><div class="brand modern-brand">
+  <span class="brand-mark" aria-hidden="true">
+    <svg viewBox="0 0 48 48" role="img"><path d="M24 3l17 7v12c0 10.8-6.8 19.8-17 23C13.8 41.8 7 32.8 7 22V10l17-7z" fill="none" stroke="currentColor" stroke-width="2.6"/><path d="M15 25h18M17 21h14M19 17h10M20 30h8" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>
+  </span>
+  <span><b>Panchayat Work GPS</b><small>Work Monitoring & Geo-Tagging System</small></span>
+</div><div class="top-actions"><button id="themeBtn" class="theme-toggle small" onclick="toggleTheme()" aria-label="Toggle light and dark mode" title="Toggle light / dark mode"><span class="theme-icon">☀</span><span class="theme-label">Light</span></button><button id="installBtn" class="small hidden" onclick="installApp()">Install App</button></div></div><main class="app">
+<section id="login" class="card login"><div class="login-brand"><div class="login-logo">✦</div><div><b>Panchayat Work GPS</b><small>Secure Work Monitoring System</small></div></div><div class="login-title"><h2>Welcome Back</h2><p>Sign in to continue</p></div><label class="field-label">User ID</label><input id="uid" placeholder="Enter User ID" autocomplete="username"><label class="field-label">Password</label><input id="pwd" type="password" placeholder="Enter Password" autocomplete="current-password"><button id="loginButton" class="login-primary" onclick="login()">Sign In</button><div id="loginStatus" class="status">Secure • Fast • Reliable</div><div class="login-note">Your account permissions determine which modules are available.</div></section>
+<section id="dash" class="hidden dashboard-page">
+<div class="dashboard-hero">
+  <div class="hero-top">
+    <div>
+      <div class="eyebrow">WORK MONITORING & GEO-TAGGING SYSTEM</div>
+      <h1>Dashboard</h1>
+      <div id="userInfo" class="hero-user"></div>
+    </div>
+    <div class="hero-actions"><span id="net" class="pill online">Online</span><button class="hero-signout" onclick="logout()">Sign out</button></div>
+  </div>
+  <div class="kpi-grid">
+    <div class="kpi-card"><span class="kpi-icon">📋</span><div><span class="kpi-label">Total Works</span><b id="statWorks">0</b><small class="kpi-status good">● Live data</small></div></div><div class="kpi-card work-done-card"><span class="kpi-icon">✓</span><div><span class="kpi-label">Work Done</span><b id="statDoneWorks">0</b><small class="kpi-status good">● 4/4 photos complete</small></div></div>
+    <div class="kpi-card"><span class="kpi-icon">📷</span><div><span class="kpi-label">Pending Photos</span><b id="statPending">0</b><small class="kpi-status warn">● Sync queue</small></div></div><div class="kpi-card activity-kpi"><span class="kpi-icon">📸</span><div><span class="kpi-label">My Captured</span><b id="statMyPhotos">0</b><small class="kpi-status good">● <span id="statMyWorks">0</span> works</small></div></div>
+    <div class="kpi-card"><span class="kpi-icon">👤</span><div><span class="kpi-label">Role</span><b id="statRole">User</b><small class="kpi-status good">● Access active</small></div></div>
+    <div class="kpi-card"><span class="kpi-icon">◐</span><div><span class="kpi-label">Theme</span><b id="statTheme">Light</b><small class="kpi-status neutral">● Interface</small></div></div>
+  </div>
+</div>
+<div id="adminActivityPanel" class="card activity-report hidden">
+  <div class="section-title"><div><h2>👥 Active User Activity</h2><p class="muted">Admin view — see who is working and how many works/photos each user has done.</p></div><span class="summary-badge"><b id="activeUserCount">0</b> Active Users</span></div>
+  <div id="activityStatus" class="status"></div>
+  <div class="table-wrap"><table><thead><tr><th>Sl No</th><th>User</th><th>Works Done</th><th>Photos Saved</th><th>4/4 Completed</th></tr></thead><tbody id="activityBody"></tbody></table></div>
+</div>
+<div class="summary-card">
+  <div class="section-title"><div><h2>Work Summary</h2><p class="muted">Current records available to your account</p></div><span class="summary-badge">Live</span></div>
+  <div class="summary-track"><span id="summaryFill"></span></div>
+  <div class="summary-meta"><span><i class="dot teal"></i><b id="summaryWorks">0</b> works</span><span><i class="dot amber"></i><b id="summaryPending">0</b> photos pending</span></div>
+</div>
+<div class="quick-card">
+  <div class="section-title"><div><h2>Quick Access</h2><p class="muted">Open a section in full page mode</p></div></div>
+  <div class="menu">
+    <button onclick="showPage('photo')">📷 <span>Capture Photo<small>Take photo + GPS</small></span></button>
+    <button id="databaseBtn" onclick="showPage('database')">🗄️ <span>Database<small>Works & Excel import</small></span></button>
+    <button id="photoDbBtn" onclick="showPage('photoDatabase')">🖼️ <span>Photo Database<small>Preview saved photos</small></span></button>
+    <button id="statusBtn" onclick="showPage('workStatus')">📈 <span>Work Status<small>Admin status overview</small></span></button><button id="reportBtn" onclick="showPage('report')">📊 <span>Report<small>Search & export</small></span></button>
+    <button id="userBtn" onclick="showPage('users')">👥 <span>User Management<small>Users & permissions</small></span></button><button id="settingsBtn" onclick="showPage('settings')">⚙️ <span>Settings<small>Theme & appearance</small></span></button>
+    <button class="secondary" onclick="showPage('sync')">🔄 <span>Offline Sync<small>Upload pending data</small></span></button>
+  </div>
+</div>
+</section>
+<section id="photo" class="card hidden page">
+<div class="toolbar no-print"><button class="secondary small" onclick="showPage('dash')">← Dashboard</button></div>
+<div class="hero card" style="margin:0 0 12px"><h2>📷 Capture Work Photo</h2><p style="opacity:.9;margin-bottom:0">Take up to 4 GPS-tagged photos. Photos are compressed automatically for faster saving.</p></div>
+<div class="grid">
+<select id="sansad" onchange="loadWorks()"><option value="">Select Sansad</option></select>
+<select id="work" onchange="refreshPhotoCount()"><option value="">Select Work</option></select>
+</div>
+<div class="toolbar"><span class="pill">Photo <b id="photoCount">1</b> / 4</span><span id="gpsBadge" class="pill">GPS: Ready</span></div>
+<select id="gpsMode"><option value="REAL">REAL GPS MODE</option><option value="TEST">TEST MODE</option></select>
+<input id="photoInput" type="file" accept="image/*" capture="environment" class="hidden">
+<div class="toolbar no-print">
+<button class="camera quick-save" onclick="openCamera()">📷 Capture Photo</button>
+<button class="secondary" onclick="openGallery()">🖼️ Choose from Gallery</button>
+</div>
+<img id="preview" class="camera-preview hidden">
+<div class="photo-stepper" id="photoStepper" aria-label="Photo progress"><span class="photo-step active">1</span><i></i><span class="photo-step">2</span><i></i><span class="photo-step">3</span><i></i><span class="photo-step">4</span></div><div class="photo-step-label" id="photoStepLabel">Photo 1 / 4</div><div class="grid">
+<div class="stat">Latitude<b id="lat">—</b></div>
+<div class="stat">Longitude<b id="lng">—</b></div>
+</div>
+<button class="success quick-save no-print" id="quickSaveBtn" onclick="savePhoto()">⚡ Quick Save Photo</button>
+<div id="photoStatus" class="status">Select a work, capture a photo, then Quick Save.</div>
+
+</section>
+<section id="database" class="card hidden page"><div class="toolbar no-print"><button class="secondary small" onclick="showPage('dash')">← Dashboard</button><button class="small admin-only" onclick="openWorkModal()">+ Add Work</button><input id="excelFiles" type="file" accept=".xlsx,.csv" multiple style="width:auto"><button class="small admin-only" onclick="importExcel()">Import Excel</button><button class="danger small admin-only" onclick="deleteSelectedWorks()">Delete Selected</button><button class="danger small admin-only" onclick="deleteAllWorks()">Delete All</button><button class="ghost small" onclick="loadDatabase()">Refresh</button></div><div class="page-title"><span class="page-icon">🗄️</span><div><h2>Works Database</h2><p class="muted">View and manage all work records</p></div></div><p class="muted">Select one or more work names with the checkboxes, then delete selected or delete all.</p><div id="dbStatus" class="status">Loading…</div><div class="table-wrap"><table><thead><tr><th><input id="selectAllWorks" type="checkbox" onchange="toggleAllWorks(this.checked)" style="width:auto"></th><th>Sl No</th><th>Sansad No</th><th>Work Code</th><th>Work Name</th><th>Location</th><th>Date</th><th>User</th><th class="no-print">Action</th></tr></thead><tbody id="dbBody"></tbody></table></div></section>
+<section id="photoDatabase" class="card hidden page">
+<div class="toolbar no-print"><button class="secondary small" onclick="showPage('dash')">← Dashboard</button><button class="small" onclick="loadPhotoDatabase()">Refresh</button></div>
+<div class="page-title"><span class="page-icon">🖼️</span><div><h2>Photo Database</h2><p class="muted">View all captured and saved photos</p></div></div><p class="muted">Compressed work photos are stored in Google Drive under Work Photo Database. Preview or open each saved photo here.</p>
+<div id="photoDbStatus" class="status">Loading…</div>
+<div id="photoDbGrid" class="recent-grid"></div>
+</section>
+<section id="workStatus" class="card hidden page"><div class="toolbar no-print"><button class="secondary small" onclick="showPage('dash')">← Dashboard</button><button class="small" onclick="loadWorkStatus()">Refresh</button></div><div class="page-title"><span class="page-icon">📈</span><div><h2>Work Status</h2><p class="muted">Admin/Master status overview, separate from the main report.</p></div></div><div class="grid"><input id="statusSearch" placeholder="Search Work Code / Name / Sansad / User" oninput="renderWorkStatus()"><select id="statusFilter" onchange="renderWorkStatus()"><option value="ALL">All Status</option><option value="PENDING">Pending</option><option value="IN PROGRESS">In Progress</option><option value="COMPLETED">Completed</option></select></div><div id="statusSummary" class="status"></div><div class="table-wrap"><table><thead><tr><th>Work Code</th><th>Work Name</th><th>Sansad</th><th>Photos</th><th>Status</th><th>User</th></tr></thead><tbody id="statusBody"></tbody></table></div></section><section id="report" class="card hidden page"><div class="toolbar no-print"><button class="secondary small" onclick="showPage('dash')">← Dashboard</button><button class="small" onclick="loadReport()">Refresh</button><button class="success small" onclick="downloadExcel()">Download Excel</button><button class="ghost small" onclick="window.print()">Print A4 Landscape</button></div><div class="page-title"><span class="page-icon">📊</span><div><h2>Reports</h2><p class="muted">View, search, export and print work reports</p></div></div><input id="reportSearch" placeholder="Search Work Code / Work Name / Sansad / User" oninput="renderReport()"><div id="reportStatus" class="status">Loading…</div><div class="table-wrap"><table id="mainReportTable"><thead><tr><th>Sl No</th><th>Sansad No</th><th>Work Code</th><th>Work Name</th><th>Location</th><th>Photo 1 Latitude</th><th>Photo 1 Longitude</th><th>Photo 2 Latitude</th><th>Photo 2 Longitude</th><th>Photo 3 Latitude</th><th>Photo 3 Longitude</th><th>Photo 4 Latitude</th><th>Photo 4 Longitude</th><th>Date</th><th>User</th></tr></thead><tbody id="reportBody"></tbody></table></div></section>
+<section id="users" class="card hidden page"><div class="toolbar no-print"><button class="secondary small" onclick="showPage('dash')">← Dashboard</button></div><div class="page-title"><span class="page-icon">👥</span><div><h2>User Management</h2><p class="muted">Manage users and permissions</p></div></div><div class="grid"><input id="newUid" placeholder="User ID"><input id="newName" placeholder="User Name"><div class="pwd-field"><input id="newPwd" type="password" placeholder="Temporary / Reset Password"><button type="button" class="ghost small" onclick="togglePwd('newPwd')">Show</button></div><select id="newRole"><option>User</option><option>Admin</option></select><input id="newSansadAccess" placeholder="Sansad Access: ALL or 1,2,3"></div><div class="toolbar"><label class="pill"><input id="pAdd" type="checkbox" style="width:auto"> Work Database</label><label class="pill"><input id="pPhoto" type="checkbox" checked style="width:auto"> Photo + GPS</label><label class="pill"><input id="pReport" type="checkbox" style="width:auto"> Report</label><label class="pill"><input id="pUsers" type="checkbox" style="width:auto"> User Management</label></div><button id="userSaveBtn" onclick="addUser()">Create User</button><button id="userCancelBtn" class="ghost small hidden" type="button" onclick="cancelUserEdit()">Cancel Edit</button><div id="userStatus" class="status"></div><div id="userList"></div><hr><h3>Admin Password</h3><div class="grid"><input id="curPwd" type="password" placeholder="Current Password"><input id="newAdminPwd" type="password" placeholder="New / Reset Password"></div><input id="confirmAdminPwd" type="password" placeholder="Confirm New Password"><button class="success" onclick="changeAdminPassword()">Change Admin Password</button><div id="pwdStatus" class="status"></div></section>
+<section id="settings" class="card hidden page"><div class="toolbar no-print"><button class="secondary small" onclick="showPage('dash')">← Dashboard</button><button class="small" onclick="loadMasterSettings()">↻ Refresh</button></div><div class="page-title"><span class="page-icon">⚙️</span><div><h2>Master Settings</h2><p class="muted">Theme Gallery, branding, security and system controls — Master only.</p></div></div><div class="settings-grid"><div class="settings-panel"><h3>🎨 Theme Gallery</h3><div class="theme-gallery"><button class="theme-card" onclick="selectMasterTheme('A')"><div class="theme-image theme-navy">A<br>Ocean Blue</div><b>Ocean Blue + White + Navy</b></button><button class="theme-card" onclick="selectMasterTheme('B')"><div class="theme-image" style="background:linear-gradient(135deg,#0f5132,#6aa84f,#f5f0df)">B<br>Forest Green</div><b>Forest Green + Clean White</b></button><button class="theme-card" onclick="selectMasterTheme('C')"><div class="theme-image" style="background:linear-gradient(135deg,#4c1d95,#8b5cf6,#f8fafc)">C<br>Royal Purple</div><b>Royal Purple + White</b></button><button class="theme-card" onclick="selectMasterTheme('D')"><div class="theme-image" style="background:linear-gradient(135deg,#0f172a,#0f766e,#94a3b8)">D<br>Midnight Teal</div><b>Midnight Teal + Dark</b></button></div><div class="color-grid"><label>Primary<input id="setNavy" type="color"></label><label>Secondary<input id="setBlue" type="color"></label><label>Accent<input id="setAccent" type="color"></label><label>Background<input id="setBg" type="color"></label><label>Card<input id="setCard" type="color"></label><label>Text<input id="setText" type="color"></label></div><div class="toolbar"><button class="small" onclick="applyMasterTheme()">Preview / Apply</button><button class="secondary small" onclick="saveMasterSettings()">Save System Theme</button></div></div><div class="settings-panel"><h3>🏷️ Logo & Branding</h3><input id="logoFile" type="file" accept="image/png,image/jpeg,image/webp"><input id="systemName" placeholder="System Name / Title"><img id="logoPreview" style="max-width:180px;max-height:80px;border-radius:10px;margin:8px 0;display:block" class="hidden"><div class="toolbar"><button class="small" onclick="previewLogo()">Preview Logo</button><button class="small" onclick="saveMasterSettings()">Save Branding</button></div><p class="muted">Master can replace the logo and system title. Changes apply across login, dashboard and reports.</p></div><div class="settings-panel"><h3>🔐 Master Security</h3><input id="masterCurPwd" type="password" placeholder="Current Master Password"><input id="masterNewPwd" type="password" placeholder="New Master Password"><input id="masterConfirmPwd" type="password" placeholder="Confirm New Password"><button class="success" onclick="changeMasterPassword()">Change Master Password</button><div id="masterSecurityStatus" class="status"></div></div><div class="settings-panel"><h3>🛡️ System Protection</h3><p class="muted">Upload validation, session checks, GPS validation and audit logging are enabled. This is application security, not a replacement for device antivirus.</p><button class="small" onclick="loadMasterSettings()">Refresh Security State</button></div><div class="settings-panel"><h3>♻️ System Reset</h3><p class="muted">Reset work and photo data only. Users, Master account and saved theme remain.</p><button class="danger" onclick="resetSystem()">Reset Work & Photo Data</button><div id="settingsStatus" class="status">Master settings ready.</div></div></div></section>
+<section id="sync" class="card hidden page"><div class="toolbar no-print"><button class="secondary small" onclick="showPage('dash')">← Dashboard</button></div><div class="page-title"><span class="page-icon">🔄</span><div><h2>Offline Sync</h2><p class="muted">Sync saved data with the server</p></div></div><p>Compressed photos saved without internet stay on this device and sync automatically when you are online.</p><button onclick="syncQueue()">Sync Now</button><button class="danger" onclick="clearQueue()">Clear Pending</button><div id="syncStatus" class="status"></div></section>
+<div id="photoEditModal" class="modal hidden"><div><div class="toolbar"><h3 style="margin:0;flex:1">Edit Photo / GPS</h3><button class="secondary small" onclick="closePhotoEdit()">Close</button></div><input id="editPhotoId" type="hidden"><input id="editPhotoLat" type="number" step="any" placeholder="Latitude"><input id="editPhotoLng" type="number" step="any" placeholder="Longitude"><input id="editPhotoFile" type="file" accept="image/*"><button class="success" onclick="savePhotoEdit()">Save Photo / GPS Changes</button><div id="photoEditStatus" class="status"></div></div></div><div id="photoPreviewModal" class="modal hidden"><div><div class="toolbar"><h3 id="previewModalTitle" style="margin:0;flex:1">Photo Preview</h3><button class="secondary small" onclick="closePhotoPreview()">Close</button></div><img id="previewModalImg" class="camera-preview" alt="Photo Preview"></div></div><div id="modal" class="modal hidden"><div><h3 id="modalTitle">Work</h3><input id="mSl" placeholder="Sl No"><input id="mSansad" placeholder="Sansad No"><input id="mCode" placeholder="Work Code"><input id="mName" placeholder="Work Name"><input id="mLocation" placeholder="Location"><div class="toolbar"><button onclick="saveWork()">Save</button><button class="secondary" onclick="closeModal()">Cancel</button></div><div id="mStatus" class="status"></div></div></div>
+<nav id="mobileNav" class="mobile-nav no-print">
+<button data-nav="dash" onclick="showPage('dash')"><span class="nav-icon">⌂</span><span>Dashboard</span></button>
+<button data-nav="photo" onclick="showPage('photo')"><span class="nav-icon">📷</span><span>Capture</span></button>
+<button data-nav="database" onclick="showPage('database')"><span class="nav-icon">🗄️</span><span>Database</span></button>
+<button data-nav="report" onclick="showPage('report')"><span class="nav-icon">📊</span><span>Report</span></button>
+<button data-nav="more" onclick="showPage(isMaster() ? 'settings' : (user && user.userManagement ? 'users' : 'sync'))"><span class="nav-icon">•••</span><span>More</span></button>
+</nav><div class="footer">PANCHAYAT WORK GPS <span>•</span> Created by AST InfoTech</div><div class="footer no-print">Dashboard Status: Real-time Live Data. All counts and pending syncs are correct.</div></main>
+<script>
+const API_URL="/api";let token=localStorage.getItem('pwg_token')||'',user=null,selectedFile=null,dbData=[],reportData=[],editCode='';function normalizeUser(u){if(!u)return null;u.role=String(u.role||'User');u.permissions=Object.assign({addWork:false,photoGPS:false,report:false,userManagement:false,sansadAccess:'ALL'},u.permissions||{});return u}function isAdmin(){return ['admin','master'].includes(String(user?.role||'').toLowerCase())} function isMaster(){return String(user?.role||'').toLowerCase()==='master'} function toggleMasterHint(){$('masterHint').classList.toggle('hidden')}function userDatabaseCacheKey(){return 'database_'+String(user?.userId||'guest')}function workCacheKey(s){return 'works_'+String(user?.userId||'guest')+'_'+String(s)}const $=id=>document.getElementById(id);const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+async function parseApiResponse(r){const text=await r.text();if(!r.ok)throw Error('Server error '+r.status);try{return JSON.parse(text)}catch(e){const t=text.replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim();throw Error(t?'API returned invalid response: '+t.slice(0,180):'API returned an empty response.')}}async function apiGet(action,params={},timeoutMs=9000){const c=new AbortController(),tm=setTimeout(()=>c.abort(),timeoutMs);try{let u=new URL(API_URL,window.location.origin);u.searchParams.set('action',action);Object.entries(params).forEach(([k,v])=>u.searchParams.set(k,v??''));let r=await fetch(u,{cache:'no-store',signal:c.signal});let j=await parseApiResponse(r);if(j.success===false)throw Error(j.message);return j}catch(e){if(e.name==='AbortError')throw Error('Request timed out. Please try again.');throw e}finally{clearTimeout(tm)}}async function apiPost(action,data={},timeoutMs=10000){const c=new AbortController(),tm=setTimeout(()=>c.abort(),timeoutMs);try{let r=await fetch(new URL(API_URL,window.location.origin),{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({action,token,data}),cache:'no-store',signal:c.signal});let j=await parseApiResponse(r);if(!j.success)throw Error(j.message);return j}catch(e){if(e.name==='AbortError')throw Error('Request timed out. Please try again.');throw e}finally{clearTimeout(tm)}}
+const dbPromise=new Promise((resolve,reject)=>{const r=indexedDB.open('PanchayatWorkGPS',2);r.onupgradeneeded=e=>{const db=e.target.result;if(!db.objectStoreNames.contains('queue'))db.createObjectStore('queue',{keyPath:'id',autoIncrement:true});if(!db.objectStoreNames.contains('cache'))db.createObjectStore('cache')};r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error)});async function cacheSet(k,v){const db=await dbPromise;return new Promise((a,b)=>{const t=db.transaction('cache','readwrite');t.objectStore('cache').put(v,k);t.oncomplete=a;t.onerror=()=>b(t.error)})}async function cacheGet(k){const db=await dbPromise;return new Promise((a,b)=>{const r=db.transaction('cache').objectStore('cache').get(k);r.onsuccess=()=>a(r.result);r.onerror=()=>b(r.error)})}async function clearWorkCaches(){const db=await dbPromise;return new Promise((resolve,reject)=>{const t=db.transaction('cache','readwrite'),s=t.objectStore('cache'),r=s.openCursor();r.onsuccess=e=>{const c=e.target.result;if(!c)return resolve();if(String(c.key)==='database'||String(c.key).startsWith('database_')||String(c.key)==='sansads'||String(c.key).startsWith('works_'))c.delete();c.continue()};r.onerror=()=>reject(r.error)})}async function queueAdd(x){const db=await dbPromise;return new Promise((a,b)=>{const t=db.transaction('queue','readwrite');t.objectStore('queue').add(x);t.oncomplete=a;t.onerror=()=>b(t.error)})}async function queueAll(){const db=await dbPromise;return new Promise((a,b)=>{const r=db.transaction('queue').objectStore('queue').getAll();r.onsuccess=()=>a(r.result);r.onerror=()=>b(r.error)})}async function queueDel(id){const db=await dbPromise;return new Promise((a,b)=>{const t=db.transaction('queue','readwrite');t.objectStore('queue').delete(id);t.oncomplete=a;t.onerror=()=>b(t.error)})}
+function setNet(){const online=navigator.onLine;$('net').textContent=online?'Online':'Offline';$('net').className='pill '+(online?'online':'offline')}window.addEventListener('online',()=>{setNet();syncQueue()});window.addEventListener('offline',setNet);function updateThemeUI(){const dark=document.body.classList.contains('dark');const b=$('themeBtn');if(b){b.innerHTML='<span class="theme-icon">'+(dark?'☀':'☾')+'</span><span class="theme-label">'+(dark?'Light':'Dark')+'</span>';}if($('statTheme'))$('statTheme').textContent=dark?'Dark':'Light'}
+function toggleTheme(){const dark=!document.body.classList.contains('dark');document.body.classList.toggle('dark',dark);localStorage.setItem('pwg_theme',dark?'dark':'light');const t=themeState();t.mode=dark?'dark':'light';applyThemeVars(t);updateThemeUI()}
+if(localStorage.getItem('pwg_theme')==='dark')document.body.classList.add('dark');
+updateThemeUI();
+let deferredInstall=null;window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredInstall=e;$('installBtn').classList.remove('hidden')});async function installApp(){if(deferredInstall){deferredInstall.prompt();deferredInstall=null;$('installBtn').classList.add('hidden')}}if('serviceWorker'in navigator)navigator.serviceWorker.register('/sw.js').catch(()=>{});
+function requireLogin(){
+  if(!token||!user){
+    document.querySelectorAll('.page').forEach(x=>x.classList.add('hidden'));
+    $('dash').classList.add('hidden');$('login').classList.remove('hidden');
+    return false;
+  }
+  return true;
+}
+function showPage(id){
+  if(!requireLogin()) return;
+  const p=user?.permissions||{};
+  const master=isMaster(); const allowed={photo:!!p.photoGPS||isAdmin(),database:true,photoDatabase:!!p.photoGPS||isAdmin(),report:!!p.report||isAdmin(),workStatus:isAdmin(),users:!!p.userManagement||isAdmin(),settings:master,sync:true,dash:true};
+  if(!allowed[id]){alert('You do not have permission for this section.');return;}
+  // Hide every screen first, including Dashboard. This makes navigation true full-page navigation.
+  document.querySelectorAll('.page, #dash').forEach(x=>x.classList.add('hidden'));
+  document.querySelectorAll('#mobileNav button[data-nav]').forEach(x=>x.classList.remove('active'));
+  const navId=(id==='users'||id==='sync'||id==='photoDatabase'||id==='settings')?'more':id;
+  const active=document.querySelector('#mobileNav button[data-nav="'+navId+'"]');
+  if(active)active.classList.add('active');
+  if(id==='dash'){
+    $('dash').classList.remove('hidden');
+    window.scrollTo({top:0,behavior:'smooth'});
+    return;
+  }
+  const target=$(id);
+  if(!target)return;
+  target.classList.remove('hidden');
+  if(id==='photo'){loadSansads();refreshPhotoCount()}
+  if(id==='database')loadDatabase();
+  if(id==='report')loadReport();
+  if(id==='photoDatabase')loadPhotoDatabase();
+  if(id==='users')loadUsers(); if(id==='workStatus')loadWorkStatus();
+  if(id==='sync')updatePending(); if(id==='settings')refreshSettings();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function applyMenus(){const p=user?.permissions||{};$('databaseBtn').classList.remove('hidden');$('photoDbBtn').classList.toggle('hidden',!p.photoGPS&&!isAdmin());$('reportBtn').classList.toggle('hidden',!p.report&&!isAdmin());$('userBtn').classList.toggle('hidden',!p.userManagement&&!isAdmin());$('settingsBtn').classList.toggle('hidden',!isMaster());$('statusBtn').classList.toggle('hidden',!isAdmin());}
+async function primeUserWorkCache(){
+ try{
+  if(!token)return;
+  const data=await apiGet('userDatabase',{token},15000);
+  if(Array.isArray(data)){
+   dbData=data;
+   await cacheSet(userDatabaseCacheKey(),data);
+   const groups={};
+   data.forEach(w=>{const s=String(w.sansadNo||'').trim();if(!s)return;(groups[s]||(groups[s]=[])).push({code:w.workCode,name:w.workName,location:w.location,slNo:w.slNo,sansadNo:w.sansadNo,photoCount:Array.isArray(w.photos)?w.photos.filter(v=>v!==''&&v!==null&&v!==undefined).length:0});});
+   for(const s of Object.keys(groups)) await cacheSet(workCacheKey(s),groups[s]);
+   await cacheSet('sansads_'+String(user?.userId||'guest'),Object.keys(groups).sort((a,b)=>a.localeCompare(b,undefined,{numeric:true})));
+   $('statWorks').textContent=data.length;$('statDoneWorks').textContent=data.filter(x=>Array.isArray(x.photos)&&x.photos.filter(Boolean).length>=4).length;$('summaryWorks').textContent=data.length;
+  }
+ }catch(e){console.warn('User work cache refresh failed',e)}
+}
+async function showLoginMode(mode){
+ const master=mode==='master';
+ $('uid').readOnly=master; $('uid').value=master?'master':'';
+ $('pwd').value='';
+ $('loginTitle').textContent=master?'Master Login':'Sign in';
+ $('loginSubtitle').textContent=master?'Master Control Panel — Full System Access':'Secure Panchayat Work GPS';
+ $('loginButton').textContent=master?'Master Sign in':'Sign in';
+ $('masterHint').classList.toggle('hidden',!master);
+ $('masterLoginBadge').classList.toggle('hidden',!master);
+ $('userLoginTab').classList.toggle('active',!master); $('masterLoginTab').classList.toggle('active',master);
+ $('loginStatus').textContent=master?'Master login ready.':'Ready'; $('loginStatus').className='status';
+}
+async function login(){
+ const userId=$('uid').value.trim(),password=$('pwd').value;
+ if(!userId||!password){$('loginStatus').textContent='❌ User ID and Password are required.';$('loginStatus').className='status err';return}
+ try{
+  $('loginButton').disabled=true;$('loginButton').textContent='Signing in…';
+  const j=normalizeUser(await apiPost('login',{userId,password},12000));
+  if(!j||!j.token) throw Error('Login response is invalid.');
+  user=j;token=j.token;
+  localStorage.setItem('pwg_token',token);localStorage.setItem('pwg_user',JSON.stringify(user));localStorage.removeItem('pwg_logged_out');
+  // Show the dashboard immediately; non-critical sync work continues in the background.
+  $('login').classList.add('hidden');$('dash').classList.remove('hidden');
+  $('userInfo').textContent='Signed in as '+user.userName;$('statRole').textContent=user.role;
+  applyMenus();setNet();updateThemeUI();showPage('dash');renderCapturePreview('');updatePending();
+  $('loginButton').disabled=false;$('loginButton').textContent='Sign In';
+  Promise.resolve().then(loadSystemBranding).catch(()=>{});
+  Promise.resolve().then(primeUserWorkCache).then(()=>{refreshStats();loadSansads()}).catch(()=>{});
+  Promise.resolve().then(refreshActivity).catch(()=>{});
+ }catch(e){$('loginStatus').textContent='❌ '+e.message;$('loginStatus').className='status err';$('loginButton').disabled=false;$('loginButton').textContent='Sign In'}
+}
+function logout(){const oldToken=token;localStorage.removeItem('pwg_token');localStorage.setItem('pwg_logged_out','1');token='';user=null;document.querySelectorAll('.page,#dash').forEach(x=>x.classList.add('hidden'));$('login').classList.remove('hidden');$('uid').value='';$('pwd').value='';$('loginStatus').textContent='Signed out.';$('loginStatus').className='status ok';if(oldToken){try{navigator.sendBeacon(API_URL,new Blob([JSON.stringify({action:'logout',token:oldToken,data:{}})],{type:'text/plain;charset=utf-8'}))}catch(e){fetch(new URL(API_URL,window.location.origin),{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({action:'logout',token:oldToken,data:{}}),keepalive:true}).catch(()=>{})}}}
+async function restoreSession(){
+ if(localStorage.getItem('pwg_logged_out')==='1'){token='';user=null;localStorage.removeItem('pwg_token');localStorage.removeItem('pwg_user');requireLogin();return}
+ if(!token){requireLogin();return}
+ try{user=normalizeUser(JSON.parse(localStorage.getItem('pwg_user')||'null'))}catch(e){user=null}
+ if(user){loadSystemBranding();$('login').classList.add('hidden');$('dash').classList.remove('hidden');$('userInfo').textContent='Signed in as '+user.userName+' ('+user.role+')';$('statRole').textContent=user.role;applyMenus();setNet();showPage('dash');updatePending();setTimeout(()=>{primeUserWorkCache().then(()=>{refreshStats();loadSansads()})},250)}
+ try{const j=normalizeUser(await apiGet('me',{token},10000));user=j;localStorage.setItem('pwg_user',JSON.stringify(user));$('userInfo').textContent='Signed in as '+user.userName+' ('+user.role+')';$('statRole').textContent=user.role;applyMenus();refreshStats();refreshActivity()}catch(e){
+   const msg=String(e.message||e).toLowerCase();
+   const authFail=msg.includes('invalid login session')||msg.includes('session expired')||msg.includes('login session');
+   if(!user||authFail){localStorage.removeItem('pwg_token');localStorage.removeItem('pwg_user');token='';user=null;requireLogin()}
+ }
+}
+async function refreshActivity(){try{const a=await apiGet('activity',{token},12000);const q=await queueAll();if(isAdmin()){const photos=Number(a.photoCount||0)+q.length,works=Number(a.workCount||0)+new Set(q.map(x=>String(x.workCode))).size;$('statMyPhotos').textContent=photos;$('statMyWorks').textContent=works;if($('adminActivityPanel'))$('adminActivityPanel').classList.remove('hidden');if($('activeUserCount'))$('activeUserCount').textContent=Number(a.activeUserCount||0);if($('activityStatus'))$('activityStatus').textContent=Number(a.activeUserCount||0)+' active users • '+Number(a.photoCount||0)+' saved photos.';if($('activityBody'))renderActivity(a.users||[]);}else{const mine=q.filter(x=>String(x.userName||'').toLowerCase()===String(user?.userName||'').toLowerCase());const photos=Number(a.photoCount||0)+mine.length,works=Number(a.workCount||0)+new Set(mine.map(x=>String(x.workCode))).size;$('statMyPhotos').textContent=photos;$('statMyWorks').textContent=works;if($('adminActivityPanel'))$('adminActivityPanel').classList.add('hidden')}}catch(e){if($('statMyPhotos'))$('statMyPhotos').textContent='0';if($('statMyWorks'))$('statMyWorks').textContent='0';if($('adminActivityPanel'))$('adminActivityPanel').classList.add('hidden')}}
+function renderActivity(rows){if(!$('activityBody'))return;$('activityBody').innerHTML=rows.map((x,i)=>'<tr><td>'+(i+1)+'</td><td>'+esc(x.user)+'</td><td>'+esc(x.workCount)+'</td><td>'+esc(x.photoCount)+'</td><td>'+esc(x.completedWorks)+'</td></tr>').join('')}
+let masterSettings={};
+async function loadMasterSettings(){if(!isMaster())return;try{const r=await apiGet('settings',{token},12000);masterSettings=r.settings||{};if(masterSettings.themeConfig)applyThemeVars(masterSettings.themeConfig);if($('systemName'))$('systemName').value=masterSettings.systemName||'Panchayat Work GPS';if(masterSettings.logoDataUrl){$('logoPreview').src=masterSettings.logoDataUrl;$('logoPreview').classList.remove('hidden')}syncColorInputs();}catch(e){if($('settingsStatus'))$('settingsStatus').textContent='❌ '+e.message}}
+async function previewLogo(){const f=$('logoFile').files[0];if(!f)return;try{const data=await compressLogo(f);$('logoPreview').src=data;$('logoPreview').classList.remove('hidden');masterSettings.logoDataUrl=data;}catch(e){$('settingsStatus').textContent='❌ Logo processing failed.';$('settingsStatus').className='status err'}}
+async function saveMasterSettings(){if(!isMaster())return alert('Master only.');await previewLogo();const t={navy:$('setNavy').value,blue:$('setBlue').value,accent:$('setAccent').value,bg:$('setBg').value,card:$('setCard').value,text:$('setText').value,mode:(window.pwgSelectedTheme==='D'?'dark':'light')};try{const r=await apiPost('saveSettings',{theme:window.pwgSelectedTheme||'CUSTOM',themeConfig:t,systemName:$('systemName').value.trim()||'Panchayat Work GPS',logoDataUrl:masterSettings.logoDataUrl||''});masterSettings=r.settings||{};$('settingsStatus').textContent='✓ System theme, branding and logo saved.';$('settingsStatus').className='status ok'}catch(e){$('settingsStatus').textContent='❌ '+e.message;$('settingsStatus').className='status err'}}
+async function changeMasterPassword(){try{const r=await apiPost('changeMasterPassword',{currentPassword:$('masterCurPwd').value,newPassword:$('masterNewPwd').value,confirmPassword:$('masterConfirmPwd').value});$('masterSecurityStatus').textContent='✓ '+r.message;$('masterSecurityStatus').className='status ok'}catch(e){$('masterSecurityStatus').textContent='❌ '+e.message;$('masterSecurityStatus').className='status err'}}
+async function resetSystem(){if(!isMaster())return; if(!confirm('সব Work এবং Photo data reset হবে. Users/Master থাকবে. Continue?'))return;try{const r=await apiPost('resetSystem',{});$('settingsStatus').textContent='✓ '+r.message;$('settingsStatus').className='status ok';await clearWorkCaches();refreshStats();loadSansads()}catch(e){$('settingsStatus').textContent='❌ '+e.message;$('settingsStatus').className='status err'}}
+let statusData=[];async function loadWorkStatus(){if(!isAdmin())return;try{statusData=await apiGet('database',{token},12000);renderWorkStatus()}catch(e){$('statusSummary').textContent='❌ '+e.message}}
+function renderWorkStatus(){const q=String($('statusSearch')?.value||'').toLowerCase();const f=$('statusFilter')?.value||'ALL';const rows=(statusData||[]).filter(x=>{const n=(x.workCode+' '+x.workName+' '+x.sansadNo+' '+x.user).toLowerCase();const c=(x.photos||[]).filter(Boolean).length;const st=c>=4?'COMPLETED':c?'IN PROGRESS':'PENDING';return (!q||n.includes(q))&&(f==='ALL'||f===st)});$('statusSummary').textContent='Showing '+rows.length+' work(s).';$('statusBody').innerHTML=rows.map(x=>{const c=(x.photos||[]).filter(Boolean).length;const st=c>=4?'COMPLETED':c?'IN PROGRESS':'PENDING';return '<tr><td>'+esc(x.workCode)+'</td><td>'+esc(x.workName)+'</td><td>'+esc(x.sansadNo)+'</td><td>'+c+'/4</td><td>'+st+'</td><td>'+esc(x.user||'—')+'</td></tr>'}).join('')}
+window.addEventListener('load',()=>{loadSystemBranding();restoreSession();setTimeout(()=>syncQueue(),1500);setInterval(async()=>{if(token&&navigator.onLine&&(await queueAll()).length)syncQueue()},30000)});
+async function refreshStats(){const cached=await cacheGet(userDatabaseCacheKey());if(cached){dbData=cached;$('statWorks').textContent=dbData.length;$('summaryWorks').textContent=dbData.length;$('summaryFill').style.width=(dbData.length?Math.min(100,Math.max(12,dbData.length*4)):0)+'%'}updatePending();if(!navigator.onLine)return;try{const fresh=await apiGet('database',{token});dbData=fresh;await cacheSet(userDatabaseCacheKey(),fresh);$('statWorks').textContent=fresh.length;$('statDoneWorks').textContent=fresh.filter(x=>Array.isArray(x.photos)&&x.photos.filter(Boolean).length>=4).length;$('summaryWorks').textContent=fresh.length;$('summaryFill').style.width=(fresh.length?Math.min(100,Math.max(12,fresh.length*4)):0)+'%'}catch(e){} await refreshActivity();}async function loadSansads(){
+ const cached=await cacheGet('sansads_'+String(user?.userId||'guest'));
+ if(cached&&Array.isArray(cached))renderSansads(cached);
+ try{const s=await apiGet('sansads',{token},12000);await cacheSet('sansads_'+String(user?.userId||'guest'),s);renderSansads(s)}catch(e){
+   const c=dbData.length?dbData:(await cacheGet(userDatabaseCacheKey())||[]);
+   const s=[...new Set(c.map(x=>String(x.sansadNo||'').trim()).filter(Boolean))].sort((a,b)=>a.localeCompare(b,undefined,{numeric:true}));
+   renderSansads(s);
+ }
+}
+function renderSansads(s){const el=$('sansad');const old=el.value;el.innerHTML='<option value="">Select Sansad</option>'+s.map(x=>'<option value="'+esc(x)+'">Sansad '+esc(x)+'</option>').join('');if(old&&s.includes(old)){el.value=old}else if(s.length===1){el.value=s[0];loadWorks()}}
+let worksRequestNo=0;
+function normalizeSansadClient(v){let s=String(v??'').trim().toLowerCase().replace(/\b(sansad|sangsad|সংসদ)\b/g,'').replace(/[._\-\/]+/g,' ').replace(/\s+/g,' ').trim();const m=s.match(/\d+(?:\.\d+)?/);if(m)return m[0].replace(/\.0+$/,'');const r={i:'1',ii:'2',iii:'3',iv:'4',v:'5',vi:'6',vii:'7',viii:'8',ix:'9',x:'10',xi:'11',xii:'12',xiii:'13',xiv:'14',xv:'15',xvi:'16',xvii:'17',xviii:'18',xix:'19',xx:'20'};if(r[s])return r[s];return s}
+async function getWorksWithPendingCounts(list){const q=await queueAll();const pending={};q.forEach(x=>{const c=String(x.workCode||'');if(c)pending[c]=(pending[c]||0)+1});return (Array.isArray(list)?list:[]).map(x=>{const code=String(x.code||x.workCode||'');const server=Number(x.photoCount??0);return Object.assign({},x,{photoCount:Math.min(4,server+(pending[code]||0))})})}
+async function loadWorks(){
+ const s=$('sansad').value;const previousWork=$('work').value;const req=++worksRequestNo;
+ $('work').innerHTML='<option value="">Select Work</option>';
+ $('work').value='';renderCapturePreview('');$('photoCount').textContent='1';updatePhotoStepper(0);
+ if(!s)return;
+ const key=workCacheKey(s);
+ const cached=await cacheGet(key);
+ if(req!==worksRequestNo)return;
+ if(Array.isArray(cached))renderWorks(await getWorksWithPendingCounts(cached),previousWork);
+ else {
+   const all=await cacheGet(userDatabaseCacheKey())||[];
+   const local=all.filter(w=>normalizeSansadClient(w.sansadNo)===normalizeSansadClient(s)).map(w=>({code:w.workCode,name:w.workName,location:w.location,slNo:w.slNo,sansadNo:w.sansadNo,photoCount:Array.isArray(w.photos)?w.photos.filter(v=>v!==''&&v!==null&&v!==undefined).length:0}));
+   if(local.length){await cacheSet(key,local);if(req!==worksRequestNo)return;renderWorks(await getWorksWithPendingCounts(local),previousWork)}
+ }
+ try{const w=await apiGet('works',{token,sansadNo:s},12000);if(req!==worksRequestNo)return;const merged=await getWorksWithPendingCounts(w);await cacheSet(key,w);renderWorks(merged,previousWork)}catch(e){if(!cached)renderWorks([])}
+}
+function workPhotoCount(code){const row=dbData.find(x=>String(x.workCode)===String(code));if(!row)return 0;return (row.photos||[]).filter(v=>v!==''&&v!==null&&v!==undefined).length}
+function renderWorks(w,preserveCode){const keep=preserveCode||$('work').value||'';const filtered=(Array.isArray(w)?w:[]).filter(x=>Number(x.photoCount??workPhotoCount(x.code))<4);$('work').innerHTML='<option value="">Select Work</option>'+filtered.map(x=>{const n=Number(x.photoCount??workPhotoCount(x.code));return '<option value="'+esc(x.code)+'">'+esc(x.code)+' — '+esc(x.name)+' — '+esc(x.location)+' — '+n+'/4 photos</option>'}).join('');if(keep&&filtered.some(x=>String(x.code)===String(keep))){$('work').value=keep}else{$('work').value='';renderCapturePreview('');$('photoCount').textContent='1';updatePhotoStepper(0)}}
+function openCamera(){$('photoInput').setAttribute('capture','environment');$('photoInput').click()}function openGallery(){$('photoInput').removeAttribute('capture');$('photoInput').click()}$('photoInput').addEventListener('change',()=>{selectedFile=$('photoInput').files[0]||null;if(selectedFile){$('preview').src=URL.createObjectURL(selectedFile);$('preview').classList.remove('hidden');$('photoStatus').textContent='Photo ready. Tap Quick Save Photo.';$('gpsBadge').textContent='Photo ready';}});function gps(){return new Promise((resolve,reject)=>navigator.geolocation.getCurrentPosition(p=>resolve({latitude:p.coords.latitude,longitude:p.coords.longitude}),()=>reject(Error('Location permission is required.')),{enableHighAccuracy:true,timeout:15000,maximumAge:10000}))}function testGps(){return{latitude:22.5787,longitude:88.3495}}
+function compressImage(file){return new Promise((resolve,reject)=>{const img=new Image();img.onload=()=>{const max=1024;let w=img.width,h=img.height;if(Math.max(w,h)>max){const r=max/Math.max(w,h);w=Math.round(w*r);h=Math.round(h*r)}const c=document.createElement('canvas');c.width=w;c.height=h;c.getContext('2d').drawImage(img,0,0,w,h);c.toBlob(b=>{if(!b)return reject(Error('Image compression failed.'));const rd=new FileReader();rd.onload=()=>resolve(rd.result);rd.readAsDataURL(b)},'image/jpeg',0.68)};img.onerror=reject;img.src=URL.createObjectURL(file)})}
+async function savePhoto(){
+ const code=$('work').value;if(!code){alert('Select a work.');return}if(!selectedFile){alert('Capture or choose a photo first.');return}
+ try{
+  $('photoStatus').className='status';$('photoStatus').textContent='Saving on this device…';$('quickSaveBtn').disabled=true;
+  const g=$('gpsMode').value==='TEST'?testGps():await gps();
+  $('lat').textContent=g.latitude.toFixed(7);$('lng').textContent=g.longitude.toFixed(7);
+  const compressed=await compressImage(selectedFile);
+  const localNo=await nextLocalPhotoNo(code);
+  const photoId=(crypto.randomUUID?crypto.randomUUID():String(Date.now())+'-'+Math.random().toString(36).slice(2));
+  const d={photoId,workCode:code,latitude:g.latitude,longitude:g.longitude,photoBase64:compressed,mimeType:'image/jpeg',createdAt:new Date().toISOString(),token:token,userName:user?.userName||''};
+  await queueAdd(Object.assign({photoNo:localNo},d));
+  
+  $('photoStatus').textContent='✅ Photo '+localNo+' saved successfully. Uploading in background…';updatePhotoStepper(localNo);
+  selectedFile=null;$('photoInput').value='';$('preview').classList.add('hidden');
+  if(Number(localNo)>=4){
+    $('work').value='';renderCapturePreview('');$('photoCount').textContent='1';updatePhotoStepper(0);updatePhotoStepper(4);$('photoStatus').textContent='✅ Photo 4 saved successfully. Work is now completed and hidden from Select Work.';
+    setTimeout(()=>loadWorks(),300);
+  }else{
+    $('work').value=code;$('photoCount').textContent=Math.min(4,localNo+1);updatePhotoStepper(Number(localNo));
+  }
+  updatePending();setTimeout(()=>syncQueue(),1200);
+ }catch(e){$('photoStatus').textContent='❌ '+e.message;$('photoStatus').className='status err'}finally{$('quickSaveBtn').disabled=false}
+}
+async function nextLocalPhotoNo(code){
+ const q=await queueAll();const nums=q.filter(x=>x.workCode===code).map(x=>Number(x.photoNo||0));
+ const row=dbData.find(x=>String(x.workCode)===String(code));const server=(row?.photos||[]).filter(Boolean).length;
+ return Math.min(4,Math.max(server,Math.max(0,...nums))+1);
+}
+const previewMemory=new Map();
+function cleanupLegacyPreviewStorage(){try{const remove=[];for(let i=0;i<localStorage.length;i++){const k=localStorage.key(i);if(k&&k.startsWith('pwg_preview_'))remove.push(k)}remove.forEach(k=>localStorage.removeItem(k))}catch(e){}}
+cleanupLegacyPreviewStorage();
+function addLocalPhotoPreview(code,dataUrl,no){let arr=previewMemory.get(String(code))||[];arr=arr.filter(x=>Number(x.no)!==Number(no));arr.push({no,dataUrl});arr=arr.slice(-4);previewMemory.set(String(code),arr);renderCapturePreview(code)}
+function renderCapturePreview(code){const el=$('capturePreviewGrid');if(!code){el.innerHTML='<div class="muted">Select a work.</div>';return}const arr=previewMemory.get(String(code))||[];el.innerHTML=arr.length?arr.map(x=>'<div class="photo-slot"><img class="photo-thumb" src="'+x.dataUrl+'" alt="Photo '+x.no+'"><span>Photo '+x.no+'</span></div>').join(''):'<div class="muted">No photos saved on this device yet.</div>'}
+function updatePhotoStepper(n){n=Math.max(0,Math.min(4,Number(n)||0));const steps=[...document.querySelectorAll('#photoStepper .photo-step')];steps.forEach((el,i)=>{el.classList.toggle('active',i===n&&n<4);el.classList.toggle('done',i<n);});const label=$('photoStepLabel');if(label)label.textContent=n>=4?'Photo 1–4 complete':('Photo '+(n+1)+' / 4');}
+async function refreshPhotoCount(){const code=$('work').value;if(!code){$('photoCount').textContent='1';updatePhotoStepper(0);renderCapturePreview('');return}const row=dbData.find(x=>String(x.workCode)===String(code));const p=(row&&row.photos)||[];const server=p.filter(v=>v!==''&&v!==null&&v!==undefined).length;const q=await queueAll();const pending=q.filter(x=>String(x.workCode)===String(code)).length;const n=Math.min(4,server+pending);$('photoCount').textContent=n>=4?'4':String(n+1);updatePhotoStepper(n);renderCapturePreview(code)}
+async function updatePending(){const q=await queueAll();$('statPending').textContent=q.length;$('summaryPending').textContent=q.length;$('syncStatus').textContent=q.length+' photo(s) pending.'}let syncRunning=false;
+async function syncQueue(){
+ if(syncRunning)return;
+ if(!navigator.onLine){$('syncStatus').textContent='Offline. Photos are safely queued on this device.';updatePending();return}
+ syncRunning=true;
+ try{
+  const q=await queueAll();let ok=0;
+  for(const x of q){
+    try{const r=await apiPost('savePhoto',x,45000);await queueDel(x.id);ok++;}catch(e){}
+  }
+  const pending=await queueAll();$('syncStatus').textContent=ok+' uploaded, '+pending.length+' pending.';updatePending();
+  // Do not reload the full database on mobile after every photo. Refresh only when needed.
+  if(ok && !document.hidden && $('sansad')?.value){setTimeout(()=>loadWorks(),250);}
+ }finally{syncRunning=false}
+}
+async function clearQueue(){if(confirm('Delete all pending offline photos?')){const db=await dbPromise;const t=db.transaction('queue','readwrite');t.objectStore('queue').clear();t.oncomplete=updatePending}}
+async function loadDatabase(){try{dbData=await apiGet('database',{token},12000);await cacheSet(userDatabaseCacheKey(),dbData);$('dbStatus').textContent='Online database loaded: '+dbData.length+' work(s).';$('dbStatus').className='status ok'}catch(e){dbData=await cacheGet(userDatabaseCacheKey())||[];$('dbStatus').textContent='Offline: cached database ('+dbData.length+' work(s)).'}renderDatabase();const canEdit=!!user?.permissions?.addWork||isAdmin();document.querySelectorAll('#database .admin-only').forEach(x=>x.classList.toggle('hidden',!canEdit))}function formatDate(x){if(!x)return '';const d=new Date(x);return isNaN(d)?String(x):d.toLocaleString()}function toggleAllWorks(checked){document.querySelectorAll('#dbBody input.work-check').forEach(x=>x.checked=checked)}function selectedWorkCodes(){return [...document.querySelectorAll('#dbBody input.work-check:checked')].map(x=>x.value)}function toggleAllWorks(checked){document.querySelectorAll('#dbBody input.work-check').forEach(x=>x.checked=checked)}function selectedWorkCodes(){return [...document.querySelectorAll('#dbBody input.work-check:checked')].map(x=>x.value)}function renderDatabase(){const sel=$('selectAllWorks');if(sel)sel.checked=false;const canEdit=!!user?.permissions?.addWork||isAdmin();$('dbBody').innerHTML=dbData.map(x=>{const c=encodeURIComponent(String(x.workCode));return '<tr><td><input class="work-check" type="checkbox" value="'+esc(x.workCode)+'" style="width:auto"></td><td>'+esc(x.slNo)+'</td><td>'+esc(x.sansadNo)+'</td><td>'+esc(x.workCode)+'</td><td>'+esc(x.workName)+'</td><td>'+esc(x.location)+'</td><td>'+esc(formatDate(x.date))+'</td><td>'+esc(x.user)+'</td><td class="no-print">'+(canEdit?'<button class="small" onclick="openWorkModalByCode(\''+c+'\')">Edit</button> <button class="small danger" onclick="deleteWork(\''+c+'\')">Delete</button>':'<span class="muted">View only</span>')+'</td></tr>'}).join('')}
+async function deleteSelectedWorks(){const codes=selectedWorkCodes();if(!codes.length){alert('Select at least one work.');return}if(!confirm('Delete '+codes.length+' selected work(s)?'))return;try{$('dbStatus').textContent='Deleting selected works…';const r=await apiPost('deleteWorks',{workCodes:codes});$('dbStatus').textContent='✓ '+r.message;$('dbStatus').className='status ok';await clearWorkCaches();await loadDatabase();refreshStats()}catch(e){$('dbStatus').textContent='❌ '+e.message;$('dbStatus').className='status err'}}async function deleteAllWorks(){if(!dbData.length){alert('No work records found.');return}if(!confirm('DELETE ALL '+dbData.length+' work records? This cannot be undone.'))return;try{$('dbStatus').textContent='Deleting all works…';const r=await apiPost('deleteAllWorks',{});$('dbStatus').textContent='✓ '+r.message;$('dbStatus').className='status ok';await clearWorkCaches();await loadDatabase();refreshStats()}catch(e){$('dbStatus').textContent='❌ '+e.message;$('dbStatus').className='status err'}}
+function openWorkModalByCode(encoded){const x=dbData.find(v=>String(v.workCode)===decodeURIComponent(encoded));if(x)openWorkModal(x)}
+function openWorkModal(x){editCode=x?.workCode||'';$('modalTitle').textContent=x?'Edit Work':'Add Work';$('mSl').value=x?.slNo||'';$('mSansad').value=x?.sansadNo||'';$('mCode').value=x?.workCode||'';$('mName').value=x?.workName||'';$('mLocation').value=x?.location||'';$('mStatus').textContent='';$('modal').classList.remove('hidden')}function closeModal(){$('modal').classList.add('hidden')}async function saveWork(){try{const d={oldWorkCode:editCode,slNo:$('mSl').value,sansadNo:$('mSansad').value,workCode:$('mCode').value,workName:$('mName').value,location:$('mLocation').value};const r=editCode?await apiPost('updateWork',d):await apiPost('addWork',d);$('mStatus').textContent='✓ '+r.message;closeModal();await clearWorkCaches();await loadDatabase();refreshStats()}catch(e){$('mStatus').textContent='❌ '+e.message;$('mStatus').className='status err'}}async function deleteWork(encoded){const code=decodeURIComponent(encoded);if(!confirm('Delete work '+code+'?'))return;try{await apiPost('deleteWork',{workCode:code});await clearWorkCaches();await loadDatabase();refreshStats()}catch(e){alert(e.message)}}
+function fileData(f){return new Promise((a,b)=>{const r=new FileReader();r.onload=()=>a(r.result);r.onerror=b;r.readAsDataURL(f)})}async function importExcel(){const fs=[...$('excelFiles').files];if(!fs.length)return alert('Select one or more .xlsx or .csv files.');let a=0,s=0;for(const f of fs){try{const r=await apiPost('uploadExcel',{fileName:f.name,fileBase64:await fileData(f)});a+=r.added;s+=r.skipped}catch(e){$('dbStatus').textContent='❌ '+f.name+': '+e.message;return}}$('dbStatus').textContent='Import complete. Added: '+a+' | Skipped: '+s;$('excelFiles').value='';await clearWorkCaches();await loadDatabase();refreshStats()}
+async function loadPhotoDatabase(){
+ try{
+  const rows=await apiGet('photoDatabase',{token});
+  $('photoDbStatus').textContent='Saved photos: '+rows.length;
+  $('photoDbStatus').className='status ok';
+  const grid=$('photoDbGrid');
+  grid.innerHTML=rows.slice().reverse().map(x=>{
+    const id=encodeURIComponent(x.photoId);
+    const thumb=x.fileUrl?('<a href="'+esc(x.fileUrl)+'" target="_blank" rel="noopener"><div class="photo-slot"><img class="photo-thumb" alt="'+esc(x.fileName)+'" src="'+esc(x.fileUrl)+'"></div></a>'):'<div class="photo-slot"><div class="photo-thumb"></div></div>';
+    return '<div class="photo-card">'+thumb+'<div class="muted" style="margin-top:6px">'+esc(x.workCode)+' · Photo '+esc(x.photoNo)+'<br>'+esc(x.user)+'<br>'+esc(x.latitude)+', '+esc(x.longitude)+'</div><button class="small ghost" onclick="previewPhoto(\''+id+'\')">Preview</button> <button class="small" onclick="openPhotoEdit('+JSON.stringify(x).replace(/</g,'&lt;')+')">Edit</button></div>'
+  }).join('');
+ }catch(e){$('photoDbStatus').textContent='❌ '+e.message;$('photoDbStatus').className='status err'}
+}
+function togglePwd(id){const e=$(id);e.type=e.type==='password'?'text':'password'}
+function compressLogo(file){return new Promise((resolve,reject)=>{const img=new Image();img.onload=()=>{const max=512;let w=img.width,h=img.height;if(Math.max(w,h)>max){const r=max/Math.max(w,h);w=Math.round(w*r);h=Math.round(h*r)}const c=document.createElement('canvas');c.width=w;c.height=h;c.getContext('2d').drawImage(img,0,0,w,h);resolve(c.toDataURL('image/jpeg',.78))};img.onerror=reject;img.src=URL.createObjectURL(file)})}
+async function loadSystemBranding(){try{const r=await apiGet('settings',{token},12000),st=r.settings||{};if(st.themeConfig)applyThemeVars(st.themeConfig);if(st.systemName){document.title=st.systemName;document.querySelectorAll('.brand b').forEach(x=>x.textContent=st.systemName);document.querySelectorAll('.footer').forEach(x=>{if(x.textContent.includes('PANCHAYAT WORK GPS'))x.firstChild.textContent=st.systemName+' '})}if(st.logoDataUrl){$('brandLogo').src=st.logoDataUrl;$('brandLogo').classList.remove('hidden');document.querySelector('#brandLogoWrap svg')?.classList.add('hidden')}}catch(e){}}
+function openPhotoEdit(x){$('editPhotoId').value=x.photoId;$('editPhotoLat').value=x.latitude||'';$('editPhotoLng').value=x.longitude||'';$('editPhotoFile').value='';$('photoEditStatus').textContent='Change GPS and/or replace photo. Minimum distance rule applies.';$('photoEditModal').classList.remove('hidden')}
+function closePhotoEdit(){$('photoEditModal').classList.add('hidden')}
+async function savePhotoEdit(){try{const d={photoId:$('editPhotoId').value,latitude:$('editPhotoLat').value,longitude:$('editPhotoLng').value};const f=$('editPhotoFile').files[0];if(f)d.photoBase64=await compressImage(f);const r=await apiPost('updatePhoto',d,30000);$('photoEditStatus').textContent='✓ '+r.message;$('photoEditStatus').className='status ok';setTimeout(()=>{closePhotoEdit();loadPhotoDatabase();loadReport();loadWorkStatus()},500)}catch(e){$('photoEditStatus').textContent='❌ '+e.message;$('photoEditStatus').className='status err'}}
+
+async function previewPhoto(encodedId){
+ try{
+  const id=decodeURIComponent(encodedId);
+  const r=await apiGet('photoPreview',{token,photoId:id});
+  $('previewModalImg').src='data:'+r.mimeType+';base64,'+r.base64;
+  $('previewModalTitle').textContent=r.fileName||'Photo Preview';
+  $('photoPreviewModal').classList.remove('hidden');
+ }catch(e){alert(e.message)}
+}
+function closePhotoPreview(){$('photoPreviewModal').classList.add('hidden');$('previewModalImg').src=''}
+async function loadReport(){try{reportData=await apiGet('report',{token},12000);await cacheSet('report_'+String(user?.userId||'guest'),reportData);$('reportStatus').textContent='Report loaded: '+reportData.length+' work(s).';$('reportStatus').className='status ok'}catch(e){reportData=await cacheGet('report_'+String(user?.userId||'guest'))||[];$('reportStatus').textContent='Offline: showing cached report.';$('reportStatus').className='status'}renderReport()}function reportRow(r){const p=r.photos||[];return '<tr><td>'+esc(r.slNo)+'</td><td>'+esc(r.sansadNo)+'</td><td>'+esc(r.workCode)+'</td><td>'+esc(r.workName)+'</td><td>'+esc(r.location)+'</td>'+Array.from({length:8},(_,i)=>'<td>'+esc(p[i]??'')+'</td>').join('')+'<td>'+esc(formatDate(r.date))+'</td><td>'+esc(r.user)+'</td></tr>'}function renderReport(){const q=String($('reportSearch')?.value||'').toLowerCase();const rows=reportData.filter(r=>(r.slNo+' '+r.sansadNo+' '+r.workCode+' '+r.workName+' '+r.location+' '+r.user).toLowerCase().includes(q));$('reportBody').innerHTML=rows.map(reportRow).join('')}function downloadExcel(){const h=[...document.querySelectorAll('#mainReportTable thead th')].map(x=>x.textContent.trim()),rows=reportData.map(r=>{const p=r.photos||[];return [r.slNo,r.sansadNo,r.workCode,r.workName,r.location,...p,formatDate(r.date),r.user]});let t='<table border="1"><tr>'+h.map(x=>'<th>'+esc(x)+'</th>').join('')+'</tr>'+rows.map(row=>'<tr>'+row.map(x=>'<td>'+esc(x)+'</td>').join('')+'</tr>').join('')+'</table>';const b=new Blob(['<html><head><meta charset="utf-8"></head><body>'+t+'</body></html>'],{type:'application/vnd.ms-excel'}),a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='Panchayat_Work_GPS_Report.xls';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}
+async function addUser(){
+ try{
+  const permissions={addWork:$('pAdd').checked,photoGPS:$('pPhoto').checked,report:$('pReport').checked,userManagement:$('pUsers').checked,sansadAccess:$('newSansadAccess').value.trim()||'ALL'};
+  const r=await apiPost('addUser',{userId:$('newUid').value.trim(),userName:$('newName').value.trim(),password:$('newPwd').value,role:$('newRole').value,permissions});
+  $('userStatus').textContent='✓ User created successfully.';$('userStatus').className='status ok';
+  clearUserForm();await loadUsers();
+ }catch(e){$('userStatus').textContent='❌ '+e.message;$('userStatus').className='status err'}
+}
+async function loadUsers(){try{const u=await apiGet('users',{token});$('userList').innerHTML=u.map(x=>'<div class="card user-row"><div class="grid"><div><b>'+esc(x.userName)+'</b> <span class="pill">'+esc(x.userId)+'</span> — '+esc(x.role)+'</div><div class="user-actions"><button class="small" type="button" onclick="editUserById('+JSON.stringify(String(x.userId)).replace(/"/g,'&quot;')+')">Edit</button><button class="small danger-outline" type="button" onclick="deleteUser('+JSON.stringify(String(x.userId)).replace(/"/g,'&quot;')+')">Delete</button></div></div><div class="muted">Status: '+esc(x.active)+' | Sansad: '+esc(x.sansadAccess)+' | Database: '+(x.addWork?'Yes':'No')+' | Photo: '+(x.photoGPS?'Yes':'No')+' | Report: '+(x.report?'Yes':'No')+' | User Management: '+(x.userManagement?'Yes':'No')+'</div><div class="muted" style="margin-top:6px">Password is protected. Use Edit to set a new password.</div></div>').join('')}catch(e){$('userStatus').textContent='❌ '+e.message;$('userStatus').className='status err'}}
+async function editUserById(userId){
+ try{
+  const u=await apiGet('users',{token});const x=(u||[]).find(v=>String(v.userId)===String(userId));
+  if(!x) throw Error('User record not found.');
+  editUser(x);
+ }catch(e){$('userStatus').textContent='❌ '+e.message;$('userStatus').className='status err'}
+}
+function editUser(x){
+ $('newUid').value=x.userId||'';$('newName').value=x.userName||'';$('newPwd').value='';$('newRole').value=x.role||'User';$('newSansadAccess').value=x.sansadAccess||'ALL';
+ $('pAdd').checked=!!x.addWork;$('pPhoto').checked=!!x.photoGPS;$('pReport').checked=!!x.report;$('pUsers').checked=!!x.userManagement;
+ $('newUid').readOnly=true;$('newUid').dataset.editing='1';
+ const btn=$('userSaveBtn');if(btn){btn.textContent='Save Changes';btn.onclick=saveEditedUser}
+ $('userCancelBtn')?.classList.remove('hidden');$('userStatus').textContent='Edit mode: update the fields and press Save Changes.';$('userStatus').className='status';
+ $('newName').focus();
+}
+function clearUserForm(){
+ $('newUid').readOnly=false;$('newUid').dataset.editing='';$('newUid').value='';$('newName').value='';$('newPwd').value='';$('newSansadAccess').value='';$('newRole').value='User';
+ $('pAdd').checked=false;$('pPhoto').checked=true;$('pReport').checked=false;$('pUsers').checked=false;
+ const btn=$('userSaveBtn');if(btn){btn.textContent='Create User';btn.onclick=addUser}$('userCancelBtn')?.classList.add('hidden');
+}
+function cancelUserEdit(){clearUserForm();$('userStatus').textContent='Ready';$('userStatus').className='status'}
+async function saveEditedUser(){
+ try{
+  const permissions={addWork:$('pAdd').checked,photoGPS:$('pPhoto').checked,report:$('pReport').checked,userManagement:$('pUsers').checked,sansadAccess:$('newSansadAccess').value.trim()||'ALL'};
+  const r=await apiPost('updateUser',{userId:$('newUid').value.trim(),userName:$('newName').value.trim(),password:$('newPwd').value,role:$('newRole').value,permissions});
+  $('userStatus').textContent='✓ User updated successfully.';$('userStatus').className='status ok';clearUserForm();await loadUsers();
+ }catch(e){$('userStatus').textContent='❌ '+e.message;$('userStatus').className='status err'}
+}
+
+async function deleteUser(userId){
+ if(!confirm('Delete user "'+userId+'"? This cannot be undone.'))return;
+ try{const r=await apiPost('deleteUser',{userId});$('userStatus').textContent='✓ '+r.message;$('userStatus').className='status ok';loadUsers()}
+ catch(e){$('userStatus').textContent='❌ '+e.message;$('userStatus').className='status err'}
+}
+const THEME_PRESETS={A:{navy:'#06295A',blue:'#2563EB',accent:'#08A6A6',bg:'#F4F8FC',card:'#FFFFFF',text:'#132238',mode:'light'},B:{navy:'#0B3D2E',blue:'#15803D',accent:'#10B981',bg:'#F2F8F5',card:'#FFFFFF',text:'#10251C',mode:'light'},C:{navy:'#32135F',blue:'#6D28D9',accent:'#A855F7',bg:'#F7F4FB',card:'#FFFFFF',text:'#241C32',mode:'light'},D:{navy:'#07152F',blue:'#0F766E',accent:'#2DD4BF',bg:'#08111F',card:'#101D2E',text:'#F8FAFC',mode:'dark'}};
+function themeState(){return JSON.parse(localStorage.getItem('pwg_theme_config')||'{}')}
+function applyThemeVars(t){const root=document.documentElement;if(t.mode)document.body.classList.toggle('dark',t.mode==='dark');const map={navy:'--gov-navy',blue:'--gov-blue',accent:'--gov-success',bg:'--gov-bg',card:'--gov-white',text:'--gov-ink'};Object.keys(map).forEach(k=>{if(t[k])root.style.setProperty(map[k],t[k]);});if(t.bg)root.style.setProperty('--bg',t.bg);if(t.card)root.style.setProperty('--card',t.card);if(t.text)root.style.setProperty('--text',t.text);if(t.blue)root.style.setProperty('--primary',t.blue);if(t.accent)root.style.setProperty('--gov-success',t.accent);localStorage.setItem('pwg_theme_config',JSON.stringify(t));syncColorInputs();}
+function syncColorInputs(){const t=Object.assign({},THEME_PRESETS.A,themeState());['Navy','Blue','Accent','Bg','Card','Text'].forEach(k=>{const el=$('set'+k);if(el){const key=k.toLowerCase();el.value=t[key]||el.value}})}
+function selectMasterTheme(name){if(!isMaster())return alert('Master only.');const t=THEME_PRESETS[name]||THEME_PRESETS.A;applyThemeVars(t);window.pwgSelectedTheme=name;document.querySelectorAll('.theme-card').forEach(x=>x.style.outline='none');}
+function applyMasterTheme(){applyCustomTheme();}
+function applyCustomTheme(){const t={navy:$('setNavy').value,blue:$('setBlue').value,accent:$('setAccent').value,bg:$('setBg').value,card:$('setCard').value,text:$('setText').value,mode:(window.pwgSelectedTheme==='D'?'dark':'light')};applyThemeVars(t);if($('settingsStatus')){$('settingsStatus').textContent='✓ Theme preview applied.';$('settingsStatus').className='status ok'}}
+function resetTheme(){localStorage.removeItem('pwg_theme_config');applyThemeVars(THEME_PRESETS.A);document.body.classList.remove('dark');localStorage.setItem('pwg_theme','light');updateThemeUI();}
+function refreshSettings(){syncColorInputs();}
+function setContrast(on){document.body.classList.toggle('high-contrast',!!on);localStorage.setItem('pwg_contrast',on?'1':'0')}
+function toggleCompactLayout(){document.body.classList.toggle('compact-mobile');localStorage.setItem('pwg_compact',document.body.classList.contains('compact-mobile')?'1':'0')}
+async function uploadThemeFile(){const f=$('themeFile').files[0];if(!f)return alert('Select a JSON theme file.');try{const t=JSON.parse(await f.text());applyThemeVars(t);$('settingsStatus').textContent='✓ Theme uploaded and applied.';$('settingsStatus').className='status ok'}catch(e){$('settingsStatus').textContent='❌ Invalid theme JSON.';$('settingsStatus').className='status err'}}
+async function importThemeUrl(){const u=$('themeUrl').value.trim();if(!u)return alert('Enter a theme JSON URL.');try{const r=await fetch(u,{cache:'no-store'});if(!r.ok)throw Error('HTTP '+r.status);const t=await r.json();applyThemeVars(t);$('settingsStatus').textContent='✓ Theme imported from URL.';$('settingsStatus').className='status ok'}catch(e){$('settingsStatus').textContent='❌ Theme URL could not be loaded. The website must allow browser access (CORS).';$('settingsStatus').className='status err'}}
+(function(){if(localStorage.getItem('pwg_contrast')==='1')document.body.classList.add('high-contrast');if(localStorage.getItem('pwg_compact')==='1')document.body.classList.add('compact-mobile');const t=themeState();if(Object.keys(t).length)applyThemeVars(t)})();
+
+async function changeAdminPassword(){try{if($('newAdminPwd').value!==$('confirmAdminPwd').value)throw Error('Passwords do not match.');const r=await apiPost('changeAdminPassword',{currentPassword:$('curPwd').value,newPassword:$('newAdminPwd').value,confirmPassword:$('confirmAdminPwd').value});$('pwdStatus').textContent='✓ '+r.message;$('curPwd').value=$('newAdminPwd').value=$('confirmAdminPwd').value=''}catch(e){$('pwdStatus').textContent='❌ '+e.message;$('pwdStatus').className='status err'}}
+setNet();updatePending();</script></body></html>
