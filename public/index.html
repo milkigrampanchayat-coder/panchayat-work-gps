@@ -1239,6 +1239,135 @@ body.logged-in .kpi-card b{color:#173b66!important}
  body.logged-in main.app{padding:10px 10px 88px!important}
 }
 @media(max-width:430px){body:not(.logged-in) main.app{padding:10px!important}body:not(.logged-in) #login{padding:24px 18px 20px!important}.login-logo{width:46px!important;height:46px!important}.login-brand b{font-size:19px!important}}
+
+/* V18.5 SOFT-CLEAR FINAL UI OVERRIDES */
+:root{
+  --pwg-bg:#f5f9ff;--pwg-card:#ffffff;--pwg-text:#17324d;--pwg-muted:#6b7f93;
+  --pwg-primary:#2563eb;--pwg-primary2:#1d4ed8;--pwg-accent:#0ea5a5;--pwg-line:#d9e5f0;
+}
+html,body{width:100%;min-height:100%;overflow-x:hidden}
+body{font-family:"Nunito","Segoe UI",Arial,sans-serif!important;font-size:15px!important;line-height:1.5!important;background:var(--pwg-bg)!important;color:var(--pwg-text)!important}
+button,input,select,textarea{font-family:"Nunito","Segoe UI",Arial,sans-serif!important}
+/* Login: clean, isolated, preview-style */
+body:not(.logged-in) main.app{
+  min-height:calc(100vh - 0px)!important;width:100%!important;max-width:none!important;margin:0!important;
+  padding:48px 6vw!important;display:grid!important;grid-template-columns:minmax(280px,1fr) minmax(360px,440px)!important;
+  gap:clamp(30px,6vw,100px)!important;align-items:center!important;justify-content:center!important;
+  background:linear-gradient(135deg,#eef7ff 0%,#f9fcff 55%,#edf9f6 100%)!important;
+  position:relative!important;
+}
+body:not(.logged-in) main.app:before{
+  content:"PANCHAYAT WORK GPS\A\A Transparent Work Monitoring\A Better Panchayat Development\A\A  •  GPS Geo-Tagging\A  •  4-Photo Evidence\A  •  Reports & Analytics";
+  white-space:pre-line;display:flex;align-items:center;justify-content:center;text-align:left;
+  min-height:360px;padding:clamp(20px,4vw,55px);border-radius:30px;
+  background:linear-gradient(145deg,rgba(255,255,255,.78),rgba(235,247,255,.92));
+  border:1px solid #dcebf7;box-shadow:0 20px 55px rgba(31,80,125,.08);
+  color:#174b82;font-weight:800;font-size:clamp(19px,2vw,28px);line-height:1.35;letter-spacing:.02em;
+}
+body:not(.logged-in) #login{
+  width:100%!important;max-width:440px!important;margin:0!important;padding:34px 34px 30px!important;
+  background:#fff!important;color:#17324d!important;border:1px solid #dce7f1!important;border-radius:24px!important;
+  box-shadow:0 22px 60px rgba(24,64,103,.13)!important;align-self:center!important;
+}
+#login .login-brand{margin-bottom:24px!important}
+#login .login-logo{width:50px!important;height:50px!important;border-radius:15px!important;background:linear-gradient(135deg,#2563eb,#0ea5a5)!important;box-shadow:0 8px 20px rgba(37,99,235,.18)!important}
+#login .login-brand b{font-size:20px!important;color:#153e68!important;letter-spacing:-.01em}
+#login .login-brand small{font-size:11px!important;color:#73869a!important}
+#login .login-title{margin-bottom:20px!important}
+#login .login-title h2{font-size:29px!important;color:#173f6b!important;letter-spacing:-.025em!important}
+#login .login-title p{font-size:14px!important;color:#718398!important}
+#login .field-label{font-size:12px!important;color:#34536f!important;margin:15px 0 6px!important}
+#login input{height:52px!important;border-radius:12px!important;border:1px solid #cdddea!important;background:#fbfdff!important;color:#17324d!important;font-size:15px!important}
+#login .pwd-toggle{background:#eef4fa!important;color:#31577d!important;border:1px solid #d4e0eb!important}
+#login .login-primary{height:52px!important;border-radius:13px!important;background:linear-gradient(135deg,#2563eb,#1d4ed8)!important;box-shadow:0 10px 22px rgba(37,99,235,.18)!important;font-size:15px!important}
+#loginStatus{font-size:12px!important;background:#f5f9fd!important;color:#60768c!important;border-color:#dfe8f0!important}
+#login .login-note{font-size:11px!important;color:#8292a2!important}
+/* Authenticated top bar */
+body.logged-in .topbar{
+  min-height:66px!important;padding:9px 18px!important;background:linear-gradient(100deg,#174a8b,#2563eb 55%,#0ea5a5)!important;
+  color:#fff!important;border:0!important;box-shadow:0 6px 22px rgba(24,74,139,.18)!important
+}
+body.logged-in .topbar *{color:#fff!important}
+body.logged-in .topbar .brand{font-size:18px!important}
+body.logged-in .topbar .brand small{color:#dcecff!important;font-size:10px!important}
+body.logged-in .brand-mark{background:rgba(255,255,255,.15)!important;border-color:rgba(255,255,255,.22)!important}
+body.logged-in .top-actions .theme-toggle,body.logged-in .top-actions .small{background:rgba(255,255,255,.14)!important;color:#fff!important;border:1px solid rgba(255,255,255,.26)!important}
+body.logged-in main.app{background:#f5f9ff!important;padding:22px 24px 40px!important}
+body.logged-in .pwg-sidebar{background:linear-gradient(180deg,#123f75,#0b315d)!important}
+/* Clear typography and cards */
+body.logged-in .card,body.logged-in .page,body.logged-in .summary-card,body.logged-in .quick-card{
+  color:#17324d!important;background:#fff!important;border:1px solid #dce7f1!important;border-radius:18px!important;box-shadow:0 8px 26px rgba(26,62,96,.065)!important
+}
+body.logged-in h1,body.logged-in h2,body.logged-in h3,body.logged-in h4,body.logged-in p,body.logged-in label{color:#173b66}
+body.logged-in .muted{color:#6e8296!important}
+body.logged-in input,body.logged-in select,body.logged-in textarea{color:#17324d!important;background:#fbfdff!important;border:1px solid #cdddea!important}
+/* Fix the white-on-white table bug */
+body.logged-in .table-wrap{background:#fff!important;border:1px solid #dce7f1!important;border-radius:14px!important;overflow:auto!important}
+body.logged-in table{background:#fff!important;color:#17324d!important}
+body.logged-in thead th,body.logged-in th{background:#eef5fb!important;color:#183b63!important;border-bottom:1px solid #d5e1ec!important;font-weight:800!important}
+body.logged-in tbody td,body.logged-in td{background:#fff!important;color:#29445d!important;border-bottom:1px solid #e1e9f0!important;font-weight:500!important}
+body.logged-in tbody tr:hover td{background:#f7fbff!important}
+/* Dashboard */
+body.logged-in .dashboard-hero,#dash>.dashboard-hero{
+  background:linear-gradient(135deg,#1e63c9 0%,#2563eb 55%,#0ea5a5 100%)!important;border-radius:22px!important;box-shadow:0 16px 36px rgba(31,91,157,.16)!important
+}
+body.logged-in .dashboard-hero *{color:#fff!important}
+body.logged-in .kpi-card{background:#fff!important;color:#17324d!important;border:1px solid #dce7f1!important;border-radius:16px!important;box-shadow:0 7px 18px rgba(25,62,97,.055)!important}
+body.logged-in .kpi-card b{color:#173b66!important;font-weight:800!important}
+body.logged-in .kpi-label,body.logged-in .kpi-card small{color:#6b7f93!important}
+body.logged-in .summary-card *,body.logged-in .quick-card *{color:inherit}
+body.logged-in .summary-card h2,body.logged-in .quick-card h2,body.logged-in .section-title h2{color:#173b66!important}
+/* Pages: buttons/forms */
+body.logged-in .page-title h2{font-size:23px!important;color:#173b66!important;font-weight:800!important}
+body.logged-in button:not(.ghost){border-radius:11px!important}
+body.logged-in button.ghost{background:#fff!important;color:#2563eb!important;border:1px solid #bfd1e2!important}
+/* Dark mode remains readable and consistent */
+body.dark.logged-in main.app{background:#0c1725!important;color:#edf5ff!important}
+body.dark.logged-in .card,body.dark.logged-in .page,body.dark.logged-in .summary-card,body.dark.logged-in .quick-card{background:#122235!important;color:#edf5ff!important;border-color:#29425a!important}
+body.dark.logged-in h1,body.dark.logged-in h2,body.dark.logged-in h3,body.dark.logged-in h4,body.dark.logged-in p,body.dark.logged-in label{color:#eef6ff!important}
+body.dark.logged-in input,body.dark.logged-in select,body.dark.logged-in textarea{background:#0d1a2a!important;color:#eef6ff!important;border-color:#35516a!important}
+body.dark.logged-in .table-wrap,body.dark.logged-in table,body.dark.logged-in tbody td,body.dark.logged-in td{background:#122235!important;color:#e7f1fb!important}
+body.dark.logged-in thead th,body.dark.logged-in th{background:#1a3046!important;color:#d9ecff!important}
+body.dark.logged-in .kpi-card{background:#122235!important;color:#eef6ff!important;border-color:#29425a!important}
+body.dark.logged-in .kpi-card b{color:#fff!important}
+/* Responsive: no crop */
+@media(max-width:800px){
+ body:not(.logged-in) main.app{display:flex!important;flex-direction:column!important;justify-content:center!important;gap:14px!important;padding:22px 14px!important;min-height:100vh!important}
+ body:not(.logged-in) main.app:before{display:none!important}
+ body:not(.logged-in) #login{max-width:430px!important;padding:25px 20px 22px!important;border-radius:20px!important}
+ body:not(.logged-in) #login .login-title h2{font-size:26px!important}
+ body.logged-in main.app{padding:12px 10px 94px!important}
+ body.logged-in .topbar{min-height:58px!important;padding:8px 10px!important}
+ body.logged-in .topbar .brand b{font-size:14px!important}
+ body.logged-in .topbar .brand small{font-size:8px!important}
+ body.logged-in .pwg-sidebar{display:none!important}
+ .dashboard-hero{padding:17px!important;border-radius:18px!important}
+ .dashboard-hero h1{font-size:25px!important}
+ .hero-top{display:block!important}
+ .hero-actions{display:flex!important;flex-direction:row!important;align-items:center!important;justify-content:space-between!important;gap:8px!important}
+ .kpi-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:9px!important}
+ .kpi-card{min-width:0!important;padding:11px!important}
+ .kpi-card b{font-size:21px!important}
+ .kpi-label{font-size:10px!important}
+ .card,.page{padding:13px!important;border-radius:15px!important}
+ .page-title h2{font-size:20px!important}
+ .toolbar{display:flex!important;flex-wrap:wrap!important}
+ .toolbar>*{max-width:100%!important}
+ .table-wrap{width:100%!important;max-width:100%!important;overflow-x:auto!important}
+ .table-wrap table{min-width:720px!important}
+ .recent-grid{grid-template-columns:repeat(2,1fr)!important}
+ .quick-card .menu{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ .quick-card .menu button{min-height:70px!important}
+}
+@media(max-width:430px){
+ body:not(.logged-in) #login{padding:23px 17px 20px!important}
+ body:not(.logged-in) #login .login-brand b{font-size:18px!important}
+ body:not(.logged-in) #login .login-title h2{font-size:24px!important}
+ .kpi-card{min-height:100px!important}
+ .kpi-card b{font-size:19px!important}
+ .hero-actions{gap:6px!important}
+ .hero-actions .pill,.hero-signout{font-size:12px!important}
+}
 </style></head><body><div class="topbar no-print"><div class="brand modern-brand">
   <span class="brand-mark" aria-hidden="true">
     <svg viewBox="0 0 48 48" role="img"><path d="M24 3l17 7v12c0 10.8-6.8 19.8-17 23C13.8 41.8 7 32.8 7 22V10l17-7z" fill="none" stroke="currentColor" stroke-width="2.6"/><path d="M15 25h18M17 21h14M19 17h10M20 30h8" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>
