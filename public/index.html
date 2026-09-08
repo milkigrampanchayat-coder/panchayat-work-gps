@@ -1180,13 +1180,72 @@ input,select,textarea{min-height:44px;border-radius:11px!important;border-color:
 @media(max-width:390px){.kpi-grid{grid-template-columns:1fr 1fr}.quick-card .menu{grid-template-columns:1fr 1fr!important}.kpi-card{gap:7px}.kpi-card .kpi-icon{width:29px;height:29px}.kpi-card b{font-size:17px}.modern-brand b{max-width:170px;overflow:hidden;text-overflow:ellipsis}.theme-gallery{grid-template-columns:1fr 1fr!important}}
 body.dark{--pwg-bg:#08111f;--pwg-card:#101d2e;--pwg-text:#f8fafc}body.dark .pwg-sidebar{background:linear-gradient(180deg,#06101e,#081a2d)}body.dark .summary-card,body.dark .quick-card,body.dark .page,body.dark .card{background:#101d2e!important;border-color:#263b52!important}body.dark input,body.dark select,body.dark textarea{background:#0d1726!important;color:#f8fafc!important;border-color:#3b526b!important}body.dark .quick-card .menu button,body.dark .stat,body.dark td{background:#122235!important;color:#f8fafc!important;border-color:#2a4056!important}body.dark th{background:#172b42!important;color:#bfe0ff!important}.theme-card{cursor:pointer;transition:.18s}.theme-card:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(8,43,92,.10)}
 </style>
-</head><body><div class="topbar no-print"><div class="brand modern-brand">
+<style>
+/* V18.4 Soft Clean UI — final auth and typography override */
+:root{
+  --pwg-bg:#f4f8fc;--pwg-card:#ffffff;--pwg-text:#18324d;--pwg-muted:#66778a;
+  --pwg-primary:#2563d9;--pwg-primary-2:#1d4ed8;--pwg-accent:#12a889;
+  --pwg-line:#dbe5ef;--pwg-shadow:0 18px 50px rgba(31,65,98,.10);
+}
+html,body{min-height:100%;overflow-x:hidden}
+body{background:var(--pwg-bg)!important;color:var(--pwg-text)!important;font-family:Inter,"Segoe UI",Roboto,Arial,sans-serif!important;letter-spacing:.01em}
+/* Before login: only the login screen exists visually. */
+body:not(.logged-in) .topbar,
+body:not(.logged-in) .pwg-sidebar,
+body:not(.logged-in) .mobile-nav{display:none!important}
+body:not(.logged-in) .pwg-shell{display:block!important;min-height:100vh!important}
+body:not(.logged-in) main.app{width:100%!important;max-width:none!important;min-height:100vh!important;padding:24px!important;display:flex!important;align-items:center!important;justify-content:center!important;background:linear-gradient(135deg,#eef6ff 0%,#f8fbff 48%,#edf8f6 100%)!important}
+body:not(.logged-in) #login{display:block!important;width:min(460px,100%)!important;max-width:460px!important;margin:0!important;padding:34px 34px 28px!important;background:rgba(255,255,255,.97)!important;color:#18324d!important;border:1px solid #dbe7f2!important;border-radius:26px!important;box-shadow:0 24px 70px rgba(28,67,105,.15)!important}
+body:not(.logged-in) #dash,body:not(.logged-in) .page{display:none!important}
+#login .login-brand{display:flex!important;align-items:center!important;gap:13px!important;margin-bottom:28px!important}
+#login .login-logo{width:52px!important;height:52px!important;border-radius:16px!important;display:grid!important;place-items:center!important;background:linear-gradient(135deg,#2563d9,#12a889)!important;color:#fff!important;font-size:25px!important;box-shadow:0 10px 24px rgba(37,99,217,.22)!important}
+#login .login-brand b{display:block!important;font-size:21px!important;line-height:1.15!important;color:#163a68!important;font-weight:800!important}
+#login .login-brand small{display:block!important;margin-top:5px!important;color:#70839a!important;font-size:12px!important}
+#login .login-title{text-align:left!important;margin:0 0 24px!important}
+#login .login-title h2{margin:0 0 6px!important;color:#173c69!important;font-size:30px!important;line-height:1.15!important;font-weight:800!important;text-align:left!important}
+#login .login-title p{margin:0!important;color:#6c7f93!important;font-size:14px!important}
+#login:before{display:none!important;content:none!important}
+#login .field-label{display:block!important;margin:16px 0 7px!important;color:#36506a!important;font-size:13px!important;font-weight:700!important}
+#login input{width:100%!important;height:50px!important;padding:0 14px!important;background:#fbfdff!important;color:#17324d!important;border:1px solid #cfddea!important;border-radius:13px!important;outline:none!important;box-shadow:none!important;font-size:15px!important}
+#login input:focus{border-color:#4b83df!important;box-shadow:0 0 0 4px rgba(37,99,217,.10)!important}
+#login input::placeholder{color:#9aaabd!important}
+.password-wrap{position:relative!important;width:100%!important}
+.password-wrap input{padding-right:72px!important}
+#login .pwd-toggle{position:absolute!important;right:8px!important;top:8px!important;width:56px!important;height:34px!important;padding:0!important;background:#eef4fb!important;color:#31577d!important;border:1px solid #d8e3ef!important;border-radius:9px!important;font-size:12px!important;font-weight:700!important}
+#login .login-primary{width:100%!important;height:52px!important;margin-top:22px!important;border:0!important;border-radius:13px!important;background:linear-gradient(135deg,#2563d9,#1d4ed8)!important;color:#fff!important;font-size:15px!important;font-weight:800!important;box-shadow:0 12px 24px rgba(37,99,217,.20)!important}
+#login .login-primary:hover{filter:brightness(1.03)!important}
+#login .login-primary:disabled{opacity:.65!important}
+#loginStatus{margin-top:14px!important;padding:11px 13px!important;border-radius:11px!important;background:#f2f7fc!important;color:#587087!important;border:1px solid #e0e9f1!important;font-size:12px!important;text-align:center!important}
+#login .login-note{margin-top:14px!important;color:#8191a1!important;font-size:11px!important;line-height:1.5!important;text-align:center!important}
+/* Authenticated shell */
+body.logged-in .topbar{background:#fff!important;border-bottom:1px solid #dce6ef!important;box-shadow:0 2px 18px rgba(24,50,77,.05)!important}
+body.logged-in .pwg-shell{min-height:calc(100vh - 65px)!important}
+body.logged-in .pwg-sidebar{background:linear-gradient(180deg,#103b70 0%,#0d315a 100%)!important;border-right:0!important}
+body.logged-in main.app{background:#f4f8fc!important}
+body.logged-in .card{background:#fff!important;color:#18324d!important;border:1px solid #e0e8f0!important;border-radius:18px!important;box-shadow:0 10px 30px rgba(31,65,98,.07)!important}
+body.logged-in .card h1,body.logged-in .card h2,body.logged-in .card h3,body.logged-in .section-title h2{color:#173b66!important}
+body.logged-in .muted{color:#708195!important}
+body.logged-in input,body.logged-in select{background:#fbfdff!important;color:#18324d!important;border:1px solid #d3dfeb!important}
+body.logged-in input:focus,body.logged-in select:focus{outline:none!important;border-color:#4b83df!important;box-shadow:0 0 0 3px rgba(37,99,217,.08)!important}
+body.logged-in button{border-radius:11px!important}
+body.logged-in .dashboard-hero{background:linear-gradient(135deg,#1556a7 0%,#2563d9 52%,#12a889 130%)!important;border-radius:22px!important;box-shadow:0 16px 36px rgba(31,87,151,.16)!important}
+body.logged-in .kpi-card{background:#fff!important;color:#18324d!important;border:1px solid #e0e8f0!important;box-shadow:0 8px 20px rgba(31,65,98,.06)!important;border-radius:16px!important}
+body.logged-in .kpi-label,body.logged-in .kpi-card small{color:#6b7e92!important}
+body.logged-in .kpi-card b{color:#173b66!important}
+@media(max-width:800px){
+ body:not(.logged-in) main.app{padding:16px!important;align-items:center!important}
+ body:not(.logged-in) #login{padding:27px 22px 22px!important;border-radius:22px!important}
+ body:not(.logged-in) #login .login-title h2{font-size:27px!important}
+ body.logged-in main.app{padding:10px 10px 88px!important}
+}
+@media(max-width:430px){body:not(.logged-in) main.app{padding:10px!important}body:not(.logged-in) #login{padding:24px 18px 20px!important}.login-logo{width:46px!important;height:46px!important}.login-brand b{font-size:19px!important}}
+</style></head><body><div class="topbar no-print"><div class="brand modern-brand">
   <span class="brand-mark" aria-hidden="true">
     <svg viewBox="0 0 48 48" role="img"><path d="M24 3l17 7v12c0 10.8-6.8 19.8-17 23C13.8 41.8 7 32.8 7 22V10l17-7z" fill="none" stroke="currentColor" stroke-width="2.6"/><path d="M15 25h18M17 21h14M19 17h10M20 30h8" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>
   </span>
   <span><b>Panchayat Work GPS</b><small>Work Monitoring & Geo-Tagging System</small></span>
 </div><div class="top-actions"><button id="themeBtn" class="theme-toggle small" onclick="toggleTheme()" aria-label="Toggle light and dark mode" title="Toggle light / dark mode"><span class="theme-icon">☀</span><span class="theme-label">Light</span></button><button id="installBtn" class="small hidden" onclick="installApp()">Install App</button></div></div><div class="pwg-shell"><aside class="pwg-sidebar no-print"><div class="side-brand"><div class="side-logo">✦</div><div><b>Panchayat Work GPS</b><small>Digital Panchayat</small></div></div><div class="side-section">MAIN</div><button class="side-nav active" data-side="dash" onclick="showPage('dash')"><span>⌂</span>Dashboard</button><button class="side-nav" data-side="photo" onclick="showPage('photo')"><span>📷</span>Capture Photo</button><button class="side-nav" data-side="database" onclick="showPage('database')"><span>▤</span>Work Database</button><button class="side-nav" data-side="workStatus" onclick="showPage('workStatus')"><span>◔</span>Work Status</button><button class="side-nav" data-side="report" onclick="showPage('report')"><span>▥</span>Reports</button><button class="side-nav" data-side="users" onclick="showPage('users')"><span>♙</span>Users</button><div class="side-section">SETTINGS</div><button class="side-nav" data-side="settings" onclick="showPage('settings')"><span>⚙</span>Settings</button><button class="side-nav" data-side="sync" onclick="showPage('sync')"><span>↻</span>Offline Sync</button><div class="side-bottom"><b>Panchayat Work GPS</b><span>GPS Based Work Monitoring</span><i>● All systems operational</i></div></aside><main class="app">
-<section id="login" class="card login"><div class="login-brand"><div class="login-logo">✦</div><div><b>Panchayat Work GPS</b><small>Secure Work Monitoring System</small></div></div><div class="login-title"><h2>Welcome Back</h2><p>Sign in to continue</p></div><label class="field-label">User ID</label><input id="uid" placeholder="Enter User ID" autocomplete="username"><label class="field-label">Password</label><input id="pwd" type="password" placeholder="Enter Password" autocomplete="current-password"><button id="loginButton" class="login-primary" onclick="login()">Sign In</button><div id="loginStatus" class="status">Secure • Fast • Reliable</div><div class="login-note">Your account permissions determine which modules are available.</div></section>
+<section id="login" class="card login"><div class="login-brand"><div class="login-logo">✦</div><div><b>Panchayat Work GPS</b><small>Secure Work Monitoring System</small></div></div><div class="login-title"><h2>Welcome Back</h2><p>Sign in to continue</p></div><label class="field-label">User ID</label><input id="uid" placeholder="Enter User ID" autocomplete="username"><label class="field-label">Password</label><div class="password-wrap"><input id="pwd" type="password" placeholder="Enter Password" autocomplete="current-password"><button type="button" id="pwdToggle" class="pwd-toggle" onclick="togglePassword()" aria-label="Show password">Show</button></div><button id="loginButton" class="login-primary" onclick="login()">Sign In</button><div id="loginStatus" class="status">Secure • Fast • Reliable</div><div class="login-note">Your account permissions determine which modules are available.</div></section>
 <section id="dash" class="hidden dashboard-page">
 <div class="dashboard-hero">
   <div class="hero-top">
@@ -1277,7 +1336,10 @@ function toggleTheme(){const dark=!document.body.classList.contains('dark');docu
 if(localStorage.getItem('pwg_theme')==='dark')document.body.classList.add('dark');
 updateThemeUI();
 let deferredInstall=null;window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredInstall=e;$('installBtn').classList.remove('hidden')});async function installApp(){if(deferredInstall){deferredInstall.prompt();deferredInstall=null;$('installBtn').classList.add('hidden')}}if('serviceWorker'in navigator)navigator.serviceWorker.register('/sw.js').catch(()=>{});
+function setAuthUI(isLoggedIn){document.body.classList.toggle("logged-in",!!isLoggedIn)}
+function togglePassword(){const i=$("pwd"),b=$("pwdToggle");if(!i||!b)return;const show=i.type==="password";i.type=show?"text":"password";b.textContent=show?"Hide":"Show";b.setAttribute("aria-label",show?"Hide password":"Show password")}
 function requireLogin(){
+  setAuthUI(!!token&&!!user);
   if(!token||!user){
     document.querySelectorAll('.page').forEach(x=>x.classList.add('hidden'));
     $('dash').classList.add('hidden');$('login').classList.remove('hidden');
@@ -1348,7 +1410,7 @@ async function login(){
   $('loginButton').disabled=true;$('loginButton').textContent='Signing in…';
   const j=normalizeUser(await apiPost('login',{userId,password},12000));
   if(!j||!j.token) throw Error('Login response is invalid.');
-  user=j;token=j.token;
+  user=j;token=j.token;setAuthUI(true);
   localStorage.setItem('pwg_token',token);localStorage.setItem('pwg_user',JSON.stringify(user));localStorage.removeItem('pwg_logged_out');
   // Show the dashboard immediately; non-critical sync work continues in the background.
   $('login').classList.add('hidden');$('dash').classList.remove('hidden');
@@ -1360,12 +1422,12 @@ async function login(){
   Promise.resolve().then(refreshActivity).catch(()=>{});
  }catch(e){$('loginStatus').textContent='❌ '+e.message;$('loginStatus').className='status err';$('loginButton').disabled=false;$('loginButton').textContent='Sign In'}
 }
-function logout(){const oldToken=token;localStorage.removeItem('pwg_token');localStorage.setItem('pwg_logged_out','1');token='';user=null;document.querySelectorAll('.page,#dash').forEach(x=>x.classList.add('hidden'));$('login').classList.remove('hidden');$('uid').value='';$('pwd').value='';$('loginStatus').textContent='Signed out.';$('loginStatus').className='status ok';if(oldToken){try{navigator.sendBeacon(API_URL,new Blob([JSON.stringify({action:'logout',token:oldToken,data:{}})],{type:'text/plain;charset=utf-8'}))}catch(e){fetch(new URL(API_URL,window.location.origin),{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({action:'logout',token:oldToken,data:{}}),keepalive:true}).catch(()=>{})}}}
+function logout(){const oldToken=token;setAuthUI(false);localStorage.removeItem('pwg_token');localStorage.setItem('pwg_logged_out','1');token='';user=null;document.querySelectorAll('.page,#dash').forEach(x=>x.classList.add('hidden'));$('login').classList.remove('hidden');$('uid').value='';$('pwd').value='';$('pwd').type='password';if($('pwdToggle'))$('pwdToggle').textContent='Show';$('loginStatus').textContent='Signed out.';$('loginStatus').className='status ok';if(oldToken){try{navigator.sendBeacon(API_URL,new Blob([JSON.stringify({action:'logout',token:oldToken,data:{}})],{type:'text/plain;charset=utf-8'}))}catch(e){fetch(new URL(API_URL,window.location.origin),{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({action:'logout',token:oldToken,data:{}}),keepalive:true}).catch(()=>{})}}}
 async function restoreSession(){
  if(localStorage.getItem('pwg_logged_out')==='1'){token='';user=null;localStorage.removeItem('pwg_token');localStorage.removeItem('pwg_user');requireLogin();return}
  if(!token){requireLogin();return}
  try{user=normalizeUser(JSON.parse(localStorage.getItem('pwg_user')||'null'))}catch(e){user=null}
- if(user){loadSystemBranding();$('login').classList.add('hidden');$('dash').classList.remove('hidden');$('userInfo').textContent='Signed in as '+user.userName+' ('+user.role+')';$('statRole').textContent=user.role;applyMenus();setNet();showPage('dash');updatePending();setTimeout(()=>{primeUserWorkCache().then(()=>{refreshStats();loadSansads()})},250)}
+ if(user){setAuthUI(true);loadSystemBranding();$('login').classList.add('hidden');$('dash').classList.remove('hidden');$('userInfo').textContent='Signed in as '+user.userName+' ('+user.role+')';$('statRole').textContent=user.role;applyMenus();setNet();showPage('dash');updatePending();setTimeout(()=>{primeUserWorkCache().then(()=>{refreshStats();loadSansads()})},250)}
  try{const j=normalizeUser(await apiGet('me',{token},10000));user=j;localStorage.setItem('pwg_user',JSON.stringify(user));$('userInfo').textContent='Signed in as '+user.userName+' ('+user.role+')';$('statRole').textContent=user.role;applyMenus();refreshStats();refreshActivity()}catch(e){
    const msg=String(e.message||e).toLowerCase();
    const authFail=msg.includes('invalid login session')||msg.includes('session expired')||msg.includes('login session');
