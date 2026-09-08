@@ -1368,7 +1368,194 @@ body.dark.logged-in .kpi-card b{color:#fff!important}
  .hero-actions{gap:6px!important}
  .hero-actions .pill,.hero-signout{font-size:12px!important}
 }
-</style></head><body><div class="topbar no-print"><div class="brand modern-brand">
+</style>
+<style>
+/* V18.6 NAVY 3D + RESPONSIVE POLISH */
+:root{
+  --navy-950:#071a33;
+  --navy-900:#0a2447;
+  --navy-800:#0e315f;
+  --blue-700:#1757c9;
+  --blue-600:#2563eb;
+  --teal-500:#12a6a6;
+  --surface:#f4f8fc;
+  --surface-2:#ffffff;
+  --ink:#132b49;
+  --muted-2:#64778c;
+}
+
+html{scroll-behavior:smooth}
+body.logged-in{background:var(--surface)!important;color:var(--ink)!important}
+body.logged-in .topbar{position:sticky!important;top:0!important;z-index:1000!important}
+body.logged-in main.app{min-width:0!important;overflow:visible!important}
+
+/* Desktop shell */
+@media(min-width:801px){
+  body.logged-in .pwg-sidebar{
+    width:244px!important;top:66px!important;
+    padding:18px 12px 16px!important;
+    background:linear-gradient(180deg,var(--navy-900) 0%,var(--navy-950) 100%)!important;
+    box-shadow:inset -1px 0 rgba(255,255,255,.07),10px 0 32px rgba(7,26,51,.14)!important;
+  }
+  body.logged-in main.app{
+    margin-left:244px!important;max-width:none!important;
+    width:calc(100% - 244px)!important;
+    padding:24px 28px 48px!important;
+  }
+  body.logged-in .side-brand{
+    padding:13px 12px!important;margin-bottom:16px!important;
+    border-radius:16px!important;
+    background:linear-gradient(145deg,rgba(37,99,235,.26),rgba(18,166,166,.10))!important;
+    border:1px solid rgba(255,255,255,.10)!important;
+    box-shadow:inset 0 1px rgba(255,255,255,.10),0 10px 24px rgba(0,0,0,.18)!important;
+  }
+  body.logged-in .side-logo{
+    width:42px!important;height:42px!important;border-radius:13px!important;
+    background:linear-gradient(145deg,#2d73e8,#0ea5a5)!important;
+    box-shadow:inset 0 1px rgba(255,255,255,.28),0 7px 16px rgba(0,0,0,.25)!important;
+  }
+  body.logged-in .side-section{color:#9db4d1!important;font-size:10px!important;letter-spacing:1.4px!important;font-weight:800!important;padding:10px 12px 7px!important}
+  body.logged-in .side-nav{
+    width:100%!important;min-height:48px!important;margin:4px 0!important;padding:10px 12px!important;
+    display:flex!important;align-items:center!important;gap:11px!important;
+    background:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.025))!important;
+    color:#dce8f7!important;border:1px solid rgba(255,255,255,.055)!important;border-radius:13px!important;
+    box-shadow:inset 0 1px rgba(255,255,255,.06),0 5px 12px rgba(0,0,0,.14)!important;
+    transition:transform .18s ease,background .18s ease,box-shadow .18s ease!important;
+  }
+  body.logged-in .side-nav:hover{
+    transform:translateX(3px)!important;
+    background:linear-gradient(100deg,rgba(37,99,235,.30),rgba(18,166,166,.14))!important;
+    box-shadow:inset 0 1px rgba(255,255,255,.10),0 8px 18px rgba(0,0,0,.20)!important;
+  }
+  body.logged-in .side-nav.active{
+    background:linear-gradient(100deg,#1d5ddd,#1769cf 55%,#168eaa)!important;
+    color:#fff!important;border-color:rgba(255,255,255,.18)!important;
+    box-shadow:inset 0 1px rgba(255,255,255,.25),0 9px 20px rgba(9,72,160,.34)!important;
+  }
+  body.logged-in .side-nav span:first-child{width:24px;text-align:center;font-size:17px!important;filter:drop-shadow(0 2px 2px rgba(0,0,0,.2))}
+  body.logged-in .side-bottom{
+    margin-top:auto!important;padding:13px!important;border-radius:15px!important;
+    background:linear-gradient(145deg,#0c2e58,#081d38)!important;
+    border:1px solid rgba(255,255,255,.08)!important;
+    box-shadow:inset 0 1px rgba(255,255,255,.06),0 10px 24px rgba(0,0,0,.20)!important;
+  }
+  body.logged-in .dashboard-page{width:100%!important;max-width:1420px!important;margin:0 auto!important}
+  body.logged-in .dashboard-hero{margin-top:0!important}
+}
+
+/* Keep the top header visually lighter than the sidebar */
+body.logged-in .topbar{
+  background:linear-gradient(100deg,#103a70 0%,#1b59c8 58%,#149e9f 100%)!important;
+  box-shadow:0 5px 18px rgba(10,36,71,.18)!important;
+}
+
+/* Modern 3D dashboard cards */
+body.logged-in .dashboard-hero{
+  box-shadow:0 18px 38px rgba(18,67,130,.20),inset 0 1px rgba(255,255,255,.12)!important;
+}
+body.logged-in .kpi-card{
+  position:relative!important;overflow:hidden!important;
+  box-shadow:0 8px 18px rgba(15,48,85,.08),0 2px 0 rgba(255,255,255,.75) inset!important;
+  transition:transform .18s ease,box-shadow .18s ease!important;
+}
+body.logged-in .kpi-card:after{content:"";position:absolute;right:-24px;top:-24px;width:72px;height:72px;border-radius:50%;background:rgba(37,99,235,.045)!important}
+body.logged-in .kpi-card:hover{transform:translateY(-2px)!important;box-shadow:0 13px 26px rgba(15,48,85,.12),0 2px 0 rgba(255,255,255,.85) inset!important}
+
+/* Clean page headings and form controls */
+body.logged-in .page-title{align-items:center!important}
+body.logged-in .page-title .page-icon{box-shadow:inset 0 1px rgba(255,255,255,.7),0 5px 12px rgba(24,65,110,.08)!important}
+body.logged-in input,body.logged-in select,body.logged-in textarea{min-height:48px!important;border-radius:13px!important;box-shadow:inset 0 1px rgba(255,255,255,.85)!important}
+body.logged-in button{box-shadow:0 4px 10px rgba(16,56,100,.08)!important}
+body.logged-in button:active{transform:translateY(1px)!important}
+
+/* Tables: strong contrast, no white-on-white */
+body.logged-in .table-wrap{box-shadow:0 7px 18px rgba(20,52,88,.055)!important}
+body.logged-in thead th{font-size:13px!important;letter-spacing:.01em!important}
+body.logged-in tbody td{font-size:13px!important;line-height:1.35!important}
+
+/* Mobile: compact, touch-friendly and visually separate bottom navigation */
+@media(max-width:800px){
+  html,body{width:100%!important;overflow-x:hidden!important}
+  body.logged-in main.app{width:100%!important;max-width:none!important;margin:0!important;padding:12px 10px 104px!important}
+  body.logged-in .topbar{min-height:60px!important;padding:8px 12px!important}
+  body.logged-in .topbar .brand-mark{width:38px!important;height:38px!important;border-radius:12px!important}
+  body.logged-in .topbar .brand b{font-size:15px!important;letter-spacing:-.02em!important}
+  body.logged-in .topbar .brand small{display:none!important}
+  body.logged-in .pwg-sidebar{display:none!important}
+  body.logged-in .dashboard-page{width:100%!important;max-width:none!important}
+  body.logged-in .dashboard-hero{margin:0!important;padding:16px!important;border-radius:20px!important}
+  body.logged-in .dashboard-hero h1{font-size:27px!important;line-height:1.1!important}
+  body.logged-in .hero-user{font-size:12px!important}
+  body.logged-in .hero-actions{margin-top:11px!important}
+  body.logged-in .kpi-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:9px!important}
+  body.logged-in .kpi-card{min-width:0!important;min-height:104px!important;padding:11px!important;border-radius:15px!important;gap:8px!important}
+  body.logged-in .kpi-card .kpi-icon{width:31px!important;height:31px!important;flex-basis:31px!important;border-radius:9px!important;font-size:14px!important}
+  body.logged-in .kpi-card b{font-size:20px!important;overflow-wrap:anywhere!important}
+  body.logged-in .kpi-label{font-size:9px!important}
+  body.logged-in .kpi-status{font-size:9px!important}
+  body.logged-in .summary-card,body.logged-in .quick-card{margin-top:11px!important;padding:13px!important;border-radius:16px!important}
+  body.logged-in .page{padding:13px!important;border-radius:16px!important}
+  body.logged-in .page-title h2{font-size:20px!important}
+  body.logged-in .toolbar{gap:7px!important}
+  body.logged-in .toolbar>*{max-width:100%!important;min-width:0!important}
+  body.logged-in .table-wrap{width:100%!important;max-width:100%!important;overflow-x:auto!important;-webkit-overflow-scrolling:touch!important}
+  body.logged-in .table-wrap table{min-width:720px!important}
+
+  /* New 3D mobile nav */
+  body.logged-in .mobile-nav{
+    left:10px!important;right:10px!important;bottom:10px!important;width:auto!important;
+    display:grid!important;grid-template-columns:repeat(5,minmax(0,1fr))!important;gap:5px!important;
+    padding:6px!important;border-radius:20px!important;
+    background:rgba(7,26,51,.96)!important;border:1px solid rgba(255,255,255,.16)!important;
+    box-shadow:0 12px 34px rgba(4,18,38,.32),inset 0 1px rgba(255,255,255,.12)!important;
+    backdrop-filter:blur(14px)!important;z-index:9999!important;
+  }
+  body.logged-in .mobile-nav button{
+    width:100%!important;min-width:0!important;height:58px!important;min-height:58px!important;
+    padding:5px 2px!important;border-radius:15px!important;background:transparent!important;
+    color:#b9c9dc!important;border:1px solid transparent!important;
+    display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:2px!important;
+    box-shadow:none!important;font-size:11px!important;font-weight:700!important;
+  }
+  body.logged-in .mobile-nav button .nav-icon{
+    width:28px!important;height:28px!important;display:grid!important;place-items:center!important;
+    border-radius:9px!important;background:#102f57!important;color:#dcecff!important;
+    font-size:17px!important;line-height:1!important;box-shadow:inset 0 1px rgba(255,255,255,.10)!important;
+  }
+  body.logged-in .mobile-nav button>span:last-child{font-size:9px!important;line-height:11px!important;color:#b9c9dc!important;white-space:nowrap!important}
+  body.logged-in .mobile-nav button.active{
+    background:linear-gradient(145deg,#1f5fe0,#0f9fa5)!important;color:#fff!important;
+    border-color:rgba(255,255,255,.22)!important;
+    box-shadow:inset 0 1px rgba(255,255,255,.24),0 7px 15px rgba(0,0,0,.24)!important;
+  }
+  body.logged-in .mobile-nav button.active .nav-icon{background:rgba(255,255,255,.18)!important;color:#fff!important}
+  body.logged-in .mobile-nav button.active>span:last-child{color:#fff!important}
+}
+
+@media(max-width:390px){
+  body.logged-in main.app{padding-left:8px!important;padding-right:8px!important;padding-bottom:100px!important}
+  body.logged-in .dashboard-hero{padding:14px!important}
+  body.logged-in .dashboard-hero h1{font-size:24px!important}
+  body.logged-in .kpi-card{min-height:98px!important;padding:9px!important}
+  body.logged-in .kpi-card b{font-size:18px!important}
+  body.logged-in .mobile-nav{left:7px!important;right:7px!important;bottom:7px!important}
+  body.logged-in .mobile-nav button{height:55px!important;min-height:55px!important}
+}
+
+/* Dark mode: keep the same hierarchy */
+body.dark.logged-in .pwg-sidebar{background:linear-gradient(180deg,#06182e,#040f20)!important}
+body.dark.logged-in main.app{background:#091625!important}
+body.dark.logged-in .card,body.dark.logged-in .page,body.dark.logged-in .summary-card,body.dark.logged-in .quick-card{box-shadow:0 10px 26px rgba(0,0,0,.20),inset 0 1px rgba(255,255,255,.03)!important}
+body.dark.logged-in .mobile-nav{background:rgba(3,13,27,.97)!important}
+
+/* Login final polish */
+body:not(.logged-in) #login{box-shadow:0 26px 70px rgba(24,64,103,.16),0 2px 0 rgba(255,255,255,.9) inset!important}
+body:not(.logged-in) #login .login-primary{letter-spacing:.01em!important}
+body:not(.logged-in) #login input{font-family:"Trebuchet MS","Segoe UI",Arial,sans-serif!important}
+
+</style>
+</head><body><div class="topbar no-print"><div class="brand modern-brand">
   <span class="brand-mark" aria-hidden="true">
     <svg viewBox="0 0 48 48" role="img"><path d="M24 3l17 7v12c0 10.8-6.8 19.8-17 23C13.8 41.8 7 32.8 7 22V10l17-7z" fill="none" stroke="currentColor" stroke-width="2.6"/><path d="M15 25h18M17 21h14M19 17h10M20 30h8" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>
   </span>
