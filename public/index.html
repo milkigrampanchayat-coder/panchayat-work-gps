@@ -14,6 +14,26 @@
 /* Settings / legacy module compatibility */
 .settings-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.settings-panel{background:#fff;border:1px solid var(--line);border-radius:17px;padding:18px}.theme-gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.theme-card{border:1px solid var(--line);border-radius:14px;padding:9px;background:#fff}.theme-preview-lab{margin-top:15px}.color-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.modal{position:fixed;inset:0;background:rgba(5,20,45,.55);display:grid;place-items:center;z-index:80}.modal>div{background:#fff;border-radius:18px;padding:20px;width:min(520px,92vw);box-shadow:var(--shadow3)}.camera-preview,.preview-stage{border:1px solid var(--line);border-radius:15px;background:#FBF4EC;padding:12px}.theme-image{max-width:100%;border-radius:10px}.recent-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 @media(max-width:700px){.settings-grid,.recent-grid{grid-template-columns:1fr}.theme-gallery{grid-template-columns:repeat(2,1fr)}}
+
+/* V18.8 correction: authentication visibility, mobile sign-out and orange/cream/black lock */
+body:not(.logged-in) .topbar,body:not(.logged-in) .pwg-sidebar,body:not(.logged-in) #mobileNav{display:none!important}
+body:not(.logged-in) .app{position:fixed;inset:0;left:0;top:0;bottom:0;padding:0;overflow:auto}
+body:not(.logged-in) .login-screen{min-height:100vh;border-radius:0;box-shadow:none}
+.pwg-sidebar{background:linear-gradient(180deg,#17130F 0%,#0D0B09 100%)}
+.side-section{color:#E8A46D}
+.side-nav.active{background:linear-gradient(135deg,#FF8A1F,#D85C0F);box-shadow:0 8px 18px rgba(0,0,0,.25),inset 0 1px rgba(255,255,255,.25)}
+.dashboard-hero{background:linear-gradient(120deg,#17130F 0%,#6B3417 58%,#E86F1E 100%)}
+.hero-grid-lines{background-image:linear-gradient(rgba(255,255,255,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.055) 1px,transparent 1px)}
+.kpi-icon,.login-logo,.pwd-toggle{color:#E86F1E}
+.quick-item .quick-icon.blue,.quick-item .quick-icon.teal,.quick-item .quick-icon.navy,.quick-item .quick-icon.amber,.quick-item .quick-icon.purple{color:#E86F1E!important;background:#FFF0DF!important}
+.quick-item:nth-child(3){background:#17130F;color:#FFF7F0;border-color:#17130F}
+.quick-item:nth-child(3) small{color:#CFC0B3}
+.quick-item:nth-child(3) .quick-icon{background:#2A211B!important;color:#FF9A3D!important}
+.good,.warn,.top-status{color:#D85C0F}
+.camera{background:#E86F1E;border-color:#E86F1E}
+.hero-signout{display:inline-flex!important}
+@media(max-width:900px){.hero-actions{flex-wrap:wrap}.hero-actions .hero-signout{display:inline-flex!important;padding:7px 10px}.pwg-sidebar{background:linear-gradient(180deg,#17130F,#0D0B09)}.mobile-nav{background:rgba(23,19,15,.98)}.mobile-nav button.active{background:linear-gradient(145deg,#FF8A1F,#C9550E)}}
+
 /* Dark theme remains controlled by existing JS variables/classes */
 body.dark{--bg:#071321;--card:#17130F;--text:#FFF7F0;--muted:#B9ADA2;--line:#3A3028}body.dark .topbar,body.dark .login-panel,body.dark .quick-card,body.dark .summary-card,body.dark .activity-report,body.dark .recent-fallback,body.dark .settings-panel,body.dark .theme-card,body.dark .login-card{background:#17130F;color:var(--text)}body.dark .topbar{border-color:#3A3028}body.dark input,body.dark select,body.dark .quick-item,body.dark .table-wrap td,body.dark .secondary,.dark .small{background:#241D18;color:var(--text);border-color:#493A30}body.dark .table-wrap th{background:#2A211B;color:#FFF7F0}body.dark .kpi-card{background:#fff;color:#17130F}body.dark .login-screen{border-color:#3A3028}body.dark .login-title p,body.dark .login-note{color:#B9ADA2}
 
@@ -55,6 +75,7 @@ body.dark{--bg:#071321;--card:#17130F;--text:#FFF7F0;--muted:#B9ADA2;--line:#3A3
     <div class="side-section">SYSTEM</div>
     <button class="side-nav" data-side="settings" onclick="showPage('settings')"><span>⚙</span>Settings</button>
     <button class="side-nav" data-side="sync" onclick="showPage('sync')"><span>↻</span>Offline Sync</button>
+    <button class="side-nav side-logout" onclick="logout()"><span>↪</span>Sign out</button>
     <div class="side-bottom"><b>System Status</b><span>GPS based work monitoring</span><i>● All systems operational</i></div>
   </aside>
   <main class="app">
@@ -280,7 +301,41 @@ async function resetSystem(){if(!isMaster())return; if(!confirm('সব Work এ
 let statusData=[];async function loadWorkStatus(){if(!isAdmin())return;try{statusData=await apiGet('database',{token},12000);renderWorkStatus()}catch(e){$('statusSummary').textContent='❌ '+e.message}}
 function renderWorkStatus(){const q=String($('statusSearch')?.value||'').toLowerCase();const f=$('statusFilter')?.value||'ALL';const rows=(statusData||[]).filter(x=>{const n=(x.workCode+' '+x.workName+' '+x.sansadNo+' '+x.user).toLowerCase();const c=(x.photos||[]).filter(Boolean).length;const st=c>=4?'COMPLETED':c?'IN PROGRESS':'PENDING';return (!q||n.includes(q))&&(f==='ALL'||f===st)});$('statusSummary').textContent='Showing '+rows.length+' work(s).';$('statusBody').innerHTML=rows.map(x=>{const c=(x.photos||[]).filter(Boolean).length;const st=c>=4?'COMPLETED':c?'IN PROGRESS':'PENDING';return '<tr><td>'+esc(x.workCode)+'</td><td>'+esc(x.workName)+'</td><td>'+esc(x.sansadNo)+'</td><td>'+c+'/4</td><td>'+st+'</td><td>'+esc(x.user||'—')+'</td></tr>'}).join('')}
 window.addEventListener('load',()=>{loadSystemBranding();restoreSession();setTimeout(()=>syncQueue(),1500);setInterval(async()=>{if(token&&navigator.onLine&&(await queueAll()).length)syncQueue()},30000)});
-async function refreshStats(){const cached=await cacheGet(userDatabaseCacheKey());if(cached){dbData=cached;$('statWorks').textContent=dbData.length;$('summaryWorks').textContent=dbData.length;$('summaryFill').style.width=(dbData.length?Math.min(100,Math.max(12,dbData.length*4)):0)+'%'}updatePending();if(!navigator.onLine)return;try{const fresh=await apiGet('database',{token});dbData=fresh;await cacheSet(userDatabaseCacheKey(),fresh);$('statWorks').textContent=fresh.length;$('statDoneWorks').textContent=fresh.filter(x=>Array.isArray(x.photos)&&x.photos.filter(Boolean).length>=4).length;$('summaryWorks').textContent=fresh.length;$('summaryFill').style.width=(fresh.length?Math.min(100,Math.max(12,fresh.length*4)):0)+'%'}catch(e){} await refreshActivity();}async function loadSansads(){
+async function refreshStats(){
+  try{
+    let rows=await cacheGet(userDatabaseCacheKey());
+    if(!Array.isArray(rows)||!rows.length){
+      try{rows=await apiGet('database',{token},15000)}catch(e){
+        try{rows=await apiGet('report',{token},15000)}catch(e2){rows=[]}
+      }
+    } else if(navigator.onLine){
+      try{const fresh=await apiGet('database',{token},15000);if(Array.isArray(fresh))rows=fresh}catch(e){}
+    }
+    dbData=Array.isArray(rows)?rows:[];
+    await cacheSet(userDatabaseCacheKey(),dbData);
+    const photoCount=r=>Array.isArray(r.photos)?r.photos.filter(v=>v!==''&&v!==null&&v!==undefined).length:0;
+    const done=dbData.filter(r=>photoCount(r)>=4).length;
+    const pending=dbData.reduce((n,r)=>n+Math.max(0,4-photoCount(r)),0);
+    const myName=String(user?.userName||'').trim().toLowerCase();
+    const myId=String(user?.userId||'').trim().toLowerCase();
+    const mine=dbData.filter(r=>String(r.user||r.userName||r.createdBy||'').trim().toLowerCase()===myName || String(r.userId||'').trim().toLowerCase()===myId);
+    const myPhotos=mine.reduce((n,r)=>n+photoCount(r),0);
+    const myWorks=mine.length;
+    if($('statWorks'))$('statWorks').textContent=dbData.length;
+    if($('statDoneWorks'))$('statDoneWorks').textContent=done;
+    if($('statPending'))$('statPending').textContent=pending;
+    if($('statMyPhotos'))$('statMyPhotos').textContent=myPhotos;
+    if($('statMyWorks'))$('statMyWorks').textContent=myWorks;
+    if($('summaryWorks'))$('summaryWorks').textContent=dbData.length;
+    if($('summaryPending'))$('summaryPending').textContent=pending;
+    if($('summaryDoneBig'))$('summaryDoneBig').textContent=done;
+    if($('summaryPendingBig'))$('summaryPendingBig').textContent=pending;
+    if($('summaryFill'))$('summaryFill').style.width=(dbData.length?Math.min(100,Math.max(12,done/dbData.length*100)):0)+'%';
+    await updatePending();
+  }catch(e){console.warn('Dashboard stats refresh failed',e)}
+  try{await refreshActivity()}catch(e){}
+}
+async function loadSansads(){
  const cached=await cacheGet('sansads_'+String(user?.userId||'guest'));
  if(cached&&Array.isArray(cached))renderSansads(cached);
  try{const s=await apiGet('sansads',{token},12000);await cacheSet('sansads_'+String(user?.userId||'guest'),s);renderSansads(s)}catch(e){
