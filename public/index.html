@@ -70,6 +70,33 @@ body.dark{--bg:#15110E!important;--card:#201A15!important;--text:#FFF7F0!importa
 
 
 
+
+<style id="pwg-final-ui-lock">
+/* FINAL UI LOCK — Orange + Cream + Black. Functional JS/backend untouched. */
+:root{--fx-orange:#F47A12;--fx-orange2:#FF9A2E;--fx-black:#17130F;--fx-black2:#0E0C0A;--fx-cream:#FFF9F1;--fx-cream2:#FFFDF9;--fx-bg:#F6EEE4;--fx-line:#E7D5C2;--fx-shadow:0 10px 0 rgba(62,32,12,.06),0 16px 30px rgba(34,20,10,.14);--fx-shadow-btn:0 5px 0 rgba(143,57,5,.22),0 10px 22px rgba(229,95,11,.22)}
+html,body{background:var(--fx-bg)!important;color:var(--fx-black)!important}
+/* Desktop login matches the requested split reference: black/orange left + cream right. */
+body:not(.logged-in) .app{background:var(--fx-bg)!important}
+.login-screen{grid-template-columns:1fr 1fr!important;background:var(--fx-cream2)!important;border:0!important;border-radius:0!important;box-shadow:none!important}
+.login-visual{background:linear-gradient(150deg,#0E0C0A 0%,#17130F 55%,#B45318 100%)!important;min-height:100vh!important}
+.login-visual-inner{max-width:560px;padding:0 70px!important;position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);}
+.login-kicker{display:none!important}.login-visual h1{font-size:clamp(42px,4.6vw,66px)!important;line-height:1.02!important;letter-spacing:-2px!important;margin:0!important;color:#fff!important}.login-visual p{font-size:15px!important;color:#FFE6CF!important;margin-top:18px!important;max-width:340px!important}.login-emblem,.login-points{display:none!important}
+.login-panel{background:var(--fx-cream2)!important;padding:56px 8%!important;align-items:center!important}.login-card{width:min(420px,100%)!important}.login-card-brand{margin-bottom:34px!important}.login-logo{background:var(--fx-orange)!important;color:#fff!important;box-shadow:0 10px 20px rgba(229,95,11,.22)!important}.login-title h2{font-size:34px!important;color:var(--fx-black)!important}.login-title p{font-size:13px!important}.field-label{color:#241A14!important}.login-card input{height:52px!important;border-radius:14px!important;background:#FFF9F2!important;border:1px solid #E2CDB8!important;color:#17130F!important}.login-card input:focus{border-color:#F47A12!important;box-shadow:0 0 0 4px rgba(244,122,18,.13)!important}.pwd-toggle{background:#FFF0DF!important;color:#C9570B!important;border:1px solid #F0C99F!important}.login-primary{height:52px!important;border-radius:14px!important;background:linear-gradient(145deg,#FF8A1F,#E45F0B)!important;box-shadow:var(--fx-shadow-btn)!important}.login-primary:active{transform:translateY(2px)!important;box-shadow:0 2px 0 rgba(143,57,5,.22),0 5px 12px rgba(229,95,11,.18)!important}
+/* All action buttons: centered, dimensional and consistent. */
+button{transition:transform .16s ease,box-shadow .16s ease,filter .16s ease!important}
+.toolbar button,.page>button,.sync button,.small,.secondary,.success,.danger,.ghost,.camera,.quick-save,.hero-signout,.theme-toggle{display:inline-flex!important;align-items:center!important;justify-content:center!important;text-align:center!important;vertical-align:middle!important;min-height:42px!important;border-radius:13px!important;font-weight:850!important;letter-spacing:.05px!important}
+.toolbar button:not(.secondary):not(.ghost):not(.danger),.page>button:not(.secondary):not(.ghost):not(.danger),.camera,.quick-save,.success{background:linear-gradient(145deg,#FF9A2E,#E45F0B)!important;color:#fff!important;border:1px solid #D95A0A!important;box-shadow:var(--fx-shadow-btn)!important}
+.toolbar .secondary,.secondary,.small,.ghost{background:linear-gradient(180deg,#FFFDF9,#FFF3E6)!important;color:#241A14!important;border:1px solid #E4CDB5!important;box-shadow:0 4px 0 rgba(94,57,30,.08),0 8px 18px rgba(44,27,13,.10)!important}
+.danger{background:linear-gradient(145deg,#241B16,#0E0C0A)!important;color:#fff!important;border:1px solid #0E0C0A!important;box-shadow:0 5px 0 rgba(0,0,0,.25),0 10px 20px rgba(0,0,0,.18)!important}
+button:hover{filter:brightness(1.03);transform:translateY(-2px)!important}.toolbar button:active,.page>button:active,.small:active,.secondary:active,.success:active,.danger:active,.ghost:active,.camera:active,.quick-save:active{transform:translateY(2px)!important}
+/* Quick Access — large centered cards with clean 3D depth. */
+.quick-grid{grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:16px!important}.quick-item{position:relative!important;min-height:156px!important;padding:20px!important;align-items:center!important;justify-content:center!important;text-align:center!important;background:linear-gradient(145deg,#FFFDF9 0%,#FFF6EA 100%)!important;border:1px solid #E6D1BC!important;border-radius:20px!important;box-shadow:0 5px 0 rgba(92,54,27,.06),0 15px 28px rgba(45,27,13,.11)!important}.quick-item:hover{transform:translateY(-5px)!important;box-shadow:0 7px 0 rgba(92,54,27,.06),0 22px 34px rgba(45,27,13,.16)!important;border-color:#E7A46D!important}.quick-icon,.quick-icon.blue,.quick-icon.navy,.quick-icon.teal,.quick-icon.amber,.quick-icon.purple{width:48px!important;height:48px!important;border-radius:15px!important;margin:0 0 12px!important;display:grid!important;place-items:center!important;background:linear-gradient(145deg,#FFF0DF,#FFE2C4)!important;color:#E45F0B!important;font-size:21px!important;box-shadow:inset 0 1px rgba(255,255,255,.85),0 6px 12px rgba(208,93,11,.12)!important}.quick-item b{font-size:15px!important;color:#17130F!important;line-height:1.15!important}.quick-item small{font-size:10px!important;color:#776A61!important;margin-top:6px!important}.quick-arrow{position:absolute;right:14px;bottom:12px;width:25px;height:25px;border-radius:9px;display:grid;place-items:center;background:#17130F;color:#fff;font-size:13px;font-weight:900;box-shadow:0 4px 8px rgba(0,0,0,.18)}
+/* Keep desktop sidebar readable and dimensional. */
+.side-nav{justify-content:flex-start!important;text-align:left!important;min-height:46px!important;padding:12px 14px!important;border-radius:14px!important;box-shadow:inset 0 1px rgba(255,255,255,.02)!important}.side-nav span{display:grid!important;place-items:center!important;width:26px!important;height:26px!important;flex:0 0 26px!important;border-radius:8px!important;background:rgba(255,255,255,.08)!important}.side-nav.active{box-shadow:0 7px 0 rgba(91,35,7,.20),0 14px 24px rgba(0,0,0,.22),inset 0 1px rgba(255,255,255,.30)!important}.side-brand{padding-bottom:22px!important}.side-brand b{font-size:14px!important}.side-brand small{font-size:9px!important}
+/* Mobile: retain the existing structure, only refine buttons/cards and spacing. */
+@media(max-width:900px){.login-screen{grid-template-columns:1fr!important}.login-visual{min-height:270px!important}.login-visual-inner{position:relative;top:auto;transform:none;padding:42px 28px!important}.login-visual h1{font-size:34px!important}.login-visual p{font-size:12px!important}.login-panel{padding:30px 20px!important}.quick-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:12px!important}.quick-item{min-height:148px!important;padding:16px 12px!important}.quick-item b{font-size:13px!important}.quick-item small{font-size:9px!important}.quick-arrow{right:10px;bottom:10px}.toolbar{gap:9px!important}.toolbar button{min-height:44px!important}.mobile-nav{background:#17130F!important}.mobile-nav button.active{background:linear-gradient(145deg,#FF9A2E,#E45F0B)!important;color:#17130F!important;box-shadow:0 6px 0 rgba(91,35,7,.22),0 12px 20px rgba(0,0,0,.25)!important}.mobile-nav button{min-height:58px!important;text-align:center!important;justify-content:center!important;align-items:center!important}.nav-icon{display:grid!important;place-items:center!important}}
+@media(max-width:560px){.login-visual{min-height:235px!important}.login-visual-inner{padding:34px 24px!important}.login-visual h1{font-size:30px!important}.login-panel{padding:24px 18px!important}.quick-item{min-height:142px!important}.quick-item b{font-size:12px!important}.quick-item small{font-size:8px!important}.quick-icon{width:44px!important;height:44px!important}}
+</style>
 </head><body><div class="topbar no-print">
   <div class="top-left">
     <button class="icon-btn menu" aria-label="Menu" onclick="document.querySelector('.pwg-sidebar')?.classList.toggle('open')">☰</button>
@@ -108,8 +135,8 @@ body.dark{--bg:#15110E!important;--card:#201A15!important;--text:#FFF7F0!importa
         <div class="login-visual-inner">
           <div class="login-emblem">✦</div>
           <div class="login-kicker">PANCHAYAT WORK GPS</div>
-          <h1>Smart Work<br>Monitoring System</h1>
-          <p>GPS based work tracking, geo-tagged photos and transparent Panchayat monitoring — all in one secure platform.</p>
+          <h1>PANCHAYAT<br>WORK GPS</h1>
+          <p>Secure Work Monitoring System</p>
           <div class="login-points"><span>✓ GPS verified work photos</span><span>✓ Real-time work progress</span><span>✓ Role-based secure access</span></div>
         </div>
         <div class="login-wave"></div>
@@ -143,13 +170,15 @@ body.dark{--bg:#15110E!important;--card:#201A15!important;--text:#FFF7F0!importa
       </div>
       <div class="reference-row">
         <div class="quick-card">
-        <div class="section-title"><div><h2>Quick Access</h2><p class="muted">Frequently used work management modules</p></div><span class="summary-badge">5 shortcuts</span></div>
+        <div class="section-title"><div><h2>Quick Access</h2><p class="muted">Open a section in full-page mode</p></div><span class="summary-badge">7 modules</span></div>
         <div class="quick-grid">
-          <button id="photoDbBtn" class="quick-item" onclick="showPage('photo')"><span class="quick-icon blue">📷</span><b>Capture Photo</b><small>GPS-tagged photos</small></button>
-          <button id="databaseBtn" class="quick-item" onclick="showPage('database')"><span class="quick-icon navy">▤</span><b>Work Database</b><small>View work records</small></button>
-          <button id="reportBtn" class="quick-item" onclick="showPage('report')"><span class="quick-icon teal">▥</span><b>Reports</b><small>Search & review</small></button>
-          <button id="statusBtn" class="quick-item" onclick="showPage('workStatus')"><span class="quick-icon amber">◔</span><b>Work Status</b><small>Track progress</small></button>
-          <button id="userBtn" class="quick-item" onclick="showPage('users')"><span class="quick-icon purple">♙</span><b>Users</b><small>Manage access</small></button>
+          <button id="photoDbBtn" class="quick-item" onclick="showPage('photo')"><span class="quick-icon blue">📷</span><b>Capture Photo</b><small>Take photo + GPS</small><span class="quick-arrow">→</span></button>
+          <button id="databaseBtn" class="quick-item" onclick="showPage('database')"><span class="quick-icon navy">▤</span><b>Work Database</b><small>Works & Excel import</small><span class="quick-arrow">→</span></button>
+          <button id="photoDatabaseBtn" class="quick-item" onclick="showPage('photoDatabase')"><span class="quick-icon teal">🖼️</span><b>Photo Database</b><small>Preview saved photos</small><span class="quick-arrow">→</span></button>
+          <button id="statusBtn" class="quick-item" onclick="showPage('workStatus')"><span class="quick-icon amber">◔</span><b>Work Status</b><small>Track progress</small><span class="quick-arrow">→</span></button>
+          <button id="reportBtn" class="quick-item" onclick="showPage('report')"><span class="quick-icon purple">📊</span><b>Reports</b><small>Search & export</small><span class="quick-arrow">→</span></button>
+          <button id="userBtn" class="quick-item" onclick="showPage('users')"><span class="quick-icon navy">👥</span><b>User Management</b><small>Users & permissions</small><span class="quick-arrow">→</span></button>
+          <button id="syncBtn" class="quick-item" onclick="showPage('sync')"><span class="quick-icon teal">↔</span><b>Offline Sync</b><small>Upload pending data</small><span class="quick-arrow">→</span></button>
         </div>
         <aside class="focus-card">
           <div class="focus-head"><span class="focus-avatar">◉</span><div><b>Welcome Back</b><small id="focusUser">Panchayat Administrator</small></div></div>
